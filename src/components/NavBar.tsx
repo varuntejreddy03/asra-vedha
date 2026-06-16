@@ -67,10 +67,10 @@ export default function NavBar({
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-[#111111] ${
         scrolled
-          ? 'bg-[#111111]/95 backdrop-blur-md border-b border-[#c8a45d]/20 shadow-lg shadow-black/20'
-          : 'bg-[#111111]/30 backdrop-blur-sm border-b border-transparent'
+          ? 'border-b border-[#c8a45d]/20 shadow-lg shadow-black/20'
+          : 'lg:bg-[#111111]/30 lg:backdrop-blur-sm border-b border-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 py-3.5 flex justify-between items-center gap-4">
