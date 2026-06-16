@@ -1,20 +1,42 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# ASRA VEDHA
 
-# Run and deploy your AI Studio app
+Premium Herbal Wellness — E-commerce frontend built with React, TypeScript, Vite & Tailwind CSS.
 
-This contains everything you need to run your app locally.
+## Tech Stack
 
-View your app in AI Studio: https://ai.studio/apps/17b511b0-8d1f-4685-ab75-f4320b1b0b30
+- React 19
+- TypeScript
+- Vite
+- Tailwind CSS 4
+- Framer Motion
 
-## Run Locally
+## Getting Started
 
-**Prerequisites:**  Node.js
+```bash
+npm install
+npm run dev
+```
 
+App runs at `http://localhost:3000`
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Build
+
+```bash
+npm run build
+```
+
+Output in `dist/` — deploy to Vercel, Netlify, or any static host.
+
+## Project Structure
+
+```
+src/
+├── components/    # UI components (views, nav, footer, etc.)
+├── App.tsx        # Main app with routing
+├── data.ts        # Static product catalog
+├── types.ts       # TypeScript types
+├── index.css      # Global styles
+└── main.tsx       # Entry point
+
+backend/           # Backend (separate deployment, not used in frontend build)
+```
