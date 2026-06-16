@@ -26,8 +26,26 @@ import SignupView from './components/SignupView';
 import SanctuaryView from './components/SanctuaryView';
 import AdminView from './components/AdminView';
 
+const validViews: ViewState[] = ['home', 'shop', 'product-details', 'cart', 'checkout', 'success', 'wisdom', 'quality', 'sustainability', 'contact', 'login', 'signup', 'sanctuary', 'admin'];
+
+function getViewFromHash(): ViewState {
+  const hash = window.location.hash.replace('#', '');
+  return validViews.includes(hash as ViewState) ? (hash as ViewState) : 'home';
+}
+
 export default function App() {
-  const [view, setView] = useState<ViewState>('home');
+  const [view, setViewState] = useState<ViewState>(getViewFromHash);
+  const setView = (v: ViewState) => {
+    setViewState(v);
+    window.location.hash = v === 'home' ? '' : v;
+  };
+
+  useEffect(() => {
+    const onHashChange = () => setViewState(getViewFromHash());
+    window.addEventListener('hashchange', onHashChange);
+    return () => window.removeEventListener('hashchange', onHashChange);
+  }, []);
+
   const [selectedProductId, setSelectedProductId] = useState<string>('moringa-powder');
   const [currency, setCurrency] = useState<'USD' | 'INR'>('INR');
   const [searchOpen, setSearchOpen] = useState<boolean>(false);
