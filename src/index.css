@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "DM Sans", sans-serif;
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-accent: "Cinzel", Georgia, serif;
+  
+  --color-brand-gold: #C8A45D;
+  --color-brand-gold-light: #e8c177;
+  --color-brand-dark: #111111;
+  --color-brand-surface: #1E1E1E;
+  
+  /* Materials Mapping */
+  --color-surface-container-highest: #353534;
+  --color-secondary-container: #24523a;
+  --color-primary-fixed-dim: #e8c177;
+  --color-secondary-fixed-dim: #a0d2b3;
+  --color-tertiary-container: #aba9a4;
+  --color-on-error-container: #ffdad6;
+  --color-surface: #131313;
+  --color-inverse-on-surface: #313030;
+  --color-on-secondary: #053823;
+  --color-on-error: #690005;
+  --color-on-primary-fixed: #261900;
+  --color-surface-container: #201f1f;
+  --color-surface-variant: #353534;
+  --color-error-container: #93000a;
+  --color-primary-container: #c8a45d;
+  --color-surface-container-lowest: #0e0e0e;
+  --color-surface-dim: #131313;
+  --color-on-primary: #402d00;
+  --color-error: #ffb4ab;
+  --color-secondary-fixed: #bceece;
+  --color-secondary: #a0d2b3;
+  --color-surface-container-low: #1c1b1b;
+  --color-primary: #e8c177;
+  --color-on-secondary-container: #93c3a5;
+  --color-on-secondary-fixed-variant: #214f38;
+  --color-tertiary-fixed-dim: #c9c6c1;
+  --color-surface-container-high: #2a2a2a;
+  --color-on-background: #e5e2e1;
+  --color-surface-bright: #3a3939;
+  --color-primary-fixed: #ffdea3;
+  --color-on-surface-variant: #d1c5b4;
+  --color-on-tertiary-container: #3e3e3a;
+  --color-outline-variant: #4d4639;
+  --color-tertiary: #c9c6c1;
+  --color-on-secondary-fixed: #002112;
+  --color-tertiary-fixed: #e5e2dc;
+  --color-on-tertiary-fixed: #1c1c18;
+  --color-on-primary-container: #513a00;
+  --color-inverse-surface: #e5e2e1;
+  --color-surface-tint: #e8c177;
+  --color-background: #131313;
+  --color-on-tertiary: #31312d;
+  --color-on-primary-fixed-variant: #5c4202;
+  --color-inverse-primary: #775a1a;
+  --color-on-tertiary-fixed-variant: #474743;
+  --color-on-surface: #e5e2e1;
+  --color-outline: #9a8f80;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(200, 164, 93, 0.05);
+}
+::-webkit-scrollbar-thumb {
+  background: #C8A45D;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #e8c177;
+}
+
+body {
+  background-color: #111111;
+  color: #e5e2e1;
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.gold-glow {
+  box-shadow: 0 4px 20px rgba(200, 164, 93, 0.15);
+}
+
+.gold-glow-hover {
+  transition: all 0.3s ease;
+}
+
+.gold-glow-hover:hover {
+  box-shadow: 0 0 25px rgba(200, 164, 93, 0.15);
+  border-color: rgba(200, 164, 93, 0.4);
+}
+
+.font-display-md {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/* Shimmer load states */
+.shimmer-bg {
+  background: #1E1E1E;
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-bg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(200, 164, 93, 0.06) 50%,
+    transparent 100%
+  );
+  animation: shimmer-anim 2s infinite linear;
+}
+
+@keyframes shimmer-anim {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}

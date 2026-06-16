@@ -1,0 +1,6 @@
+{
+  "name": "Asra Vedha",
+  "description": "Refined botanical luxury store featuring premium Ayurvedic apothecary, organic herbal powders, nutraceuticals, and wellness elixirs.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
