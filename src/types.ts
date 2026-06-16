@@ -50,7 +50,8 @@ export type ViewState =
   | 'login'
   | 'signup'
   | 'sanctuary'
-  | 'admin';
+  | 'admin'
+  | 'not-found';
 
 export interface AuthUser {
   id: string;

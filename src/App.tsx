@@ -25,12 +25,14 @@ import LoginView from './components/LoginView';
 import SignupView from './components/SignupView';
 import SanctuaryView from './components/SanctuaryView';
 import AdminView from './components/AdminView';
+import NotFoundView from './components/NotFoundView';
 
-const validViews: ViewState[] = ['home', 'shop', 'product-details', 'cart', 'checkout', 'success', 'wisdom', 'quality', 'sustainability', 'contact', 'login', 'signup', 'sanctuary', 'admin'];
+const validViews: ViewState[] = ['home', 'shop', 'product-details', 'cart', 'checkout', 'success', 'wisdom', 'quality', 'sustainability', 'contact', 'login', 'signup', 'sanctuary', 'admin', 'not-found'];
 
 function getViewFromHash(): ViewState {
   const hash = window.location.hash.replace('#', '');
-  return validViews.includes(hash as ViewState) ? (hash as ViewState) : 'home';
+  if (!hash) return 'home';
+  return validViews.includes(hash as ViewState) ? (hash as ViewState) : 'not-found';
 }
 
 export default function App() {
@@ -461,6 +463,18 @@ export default function App() {
               ) : (
                 <LoginView setView={setView} onGoogleLogin={handleGoogleLogin} />
               )}
+            </motion.div>
+          )}
+
+          {view === 'not-found' && (
+            <motion.div
+              key="not-found"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <NotFoundView setView={setView} />
             </motion.div>
           )}
         </AnimatePresence>
