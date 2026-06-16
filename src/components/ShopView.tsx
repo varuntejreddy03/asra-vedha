@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { SlidersHorizontal, Check, Search, AlertCircle } from 'lucide-react';
+import { SlidersHorizontal, Check, Search, AlertCircle, Plus, Minus } from 'lucide-react';
 import { Product, ViewState } from '../types';
 import { products, getPrice } from '../data';
 
@@ -8,7 +8,7 @@ interface ShopViewProps {
   setView: (view: ViewState) => void;
   currency: 'USD' | 'INR';
   onSelectProduct: (productId: string) => void;
-  addToCart: (productId: string) => void;
+  addToCart: (productId: string, qty?: number) => void;
   searchTerm?: string;
   setSearchTerm?: (term: string) => void;
   catalogProducts?: Product[];
@@ -26,6 +26,8 @@ export default function ShopView({
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [sortBy, setSortBy] = useState<string>('featured');
   const [localSearch, setLocalSearch] = useState<string>(searchTerm);
+  const [activeQtyPicker, setActiveQtyPicker] = useState<string | null>(null);
+  const [pickerQty, setPickerQty] = useState<number>(1);
 
   // Sync state if changed externally
   const activeSearch = setSearchTerm ? searchTerm : localSearch;
@@ -218,15 +220,44 @@ export default function ShopView({
                         <span className="text-[9px] text-[#9a8f80] font-mono tracking-widest uppercase">
                           Lab Tested
                         </span>
-                        <button
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            addToCart(product.id);
-                          }}
-                          className="text-xs text-[#e8c177] hover:text-[#ffdea3] font-sans font-bold uppercase tracking-wider cursor-pointer"
-                        >
-                          Add To Cart
-                        </button>
+                        {activeQtyPicker === product.id ? (
+                          <div className="flex items-center gap-2" onClick={(e) => e.stopPropagation()}>
+                            <button
+                              onClick={() => setPickerQty(Math.max(1, pickerQty - 1))}
+                              className="w-7 h-7 flex items-center justify-center border border-[#4d4639]/40 rounded text-[#e8c177] hover:bg-[#c8a45d]/10 cursor-pointer"
+                            >
+                              <Minus className="w-3 h-3" />
+                            </button>
+                            <span className="text-xs font-bold text-[#e5e2e1] w-5 text-center">{pickerQty}</span>
+                            <button
+                              onClick={() => setPickerQty(pickerQty + 1)}
+                              className="w-7 h-7 flex items-center justify-center border border-[#4d4639]/40 rounded text-[#e8c177] hover:bg-[#c8a45d]/10 cursor-pointer"
+                            >
+                              <Plus className="w-3 h-3" />
+                            </button>
+                            <button
+                              onClick={() => {
+                                addToCart(product.id, pickerQty);
+                                setActiveQtyPicker(null);
+                                setPickerQty(1);
+                              }}
+                              className="text-[10px] bg-[#c8a45d] text-[#261900] font-bold uppercase px-3 py-1.5 rounded cursor-pointer hover:bg-[#ffdea3] transition-colors"
+                            >
+                              Add
+                            </button>
+                          </div>
+                        ) : (
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setActiveQtyPicker(product.id);
+                              setPickerQty(1);
+                            }}
+                            className="text-xs text-[#e8c177] hover:text-[#ffdea3] font-sans font-bold uppercase tracking-wider cursor-pointer"
+                          >
+                            Add To Cart
+                          </button>
+                        )}
                       </div>
                     </div>
                   </motion.div>
