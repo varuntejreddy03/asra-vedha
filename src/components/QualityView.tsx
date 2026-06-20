@@ -59,8 +59,8 @@ const certifications = [
 
 export default function QualityView({ setView }: QualityViewProps) {
   return (
-    <div className="min-h-screen bg-[#111111] text-[#e5e2e1] pt-24">
-      <section className="relative overflow-hidden px-6 md:px-12 py-20 md:py-28 border-b border-[#4d4639]/30">
+    <div className="min-h-screen bg-[#1A0F00] text-[#F5E4B0] pt-24">
+      <section className="relative overflow-hidden px-6 md:px-12 py-20 md:py-28 border-b border-[#C4A042]/30">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(200,164,93,0.14),transparent_34%),linear-gradient(135deg,rgba(31,77,54,0.34),transparent_45%)]" />
         <div className="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <motion.div
@@ -69,7 +69,7 @@ export default function QualityView({ setView }: QualityViewProps) {
             transition={{ duration: 0.6 }}
             className="lg:col-span-7"
           >
-            <span className="font-sans text-xs tracking-[0.24em] uppercase text-[#c8a45d] font-bold">Quality & Certifications</span>
+            <span className="font-sans text-xs tracking-[0.24em] uppercase text-[#C4A042] font-bold">Quality & Certifications</span>
             <h1 className="font-display text-4xl md:text-6xl text-[#f8f5ef] leading-tight mt-5">
               Uncompromising Quality
             </h1>
@@ -82,12 +82,12 @@ export default function QualityView({ setView }: QualityViewProps) {
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="lg:col-span-5 bg-[#1e1e1e]/80 border border-[#c8a45d]/20 rounded-xl p-6 shadow-2xl"
+            className="lg:col-span-5 bg-[#3D2600]/80 border border-[#C4A042]/20 rounded-xl p-6 shadow-2xl"
           >
             <div className="grid grid-cols-2 gap-4">
               {['Lab Tested', 'Natural', 'Traceable', 'Premium'].map((label) => (
-                <div key={label} className="bg-[#111111] border border-[#4d4639]/40 rounded-lg p-5">
-                  <Award className="w-6 h-6 text-[#c8a45d] mb-4" />
+                <div key={label} className="bg-[#1A0F00] border border-[#C4A042]/40 rounded-lg p-5">
+                  <Award className="w-6 h-6 text-[#C4A042] mb-4" />
                   <p className="font-sans text-xs uppercase tracking-[0.16em] text-[#d1c5b4]">{label}</p>
                 </div>
               ))}
@@ -98,7 +98,7 @@ export default function QualityView({ setView }: QualityViewProps) {
 
       <section className="px-6 md:px-12 py-20 max-w-7xl mx-auto">
         <div className="mb-12">
-          <span className="font-sans text-xs uppercase tracking-[0.22em] text-[#c8a45d] font-bold">Our Process</span>
+          <span className="font-sans text-xs uppercase tracking-[0.22em] text-[#C4A042] font-bold">Our Process</span>
           <h2 className="font-display text-3xl md:text-4xl mt-3">From Herb Selection to Premium Delivery</h2>
         </div>
 
@@ -112,13 +112,13 @@ export default function QualityView({ setView }: QualityViewProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.45, delay: index * 0.05 }}
-                className="relative bg-[#1c1b1b] border border-[#4d4639]/35 hover:border-[#c8a45d]/45 rounded-lg p-6 min-h-[220px]"
+                className="relative bg-[#2D1A00] border border-[#C4A042]/35 hover:border-[#C4A042]/45 rounded-lg p-6 min-h-[220px]"
               >
                 <div className="flex items-center justify-between mb-6">
                   <div className="w-11 h-11 rounded-full bg-[#24523a]/45 text-[#a0d2b3] flex items-center justify-center">
                     <Icon className="w-5 h-5" />
                   </div>
-                  <span className="font-mono text-xs text-[#c8a45d]">0{index + 1}</span>
+                  <span className="font-mono text-xs text-[#C4A042]">0{index + 1}</span>
                 </div>
                 <h3 className="font-display text-xl text-[#f8f5ef]">{step.title}</h3>
                 <p className="font-sans text-sm text-[#9a8f80] leading-relaxed mt-3">{step.text}</p>
@@ -128,16 +128,16 @@ export default function QualityView({ setView }: QualityViewProps) {
         </div>
       </section>
 
-      <section className="bg-[#151515] border-y border-[#4d4639]/25 px-6 md:px-12 py-20">
+      <section className="bg-[#151515] border-y border-[#C4A042]/25 px-6 md:px-12 py-20">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
           <div className="lg:col-span-5">
-            <span className="font-sans text-xs uppercase tracking-[0.22em] text-[#c8a45d] font-bold">Quality Pillars</span>
+            <span className="font-sans text-xs uppercase tracking-[0.22em] text-[#C4A042] font-bold">Quality Pillars</span>
             <h2 className="font-display text-3xl md:text-4xl mt-3">Four controls that keep products consistent.</h2>
           </div>
           <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
             {pillars.map(([title, text]) => (
-              <div key={title} className="bg-[#1e1e1e] border border-[#4d4639]/30 rounded-lg p-6">
-                <CheckCircle2 className="w-5 h-5 text-[#c8a45d] mb-4" />
+              <div key={title} className="bg-[#3D2600] border border-[#C4A042]/30 rounded-lg p-6">
+                <CheckCircle2 className="w-5 h-5 text-[#C4A042] mb-4" />
                 <h3 className="font-display text-xl text-[#f8f5ef]">{title}</h3>
                 <p className="font-sans text-sm text-[#9a8f80] leading-relaxed mt-2">{text}</p>
               </div>
@@ -148,7 +148,7 @@ export default function QualityView({ setView }: QualityViewProps) {
 
       <section className="px-6 md:px-12 py-20 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
         <div className="lg:col-span-5 bg-[#1f4d36] rounded-lg p-8">
-          <FlaskConical className="w-8 h-8 text-[#e8c177] mb-6" />
+          <FlaskConical className="w-8 h-8 text-[#C4A042] mb-6" />
           <h2 className="font-display text-3xl text-[#f8f5ef]">Lab Testing Roadmap</h2>
           <p className="font-sans text-sm text-[#e8f0e9] leading-relaxed mt-4">
             Every batch should move through documented quality checks before sale. This keeps the website, admin records, and product labels aligned.
@@ -156,7 +156,7 @@ export default function QualityView({ setView }: QualityViewProps) {
         </div>
         <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3">
           {testingItems.map((item) => (
-            <div key={item} className="flex items-center gap-3 bg-[#1c1b1b] border border-[#4d4639]/25 rounded-lg p-4">
+            <div key={item} className="flex items-center gap-3 bg-[#2D1A00] border border-[#C4A042]/25 rounded-lg p-4">
               <CheckCircle2 className="w-4 h-4 text-[#a0d2b3] shrink-0" />
               <span className="font-sans text-sm text-[#d1c5b4]">{item}</span>
             </div>
@@ -167,8 +167,8 @@ export default function QualityView({ setView }: QualityViewProps) {
       <section className="px-6 md:px-12 pb-20 max-w-7xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {certifications.map(([title, text]) => (
-            <div key={title} className="bg-[#111111] border border-[#c8a45d]/25 rounded-lg p-6 text-center">
-              <div className="mx-auto w-14 h-14 rounded-full border border-[#c8a45d]/40 flex items-center justify-center text-[#c8a45d] font-display text-xl">
+            <div key={title} className="bg-[#1A0F00] border border-[#C4A042]/25 rounded-lg p-6 text-center">
+              <div className="mx-auto w-14 h-14 rounded-full border border-[#C4A042]/40 flex items-center justify-center text-[#C4A042] font-display text-xl">
                 {title.slice(0, 2)}
               </div>
               <h3 className="font-sans text-sm text-[#f8f5ef] font-bold mt-5">{title}</h3>
@@ -177,14 +177,14 @@ export default function QualityView({ setView }: QualityViewProps) {
           ))}
         </div>
 
-        <div className="mt-16 bg-[#1e1e1e] border border-[#c8a45d]/25 rounded-lg p-8 md:p-10 flex flex-col md:flex-row gap-6 md:items-center md:justify-between">
+        <div className="mt-16 bg-[#3D2600] border border-[#C4A042]/25 rounded-lg p-8 md:p-10 flex flex-col md:flex-row gap-6 md:items-center md:justify-between">
           <div>
             <h2 className="font-display text-3xl text-[#f8f5ef]">Explore products made with a quality-first mindset.</h2>
             <p className="font-sans text-sm text-[#9a8f80] mt-2">Review the current wellness collection and product-level testing badges.</p>
           </div>
           <button
             onClick={() => setView('shop')}
-            className="bg-[#c8a45d] text-[#261900] hover:bg-[#ffdea3] px-6 py-3 rounded text-xs uppercase tracking-widest font-bold inline-flex items-center justify-center gap-2 cursor-pointer"
+            className="bg-[#C4A042] text-[#1A0F00] hover:bg-[#d4b052] px-6 py-3 rounded text-xs uppercase tracking-widest font-bold inline-flex items-center justify-center gap-2 cursor-pointer"
           >
             View Products
             <ArrowRight className="w-4 h-4" />
@@ -194,3 +194,4 @@ export default function QualityView({ setView }: QualityViewProps) {
     </div>
   );
 }
+

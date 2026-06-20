@@ -90,7 +90,7 @@ export default function ProductDetailView({
       {/* Return link */}
       <button
         onClick={() => setView('shop')}
-        className="flex items-center gap-2 text-xs text-[#e8c177] hover:text-[#ffdea3] uppercase tracking-wider font-sans font-bold cursor-pointer mb-12 self-start"
+        className="flex items-center gap-2 text-xs text-[#C4A042] hover:text-[#d4b052] uppercase tracking-wider font-sans font-bold cursor-pointer mb-12 self-start"
       >
         <ArrowLeft className="w-4 h-4" />
         Back to Products
@@ -101,7 +101,7 @@ export default function ProductDetailView({
         {/* Left column (Image & Quality Certificates) */}
         <div className="lg:col-span-6 flex flex-col gap-8">
           <motion.div 
-            className="aspect-[4/5] w-full rounded-2xl overflow-hidden border border-[#4d4639]/40 bg-[#1e1e1e] relative gold-glow"
+            className="aspect-[4/5] w-full rounded-2xl overflow-hidden border border-[#C4A042]/40 bg-[#3D2600] relative gold-glow"
             layoutId={`shop-card-${product.id}`}
           >
             <img
@@ -111,14 +111,14 @@ export default function ProductDetailView({
               referrerPolicy="no-referrer"
             />
             
-            <div className="absolute top-6 left-6 bg-[#111111]/80 backdrop-blur-md border border-[#c8a45d]/30 text-[#e8c177] text-[10px] font-mono tracking-widest px-3 py-1.5 rounded-full uppercase">
+            <div className="absolute top-6 left-6 bg-[#1A0F00]/80 backdrop-blur-md border border-[#C4A042]/30 text-[#C4A042] text-[10px] font-mono tracking-widest px-3 py-1.5 rounded-full uppercase">
               {product.scientificBadge || 'Raw Purity'}
             </div>
           </motion.div>
 
           {/* Clinical Credentials Frame */}
-          <div className="bg-[#161514] border border-[#4d4639]/30 rounded-xl p-6 flex flex-col gap-4">
-            <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-[#c8a45d] font-bold">
+          <div className="bg-[#2D1A00] border border-[#C4A042]/30 rounded-xl p-6 flex flex-col gap-4">
+            <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-[#C4A042] font-bold">
               Laboratory Assayed Authenticity
             </span>
             <div className="grid grid-cols-2 gap-4">
@@ -129,7 +129,7 @@ export default function ProductDetailView({
                 </div>
               ))}
             </div>
-            <p className="text-xs text-[#9a8f80] leading-relaxed border-t border-[#4d4639]/30 pt-3 mt-1">
+            <p className="text-xs text-[#9a8f80] leading-relaxed border-t border-[#C4A042]/30 pt-3 mt-1">
               {product.qualityTesting.description}
             </p>
           </div>
@@ -144,7 +144,7 @@ export default function ProductDetailView({
                   Organic
                 </span>
               )}
-              <div className="flex items-center gap-1 text-[#C8A45D]">
+              <div className="flex items-center gap-1 text-[#C4A042]">
                 <Star className="w-3.5 h-3.5 fill-current" />
                 <Star className="w-3.5 h-3.5 fill-current" />
                 <Star className="w-3.5 h-3.5 fill-current" />
@@ -154,16 +154,16 @@ export default function ProductDetailView({
               </div>
             </div>
 
-            <h1 className="font-display text-3xl md:text-4xl text-[#e5e2e1] tracking-tight mt-1">
+            <h1 className="font-display text-3xl md:text-4xl text-[#F5E4B0] tracking-tight mt-1">
               {product.name}
             </h1>
             
-            <p className="font-sans text-sm italic text-[#c8a45d] tracking-wide">
+            <p className="font-sans text-sm italic text-[#C4A042] tracking-wide">
               {product.subheading}
             </p>
           </div>
 
-          <div className="text-3xl font-display font-medium text-[#e8c177] border-y border-[#4d4639]/20 py-4 font-mono">
+          <div className="text-3xl font-display font-medium text-[#C4A042] border-y border-[#C4A042]/20 py-4 font-mono">
             {priceData.formatted}
           </div>
 
@@ -175,20 +175,20 @@ export default function ProductDetailView({
           <div className="flex flex-col gap-3 mt-2">
             <span className="text-xs text-[#9a8f80] font-sans uppercase tracking-widest">Select Quantity</span>
             <div className="flex items-center gap-6">
-              <div className="flex items-center bg-[#1c1b1b] border border-[#4d4639]/60 rounded-lg p-1">
+              <div className="flex items-center bg-[#2D1A00] border border-[#C4A042]/60 rounded-lg p-1">
                 <button
                   onClick={() => handleQtyChange(-1)}
-                  className="p-2 hover:text-[#e8c177] transition-colors cursor-pointer text-[#d1c5b4]"
+                  className="p-2 hover:text-[#C4A042] transition-colors cursor-pointer text-[#d1c5b4]"
                   aria-label="Decrease discount"
                 >
                   <Minus className="w-3.5 h-3.5" />
                 </button>
-                <span className="w-10 text-center font-mono text-sm text-[#e5e2e1] font-semibold select-none">
+                <span className="w-10 text-center font-mono text-sm text-[#F5E4B0] font-semibold select-none">
                   {quantity}
                 </span>
                 <button
                   onClick={() => handleQtyChange(1)}
-                  className="p-2 hover:text-[#e8c177] transition-colors cursor-pointer text-[#d1c5b4]"
+                  className="p-2 hover:text-[#C4A042] transition-colors cursor-pointer text-[#d1c5b4]"
                   aria-label="Increase discount"
                 >
                   <Plus className="w-3.5 h-3.5" />
@@ -207,13 +207,13 @@ export default function ProductDetailView({
               onClick={() => {
                 addToCart(product.id, quantity);
               }}
-              className="border border-[#c8a45d] text-[#e8c177] hover:bg-[#c8a45d]/10 px-6 py-4 rounded text-xs uppercase tracking-widest font-sans font-bold transition-all cursor-pointer text-center"
+              className="border border-[#C4A042] text-[#C4A042] hover:bg-[#C4A042]/10 px-6 py-4 rounded text-xs uppercase tracking-widest font-sans font-bold transition-all cursor-pointer text-center"
             >
               Add To Cart
             </button>
             <button
               onClick={() => onInstantBuy(product.id, quantity)}
-              className="bg-[#c8a45d] hover:bg-[#ffdea3] text-[#261900] px-6 py-4 rounded text-xs uppercase tracking-widest font-sans font-bold transition-colors cursor-pointer text-center gold-glow"
+              className="bg-[#C4A042] hover:bg-[#d4b052] text-[#1A0F00] px-6 py-4 rounded text-xs uppercase tracking-widest font-sans font-bold transition-colors cursor-pointer text-center gold-glow"
             >
               Buy Now
             </button>
@@ -223,18 +223,18 @@ export default function ProductDetailView({
           <div className="mt-4">
             <button
               onClick={() => setChatOpen(!chatOpen)}
-              className="w-full bg-[#1c1b1b] border border-[#e8c177]/20 hover:border-[#e8c177]/50 rounded-xl p-4 flex items-center justify-between transition-all cursor-pointer text-left group"
+              className="w-full bg-[#2D1A00] border border-[#C4A042]/20 hover:border-[#C4A042]/50 rounded-xl p-4 flex items-center justify-between transition-all cursor-pointer text-left group"
             >
               <div className="flex items-center gap-3">
                 <div className="p-2.5 rounded-lg bg-[#24523a]/40 text-[#a0d2b3]">
                   <MessageSquare className="w-5 h-5 animate-bounce" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold text-[#e5e2e1] uppercase tracking-wider">Consult Botanical Advisor</h4>
+                  <h4 className="text-xs font-bold text-[#F5E4B0] uppercase tracking-wider">Consult Botanical Advisor</h4>
                   <p className="text-[11px] text-[#9a8f80] mt-0.5">Ask about ingredients, timing, and responsible use.</p>
                 </div>
               </div>
-              <span className="text-xs font-bold text-[#e8c177] group-hover:underline uppercase tracking-wider">
+              <span className="text-xs font-bold text-[#C4A042] group-hover:underline uppercase tracking-wider">
                 {chatOpen ? 'Minimize' : 'Ask Now'}
               </span>
             </button>
@@ -247,7 +247,7 @@ export default function ProductDetailView({
                 className="mt-3 bg-[#0d0d0c] border border-[#24523a]/40 rounded-xl p-4 flex flex-col gap-4 overflow-hidden"
               >
                 {/* Simulated WhatsApp Header */}
-                <div className="flex items-center justify-between border-b border-[#4d4639]/20 pb-3">
+                <div className="flex items-center justify-between border-b border-[#C4A042]/20 pb-3">
                   <div className="flex items-center gap-2">
                     <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></div>
                     <span className="text-xs font-mono font-bold tracking-wider text-[#a0d2b3] uppercase">WhatsApp Clinician Interface</span>
@@ -262,7 +262,7 @@ export default function ProductDetailView({
                       key={idx}
                       className={`flex flex-col max-w-[85%] rounded-xl p-3 text-xs leading-relaxed ${
                         log.sender === 'user' 
-                          ? 'bg-[#1c1b1b] border border-[#4d4639]/30 text-[#e5e2e1] self-end' 
+                          ? 'bg-[#2D1A00] border border-[#C4A042]/30 text-[#F5E4B0] self-end' 
                           : 'bg-[#24523a]/15 border border-[#24523a]/40 text-[#d1c5b4] self-start'
                       }`}
                     >
@@ -279,13 +279,13 @@ export default function ProductDetailView({
                 </div>
 
                 {/* Input form */}
-                <form onSubmit={submitChat} className="flex gap-2 border-t border-[#4d4639]/20 pt-3">
+                <form onSubmit={submitChat} className="flex gap-2 border-t border-[#C4A042]/20 pt-3">
                   <input
                     type="text"
                     value={userMsg}
                     onChange={(e) => setUserMsg(e.target.value)}
                     placeholder="Ask about ideal times, dosages, side benefits..."
-                    className="flex-grow bg-[#141413] border border-[#4d4639]/60 text-xs rounded-lg px-3 py-2 text-[#e5e2e1] focus:outline-none focus:border-[#c8a45d]"
+                    className="flex-grow bg-[#141413] border border-[#C4A042]/60 text-xs rounded-lg px-3 py-2 text-[#F5E4B0] focus:outline-none focus:border-[#C4A042]"
                   />
                   <button
                     type="submit"
@@ -300,16 +300,16 @@ export default function ProductDetailView({
           </div>
 
           {/* Tab Accordion Details */}
-          <div className="border border-[#4d4639]/30 rounded-xl overflow-hidden mt-4">
-            <div className="flex border-b border-[#4d4639]/30 bg-[#161514]">
+          <div className="border border-[#C4A042]/30 rounded-xl overflow-hidden mt-4">
+            <div className="flex border-b border-[#C4A042]/30 bg-[#2D1A00]">
               {(['benefits', 'ingredients', 'quality'] as ActiveTab[]).map((tab) => (
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
                   className={`flex-1 py-3 text-xs font-sans uppercase tracking-widest font-bold border-b-2 transition-all cursor-pointer ${
                     activeTab === tab
-                      ? 'text-[#e8c177] border--[#e8c177] bg-[#1e1e1e]'
-                      : 'text-[#9a8f80] border-transparent hover:text-[#e8c177]'
+                      ? 'text-[#C4A042] border--[#C4A042] bg-[#3D2600]'
+                      : 'text-[#9a8f80] border-transparent hover:text-[#C4A042]'
                   }`}
                 >
                   {tab === 'benefits' ? 'The Benefits' : tab === 'ingredients' ? 'Ingredients' : 'Testing Log'}
@@ -317,7 +317,7 @@ export default function ProductDetailView({
               ))}
             </div>
 
-            <div className="p-6 bg-[#1e1e1e]">
+            <div className="p-6 bg-[#3D2600]">
               <AnimatePresence mode="wait">
                 {activeTab === 'benefits' && (
                   <motion.div
@@ -329,11 +329,11 @@ export default function ProductDetailView({
                   >
                     {product.benefits.map((benefit, i) => (
                       <div key={i} className="flex gap-3 items-start">
-                        <div className="p-1.5 rounded bg-[#c8a45d]/10 text-[#e8c177] mt-0.5">
-                          <CheckCircle className="w-3.5 h-3.5 text-[#e8c177]" />
+                        <div className="p-1.5 rounded bg-[#C4A042]/10 text-[#C4A042] mt-0.5">
+                          <CheckCircle className="w-3.5 h-3.5 text-[#C4A042]" />
                         </div>
                         <div>
-                          <h4 className="text-xs font-bold text-[#e5e2e1] uppercase tracking-wider">{benefit.title}</h4>
+                          <h4 className="text-xs font-bold text-[#F5E4B0] uppercase tracking-wider">{benefit.title}</h4>
                           <p className="text-xs text-[#9a8f80] mt-1 leading-relaxed">{benefit.description}</p>
                         </div>
                       </div>
@@ -349,9 +349,9 @@ export default function ProductDetailView({
                     exit={{ opacity: 0 }}
                     className="flex flex-col gap-2"
                   >
-                    <div className="text-xs font-mono font-bold text-[#e8c177] uppercase">Active Formula</div>
-                    <p className="text-xs font-sans text-[#e5e2e1] font-semibold">{product.ingredients}</p>
-                    <div className="w-full h-[1px] bg-[#4d4639]/20 my-2"></div>
+                    <div className="text-xs font-mono font-bold text-[#C4A042] uppercase">Active Formula</div>
+                    <p className="text-xs font-sans text-[#F5E4B0] font-semibold">{product.ingredients}</p>
+                    <div className="w-full h-[1px] bg-[#C4A042]/20 my-2"></div>
                     <p className="text-xs text-[#9a8f80] leading-relaxed">{product.ingredientsDetail}</p>
                   </motion.div>
                 )}
@@ -365,8 +365,8 @@ export default function ProductDetailView({
                     className="flex flex-col gap-3"
                   >
                     <div className="flex flex-wrap gap-2">
-                      <span className="bg-[#111111] px-2.5 py-1 text-[9px] font-mono text-[#a0d2b3] border border-[#a0d2b3]/20 rounded uppercase">Certificate of Analysis: #AV-2026-X</span>
-                      <span className="bg-[#111111] px-2.5 py-1 text-[9px] font-mono text-[#e8c177] border border-[#e8c177]/20 rounded uppercase">Standard HPLC HPLC Grade</span>
+                      <span className="bg-[#1A0F00] px-2.5 py-1 text-[9px] font-mono text-[#a0d2b3] border border-[#a0d2b3]/20 rounded uppercase">Certificate of Analysis: #AV-2026-X</span>
+                      <span className="bg-[#1A0F00] px-2.5 py-1 text-[9px] font-mono text-[#C4A042] border border-[#C4A042]/20 rounded uppercase">Standard HPLC HPLC Grade</span>
                     </div>
                     <p className="text-xs text-[#d1c5b4] leading-relaxed">
                       Assayed completely by independent certified third-party testing centers. Results guarantee absence of heavy metals down to 0.001 parts per billion, with zero synthetic fillers, talcs, or moisture accelerators.
@@ -380,8 +380,8 @@ export default function ProductDetailView({
       </div>
 
       {/* Companion Rituals Recommendations */}
-      <section className="mt-24 border-t border-[#4d4639]/30 pt-16 mb-12">
-        <h3 className="font-display text-2xl text-[#e5e2e1] mb-8 tracking-tight text-center">Related Wellness Products</h3>
+      <section className="mt-24 border-t border-[#C4A042]/30 pt-16 mb-12">
+        <h3 className="font-display text-2xl text-[#F5E4B0] mb-8 tracking-tight text-center">Related Wellness Products</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto w-full">
           {companionProducts.map((companion) => {
             const compPrice = getPrice(companion, currency);
@@ -397,15 +397,15 @@ export default function ProductDetailView({
                     window.dispatchEvent(clickEvent);
                   }, 100);
                 }}
-                className="bg-[#161514] border border-[#4d4639]/20 rounded-xl p-4 flex gap-4 hover:border-[#c8a45d]/40 transition-all cursor-pointer group"
+                className="bg-[#2D1A00] border border-[#C4A042]/20 rounded-xl p-4 flex gap-4 hover:border-[#C4A042]/40 transition-all cursor-pointer group"
               >
-                <div className="w-20 h-20 rounded-lg overflow-hidden bg-[#111111]">
+                <div className="w-20 h-20 rounded-lg overflow-hidden bg-[#1A0F00]">
                   <img src={companion.image} alt={companion.name} className="w-full h-full object-cover group-hover:scale-104 transition-transform" />
                 </div>
                 <div className="flex flex-col justify-center flex-grow">
-                  <h4 className="text-sm font-display text-[#e5e2e1] group-hover:text-[#e8c177] transition-colors font-semibold">{companion.name}</h4>
+                  <h4 className="text-sm font-display text-[#F5E4B0] group-hover:text-[#C4A042] transition-colors font-semibold">{companion.name}</h4>
                   <p className="text-xs text-[#9a8f80] mt-0.5 line-clamp-1">{companion.subheading}</p>
-                  <span className="text-xs font-mono text-[#e8c177] mt-1">{compPrice.formatted}</span>
+                  <span className="text-xs font-mono text-[#C4A042] mt-1">{compPrice.formatted}</span>
                 </div>
               </div>
             );
@@ -415,3 +415,4 @@ export default function ProductDetailView({
     </div>
   );
 }
+

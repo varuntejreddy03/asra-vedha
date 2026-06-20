@@ -223,7 +223,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#111111] text-[#e5e2e1] flex flex-col justify-between selection:bg-[#c8a45d] selection:text-[#111]">
+    <div className="min-h-screen bg-[#1A0F00] text-[#F5E4B0] flex flex-col justify-between selection:bg-[#C4A042] selection:text-[#1A0F00]">
       
 
       {/* Main navigation menu */}
@@ -245,7 +245,7 @@ export default function App() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
-            className="fixed bottom-8 right-8 z-[80] bg-[#1c1b1b] border border-[#24523a] text-emerald-400 font-sans text-xs font-semibold px-5 py-3 rounded-lg shadow-xl flex items-center gap-2"
+            className="fixed bottom-8 right-8 z-[80] bg-[#2D1A00] border border-[#24523a]/50 text-emerald-400 font-sans text-xs font-semibold px-5 py-3 rounded-lg shadow-xl flex items-center gap-2"
           >
             <Check className="w-4 h-4 text-emerald-400 stroke-[2.2]" />
             <span>{toastStr}</span>
@@ -483,16 +483,16 @@ export default function App() {
       {/* Global Interactive wisdom dialogs */}
       <AnimatePresence>
         {modalOpen && (
-          <div className="fixed inset-0 z-[110] flex items-center justify-center p-6 bg-black/80 backdrop-blur-sm">
+          <div className="fixed inset-0 z-[110] flex items-center justify-center p-6 bg-black/70 backdrop-blur-sm">
             <motion.div
               initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
-              className="bg-[#1e1e1e] border border-[#c8a45d]/40 rounded-2xl max-w-md w-full overflow-hidden"
+              className="bg-[#2D1A00] border border-[#C4A042]/30 rounded-2xl max-w-md w-full overflow-hidden shadow-xl"
             >
-              <div className="flex justify-between items-center bg-[#161514] px-6 py-4 border-b border-[#4d4639]/30">
-                <h3 className="font-display text-[#e8c177] font-semibold uppercase text-xs tracking-widest">{modalTitle}</h3>
-                <button onClick={() => setModalOpen(false)} className="text-[#9a8f80] hover:text-[#e5e2e1] cursor-pointer">
+              <div className="flex justify-between items-center bg-[#1A0F00] px-6 py-4 border-b border-[#C4A042]/20">
+                <h3 className="font-display text-[#C4A042] font-semibold uppercase text-xs tracking-widest">{modalTitle}</h3>
+                <button onClick={() => setModalOpen(false)} className="text-[#9a8f80] hover:text-[#F5E4B0] cursor-pointer">
                   <X className="w-4 h-4" />
                 </button>
               </div>
@@ -500,7 +500,7 @@ export default function App() {
                 <p className="font-sans text-sm text-[#d1c5b4] leading-relaxed whitespace-pre-wrap">{modalContent}</p>
                 <button
                   onClick={() => setModalOpen(false)}
-                  className="mt-6 w-full bg-[#c8a45d] text-[#261900] text-xs font-sans font-bold uppercase py-3 rounded-md hover:bg-[#ffdea3] transition-colors cursor-pointer"
+                  className="mt-6 w-full bg-[#C4A042] text-[#1A0F00] text-xs font-sans font-bold uppercase py-3 rounded-md hover:bg-[#d4b052] transition-colors cursor-pointer"
                 >
                   Understood
                 </button>

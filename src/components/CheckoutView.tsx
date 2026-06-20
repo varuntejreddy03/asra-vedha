@@ -77,7 +77,7 @@ export default function CheckoutView({
       <button
         onClick={() => setView('cart')}
         disabled={loading || orderComplete}
-        className="flex items-center gap-2 text-xs text-[#e8c177] hover:text-[#ffdea3] uppercase tracking-wider font-sans font-bold cursor-pointer mb-8 self-start disabled:opacity-30"
+        className="flex items-center gap-2 text-xs text-[#C4A042] hover:text-[#d4b052] uppercase tracking-wider font-sans font-bold cursor-pointer mb-8 self-start disabled:opacity-30"
       >
         <ArrowLeft className="w-4 h-4" />
         Return to Cart
@@ -85,7 +85,7 @@ export default function CheckoutView({
 
       {orderComplete ? (
         <motion.div 
-          className="bg-[#161514] border border-[#24523a]/50 p-12 rounded-2xl max-w-2xl mx-auto w-full text-center flex flex-col items-center gap-6"
+          className="bg-[#2D1A00] border border-[#24523a]/50 p-12 rounded-2xl max-w-2xl mx-auto w-full text-center flex flex-col items-center gap-6"
           initial={{ scale: 0.95, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
         >
@@ -94,15 +94,15 @@ export default function CheckoutView({
           </div>
 
           <div className="flex flex-col gap-2">
-            <span className="font-sans text-xs tracking-widest text-[#c8a45d] uppercase font-bold">Order Placed Successfully</span>
-            <h2 className="font-display text-3xl text-[#e5e2e1] tracking-tight">Thank You for Your Order</h2>
+            <span className="font-sans text-xs tracking-widest text-[#C4A042] uppercase font-bold">Order Placed Successfully</span>
+            <h2 className="font-display text-3xl text-[#F5E4B0] tracking-tight">Thank You for Your Order</h2>
           </div>
 
           <p className="font-sans text-sm text-[#d1c5b4] leading-relaxed max-w-md">
-            Your wellness order has been created under code <strong className="font-mono text-[#e8c177]">#AV-{Math.floor(Math.random() * 89999 + 10000)}</strong>. Our team will confirm payment and delivery details by email: <strong className="text-[#e8c177]">{details.email}</strong>.
+            Your wellness order has been created under code <strong className="font-mono text-[#C4A042]">#AV-{Math.floor(Math.random() * 89999 + 10000)}</strong>. Our team will confirm payment and delivery details by email: <strong className="text-[#C4A042]">{details.email}</strong>.
           </p>
 
-          <div className="w-full h-[1px] bg-[#4d4639]/30"></div>
+          <div className="w-full h-[1px] bg-[#C4A042]/30"></div>
 
           <div className="flex flex-col gap-1 items-center">
             <Heart className="w-5 h-5 text-red-400 fill-current animate-pulse" />
@@ -111,7 +111,7 @@ export default function CheckoutView({
 
           <button
             onClick={() => setView('home')}
-            className="mt-4 bg-[#c8a45d] text-[#261900] px-8 py-3 rounded text-xs uppercase tracking-widest font-sans font-bold hover:bg-[#ffdea3] transition-colors cursor-pointer"
+            className="mt-4 bg-[#C4A042] text-[#1A0F00] px-8 py-3 rounded text-xs uppercase tracking-widest font-sans font-bold hover:bg-[#d4b052] transition-colors cursor-pointer"
           >
             Continue Shopping
           </button>
@@ -121,8 +121,8 @@ export default function CheckoutView({
           {/* Checkout Form Area - Left */}
           <form onSubmit={handleSubmit} className="lg:col-span-7 flex flex-col gap-8">
             {/* Contact Box */}
-            <div className="bg-[#1e1e1e] border border-[#4d4639]/30 rounded-xl p-6 flex flex-col gap-5">
-              <h2 className="text-sm font-sans uppercase font-bold text-[#c8a45d] tracking-widest border-b border-[#4d4639]/20 pb-3">
+            <div className="bg-[#3D2600] border border-[#C4A042]/30 rounded-xl p-6 flex flex-col gap-5">
+              <h2 className="text-sm font-sans uppercase font-bold text-[#C4A042] tracking-widest border-b border-[#C4A042]/20 pb-3">
                 1. Contact Details
               </h2>
               
@@ -138,7 +138,7 @@ export default function CheckoutView({
                   disabled={loading}
                   onChange={(e) => setDetails({...details, email: e.target.value})}
                   placeholder="name@example.com"
-                  className="bg-[#111111] border border-[#4d4639]/50 text-xs text-[#e5e2e1] px-4 py-3 rounded-lg focus:outline-none focus:border-[#c8a45d]"
+                  className="bg-[#1A0F00] border border-[#C4A042]/50 text-xs text-[#F5E4B0] px-4 py-3 rounded-lg focus:outline-none focus:border-[#C4A042]"
                 />
               </div>
 
@@ -149,7 +149,7 @@ export default function CheckoutView({
                   disabled={loading}
                   checked={details.newsletter}
                   onChange={(e) => setDetails({...details, newsletter: e.target.checked})}
-                  className="w-4 h-4 rounded border-[#4d4639]/60 text-[#c8a45d] focus:ring-[#c8a45d]/30"
+                  className="w-4 h-4 rounded border-[#C4A042]/60 text-[#C4A042] focus:ring-[#C4A042]/30"
                 />
                 <label htmlFor="newsletter" className="text-xs text-[#d1c5b4] select-none cursor-pointer">
                   Subscribe to wellness updates, product launches, and offers.
@@ -158,8 +158,8 @@ export default function CheckoutView({
             </div>
 
             {/* Delivery Box */}
-            <div className="bg-[#1e1e1e] border border-[#4d4639]/30 rounded-xl p-6 flex flex-col gap-6">
-              <h2 className="text-sm font-sans uppercase font-bold text-[#c8a45d] tracking-widest border-b border-[#4d4639]/20 pb-3">
+            <div className="bg-[#3D2600] border border-[#C4A042]/30 rounded-xl p-6 flex flex-col gap-6">
+              <h2 className="text-sm font-sans uppercase font-bold text-[#C4A042] tracking-widest border-b border-[#C4A042]/20 pb-3">
                 2. Delivery Address
               </h2>
 
@@ -172,7 +172,7 @@ export default function CheckoutView({
                   disabled={loading}
                   value={details.country}
                   onChange={(e) => setDetails({...details, country: e.target.value})}
-                  className="bg-[#111111] border border-[#4d4639]/50 text-xs text-[#e5e2e1] px-4 py-3 rounded-lg focus:outline-none focus:border-[#c8a45d]"
+                  className="bg-[#1A0F00] border border-[#C4A042]/50 text-xs text-[#F5E4B0] px-4 py-3 rounded-lg focus:outline-none focus:border-[#C4A042]"
                 >
                   <option value="India">India (Republic of India)</option>
                   <option value="United States">United States</option>
@@ -195,7 +195,7 @@ export default function CheckoutView({
                     value={details.firstName}
                     onChange={(e) => setDetails({...details, firstName: e.target.value})}
                     placeholder="Siddharth"
-                    className="bg-[#111111] border border-[#4d4639]/50 text-xs text-[#e5e2e1] px-4 py-3 rounded-lg focus:outline-none focus:border-[#c8a45d]"
+                    className="bg-[#1A0F00] border border-[#C4A042]/50 text-xs text-[#F5E4B0] px-4 py-3 rounded-lg focus:outline-none focus:border-[#C4A042]"
                   />
                 </div>
                 <div className="flex flex-col gap-1">
@@ -210,7 +210,7 @@ export default function CheckoutView({
                     value={details.lastName}
                     onChange={(e) => setDetails({...details, lastName: e.target.value})}
                     placeholder="Varma"
-                    className="bg-[#111111] border border-[#4d4639]/50 text-xs text-[#e5e2e1] px-4 py-3 rounded-lg focus:outline-none focus:border-[#c8a45d]"
+                    className="bg-[#1A0F00] border border-[#C4A042]/50 text-xs text-[#F5E4B0] px-4 py-3 rounded-lg focus:outline-none focus:border-[#C4A042]"
                   />
                 </div>
               </div>
@@ -227,7 +227,7 @@ export default function CheckoutView({
                   value={details.address}
                   onChange={(e) => setDetails({...details, address: e.target.value})}
                     placeholder="House no., street, area"
-                  className="bg-[#111111] border border-[#4d4639]/50 text-xs text-[#e5e2e1] px-4 py-3 rounded-lg focus:outline-none focus:border-[#c8a45d]"
+                  className="bg-[#1A0F00] border border-[#C4A042]/50 text-xs text-[#F5E4B0] px-4 py-3 rounded-lg focus:outline-none focus:border-[#C4A042]"
                 />
               </div>
 
@@ -242,7 +242,7 @@ export default function CheckoutView({
                   value={details.apartment}
                   onChange={(e) => setDetails({...details, apartment: e.target.value})}
                   placeholder="3rd Floor, Lotus Wing"
-                  className="bg-[#111111] border border-[#4d4639]/50 text-xs text-[#e5e2e1] px-4 py-3 rounded-lg focus:outline-none focus:border-[#c8a45d]"
+                  className="bg-[#1A0F00] border border-[#C4A042]/50 text-xs text-[#F5E4B0] px-4 py-3 rounded-lg focus:outline-none focus:border-[#C4A042]"
                 />
               </div>
 
@@ -259,7 +259,7 @@ export default function CheckoutView({
                     value={details.city}
                     onChange={(e) => setDetails({...details, city: e.target.value})}
                     placeholder="New Delhi"
-                    className="bg-[#111111] border border-[#4d4639]/50 text-xs text-[#e5e2e1] px-4 py-3 rounded-lg focus:outline-none focus:border-[#c8a45d]"
+                    className="bg-[#1A0F00] border border-[#C4A042]/50 text-xs text-[#F5E4B0] px-4 py-3 rounded-lg focus:outline-none focus:border-[#C4A042]"
                   />
                 </div>
                 <div className="flex flex-col gap-1">
@@ -273,7 +273,7 @@ export default function CheckoutView({
                     value={details.state}
                     onChange={(e) => setDetails({...details, state: e.target.value})}
                     placeholder="Delhi NCT"
-                    className="bg-[#111111] border border-[#4d4639]/50 text-xs text-[#e5e2e1] px-4 py-3 rounded-lg focus:outline-none focus:border-[#c8a45d]"
+                    className="bg-[#1A0F00] border border-[#C4A042]/50 text-xs text-[#F5E4B0] px-4 py-3 rounded-lg focus:outline-none focus:border-[#C4A042]"
                   />
                 </div>
                 <div className="flex flex-col gap-1">
@@ -288,7 +288,7 @@ export default function CheckoutView({
                     value={details.zipCode}
                     onChange={(e) => setDetails({...details, zipCode: e.target.value})}
                     placeholder="110001"
-                    className="bg-[#111111] border border-[#4d4639]/50 text-xs text-[#e5e2e1] px-4 py-3 rounded-lg focus:outline-none focus:border-[#c8a45d]"
+                    className="bg-[#1A0F00] border border-[#C4A042]/50 text-xs text-[#F5E4B0] px-4 py-3 rounded-lg focus:outline-none focus:border-[#C4A042]"
                   />
                 </div>
               </div>
@@ -298,7 +298,7 @@ export default function CheckoutView({
             <button
               type="submit"
               disabled={loading}
-              className="bg-[#c8a45d] hover:bg-[#ffdea3] text-[#261900] px-6 py-4 rounded-xl text-xs uppercase tracking-widest font-sans font-bold transition-all flex items-center justify-center gap-3 disabled:opacity-50 cursor-pointer shadow-lg shadow-[#c8a45d]/10"
+              className="bg-[#C4A042] hover:bg-[#d4b052] text-[#1A0F00] px-6 py-4 rounded-xl text-xs uppercase tracking-widest font-sans font-bold transition-all flex items-center justify-center gap-3 disabled:opacity-50 cursor-pointer shadow-lg shadow-[#C4A042]/10"
             >
               {loading ? (
                 <>
@@ -315,25 +315,25 @@ export default function CheckoutView({
           </form>
 
           {/* Checkout Item Summary - Right */}
-          <div className="lg:col-span-5 bg-[#161514] border border-[#4d4639]/40 rounded-xl p-6 flex flex-col gap-6">
-            <h2 className="text-xs font-sans uppercase font-bold text-[#c8a45d] tracking-widest border-b border-[#4d4639]/20 pb-3">
+          <div className="lg:col-span-5 bg-[#2D1A00] border border-[#C4A042]/40 rounded-xl p-6 flex flex-col gap-6">
+            <h2 className="text-xs font-sans uppercase font-bold text-[#C4A042] tracking-widest border-b border-[#C4A042]/20 pb-3">
               Order Summary
             </h2>
 
             {/* Item listing */}
             <div className="flex flex-col gap-4 max-h-72 overflow-y-auto">
               {resolvedItems.map((item) => (
-                <div key={item.product?.id} className="flex gap-3 justify-between items-center border-b border-[#4d4639]/10 pb-3">
+                <div key={item.product?.id} className="flex gap-3 justify-between items-center border-b border-[#C4A042]/10 pb-3">
                   <div className="flex gap-3 items-center">
-                    <div className="w-12 h-12 rounded bg-[#111111] overflow-hidden flex-shrink-0 border border-[#4d4639]/20">
+                    <div className="w-12 h-12 rounded bg-[#1A0F00] overflow-hidden flex-shrink-0 border border-[#C4A042]/20">
                       <img src={item.product?.image} alt={item.product?.name} className="w-full h-full object-cover" />
                     </div>
                     <div>
-                      <h4 className="text-xs font-display text-[#e5e2e1] font-bold">{item.product?.name}</h4>
+                      <h4 className="text-xs font-display text-[#F5E4B0] font-bold">{item.product?.name}</h4>
                       <p className="text-[10px] text-[#9a8f80] font-mono mt-0.5">Quantity: {item.quantity}</p>
                     </div>
                   </div>
-                  <span className="text-xs font-mono font-bold text-[#e8c177]">
+                  <span className="text-xs font-mono font-bold text-[#C4A042]">
                     {currency === 'INR' 
                       ? `₹${((item.priceDetails?.price || 0) * item.quantity).toLocaleString()}` 
                       : `$${((item.priceDetails?.price || 0) * item.quantity).toFixed(2)}`}
@@ -343,10 +343,10 @@ export default function CheckoutView({
             </div>
 
             {/* Total blocks */}
-            <div className="flex flex-col gap-3 font-sans text-xs text-[#d1c5b4] border-t border-[#4d4639]/20 pt-4">
+            <div className="flex flex-col gap-3 font-sans text-xs text-[#d1c5b4] border-t border-[#C4A042]/20 pt-4">
               <div className="flex justify-between">
                 <span>Subtotal</span>
-                <span className="font-mono text-[#e5e2e1]">{formattedSubTotal}</span>
+                <span className="font-mono text-[#F5E4B0]">{formattedSubTotal}</span>
               </div>
               <div className="flex justify-between">
                 <span>Shipping</span>
@@ -354,11 +354,11 @@ export default function CheckoutView({
               </div>
             </div>
 
-            <div className="h-[1px] bg-[#4d4639]/30"></div>
+            <div className="h-[1px] bg-[#C4A042]/30"></div>
 
             <div className="flex justify-between items-baseline font-display text-lg">
-              <span className="text-[#e5e2e1]">Total</span>
-              <span className="font-mono font-bold text-[#e8c177]">{formattedSubTotal}</span>
+              <span className="text-[#F5E4B0]">Total</span>
+              <span className="font-mono font-bold text-[#C4A042]">{formattedSubTotal}</span>
             </div>
 
             <div className="bg-[#111]/80 rounded-xl p-4 flex flex-col gap-2 border border-[#24523a]/30">
@@ -376,3 +376,4 @@ export default function CheckoutView({
     </div>
   );
 }
+

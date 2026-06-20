@@ -68,11 +68,11 @@ export default function ContactView() {
   };
 
   return (
-    <div className="min-h-screen bg-[#111111] text-[#e5e2e1] pt-24">
-      <section className="relative overflow-hidden px-6 md:px-12 py-16 md:py-20 border-b border-[#4d4639]/30">
+    <div className="min-h-screen bg-[#1A0F00] text-[#F5E4B0] pt-24">
+      <section className="relative overflow-hidden px-6 md:px-12 py-16 md:py-20 border-b border-[#C4A042]/30">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(31,77,54,0.42),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(200,164,93,0.12),transparent_32%)]" />
         <div className="relative max-w-7xl mx-auto">
-          <span className="font-sans text-xs tracking-[0.24em] uppercase text-[#c8a45d] font-bold">Contact Us</span>
+          <span className="font-sans text-xs tracking-[0.24em] uppercase text-[#C4A042] font-bold">Contact Us</span>
           <h1 className="font-display text-4xl md:text-6xl text-[#f8f5ef] leading-tight mt-5">We are here to help.</h1>
           <p className="font-sans text-base md:text-lg text-[#d1c5b4] leading-relaxed max-w-2xl mt-5">
             Send product questions, order support requests, distributor interest, or general enquiries to ASRA VEDHA WELLNESS.
@@ -86,7 +86,7 @@ export default function ContactView() {
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45 }}
-          className="lg:col-span-7 bg-[#1e1e1e] border border-[#4d4639]/30 rounded-xl p-6 md:p-8 space-y-6"
+          className="lg:col-span-7 bg-[#3D2600] border border-[#C4A042]/30 rounded-xl p-6 md:p-8 space-y-6"
         >
           <div>
             <h2 className="font-display text-3xl text-[#f8f5ef]">Send a Message</h2>
@@ -113,7 +113,7 @@ export default function ContactView() {
                 required
                 value={formData.name}
                 onChange={(event) => setFormData({ ...formData, name: event.target.value })}
-                className="w-full bg-[#111111] border border-[#4d4639]/55 rounded-lg px-4 py-3 text-sm text-[#e5e2e1] focus:outline-none focus:border-[#c8a45d]"
+                className="w-full bg-[#1A0F00] border border-[#C4A042]/55 rounded-lg px-4 py-3 text-sm text-[#F5E4B0] focus:outline-none focus:border-[#C4A042]"
                 placeholder="Your name"
               />
             </label>
@@ -124,7 +124,7 @@ export default function ContactView() {
                 type="email"
                 value={formData.email}
                 onChange={(event) => setFormData({ ...formData, email: event.target.value })}
-                className="w-full bg-[#111111] border border-[#4d4639]/55 rounded-lg px-4 py-3 text-sm text-[#e5e2e1] focus:outline-none focus:border-[#c8a45d]"
+                className="w-full bg-[#1A0F00] border border-[#C4A042]/55 rounded-lg px-4 py-3 text-sm text-[#F5E4B0] focus:outline-none focus:border-[#C4A042]"
                 placeholder="name@example.com"
               />
             </label>
@@ -137,7 +137,7 @@ export default function ContactView() {
                 required
                 value={formData.phone}
                 onChange={(event) => setFormData({ ...formData, phone: event.target.value })}
-                className="w-full bg-[#111111] border border-[#4d4639]/55 rounded-lg px-4 py-3 text-sm text-[#e5e2e1] focus:outline-none focus:border-[#c8a45d]"
+                className="w-full bg-[#1A0F00] border border-[#C4A042]/55 rounded-lg px-4 py-3 text-sm text-[#F5E4B0] focus:outline-none focus:border-[#C4A042]"
                 placeholder="+91..."
               />
             </label>
@@ -146,7 +146,7 @@ export default function ContactView() {
               <select
                 value={formData.subject}
                 onChange={(event) => setFormData({ ...formData, subject: event.target.value })}
-                className="w-full bg-[#111111] border border-[#4d4639]/55 rounded-lg px-4 py-3 text-sm text-[#e5e2e1] focus:outline-none focus:border-[#c8a45d]"
+                className="w-full bg-[#1A0F00] border border-[#C4A042]/55 rounded-lg px-4 py-3 text-sm text-[#F5E4B0] focus:outline-none focus:border-[#C4A042]"
               >
                 <option>Product Enquiry</option>
                 <option>Order Support</option>
@@ -164,7 +164,7 @@ export default function ContactView() {
               rows={7}
               value={formData.message}
               onChange={(event) => setFormData({ ...formData, message: event.target.value })}
-              className="w-full bg-[#111111] border border-[#4d4639]/55 rounded-lg px-4 py-3 text-sm text-[#e5e2e1] focus:outline-none focus:border-[#c8a45d] resize-none"
+              className="w-full bg-[#1A0F00] border border-[#C4A042]/55 rounded-lg px-4 py-3 text-sm text-[#F5E4B0] focus:outline-none focus:border-[#C4A042] resize-none"
               placeholder="Tell us how we can help..."
             />
           </label>
@@ -172,7 +172,7 @@ export default function ContactView() {
           <button
             type="submit"
             disabled={submitting}
-            className="bg-[#c8a45d] text-[#261900] hover:bg-[#ffdea3] px-6 py-4 rounded text-xs uppercase tracking-widest font-bold inline-flex items-center justify-center gap-2 cursor-pointer w-full sm:w-auto disabled:opacity-50"
+            className="bg-[#C4A042] text-[#1A0F00] hover:bg-[#d4b052] px-6 py-4 rounded text-xs uppercase tracking-widest font-bold inline-flex items-center justify-center gap-2 cursor-pointer w-full sm:w-auto disabled:opacity-50"
           >
             {submitting ? 'Sending...' : 'Send Message'}
             <Send className="w-4 h-4" />
@@ -191,26 +191,26 @@ export default function ContactView() {
               Premium Herbal Nutrition | Nutraceuticals | Wellness Products
             </p>
             <div className="space-y-5 mt-8">
-              <a href="tel:+917989255841" className="flex gap-4 text-[#f8f5ef] hover:text-[#e8c177] transition-colors">
-                <Phone className="w-5 h-5 text-[#e8c177] shrink-0 mt-0.5" />
+              <a href="tel:+917989255841" className="flex gap-4 text-[#f8f5ef] hover:text-[#C4A042] transition-colors">
+                <Phone className="w-5 h-5 text-[#C4A042] shrink-0 mt-0.5" />
                 <span>7989255841</span>
               </a>
-              <a href="mailto:asravedha@gmail.com" className="flex gap-4 text-[#f8f5ef] hover:text-[#e8c177] transition-colors">
-                <Mail className="w-5 h-5 text-[#e8c177] shrink-0 mt-0.5" />
+              <a href="mailto:asravedha@gmail.com" className="flex gap-4 text-[#f8f5ef] hover:text-[#C4A042] transition-colors">
+                <Mail className="w-5 h-5 text-[#C4A042] shrink-0 mt-0.5" />
                 <span>asravedha@gmail.com</span>
               </a>
               <div className="flex gap-4 text-[#f8f5ef]">
-                <MapPin className="w-5 h-5 text-[#e8c177] shrink-0 mt-0.5" />
+                <MapPin className="w-5 h-5 text-[#C4A042] shrink-0 mt-0.5" />
                 <span>Plot No. 4, New Ragavendra Colony, Nalgonda - 508001</span>
               </div>
             </div>
           </div>
 
-          <div className="bg-[#1e1e1e] border border-[#4d4639]/30 rounded-xl p-6">
-            <h3 className="font-sans text-xs uppercase tracking-[0.18em] text-[#c8a45d] font-bold mb-5">Business Hours</h3>
+          <div className="bg-[#3D2600] border border-[#C4A042]/30 rounded-xl p-6">
+            <h3 className="font-sans text-xs uppercase tracking-[0.18em] text-[#C4A042] font-bold mb-5">Business Hours</h3>
             <div className="space-y-3">
               {businessHours.map(([day, time]) => (
-                <div key={day} className="flex justify-between gap-5 text-sm border-b border-[#4d4639]/20 pb-3 last:border-0 last:pb-0">
+                <div key={day} className="flex justify-between gap-5 text-sm border-b border-[#C4A042]/20 pb-3 last:border-0 last:pb-0">
                   <span className="text-[#d1c5b4]">{day}</span>
                   <span className="text-[#f8f5ef] text-right">{time}</span>
                 </div>
@@ -230,7 +230,7 @@ export default function ContactView() {
       </section>
 
       <section className="px-6 md:px-12 pb-20 max-w-7xl mx-auto">
-        <div className="rounded-xl overflow-hidden border border-[#c8a45d]/25 bg-[#1e1e1e] min-h-[360px]">
+        <div className="rounded-xl overflow-hidden border border-[#C4A042]/25 bg-[#3D2600] min-h-[360px]">
           <iframe
             title="ASRA VEDHA Nalgonda map"
             src="https://www.google.com/maps?q=Nalgonda,%20Telangana,%20India&output=embed"
@@ -243,3 +243,4 @@ export default function ContactView() {
     </div>
   );
 }
+

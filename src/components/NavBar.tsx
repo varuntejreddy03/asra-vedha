@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
-import { Leaf, Menu, Search, ShieldCheck, ShoppingBag, User, X } from 'lucide-react';
+import { Menu, Search, ShieldCheck, ShoppingBag, User, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ViewState } from '../types';
+import logo from '../assets/logo.png';
 
 interface NavBarProps {
   currentView: ViewState;
@@ -77,23 +78,21 @@ export default function NavBar({
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-[#111111] ${
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-[#1A0F00] ${
         scrolled
-          ? 'border-b border-[#c8a45d]/20 shadow-lg shadow-black/20'
-          : 'lg:bg-[#111111]/30 lg:backdrop-blur-sm border-b border-transparent'
+          ? 'bg-[rgba(26,15,0,0.92)] backdrop-blur-md border-b border-[#C4A042]/20 shadow-lg shadow-black/30'
+          : 'lg:bg-transparent border-b border-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 py-3.5 flex justify-between items-center gap-4">
         <button
           onClick={() => handleNavClick('home')}
-          className="flex items-center gap-2 text-left text-[#e8c177] hover:text-[#ffdea3] transition-colors cursor-pointer shrink-0"
+          className="flex items-center gap-2 text-left text-[#C4A042] hover:text-[#d4b052] transition-colors cursor-pointer shrink-0"
           id="nav-logo"
           aria-label="ASRA VEDHA home"
         >
-          <span className="w-8 h-8 rounded-full border border-[#c8a45d]/40 bg-[#111111]/70 flex items-center justify-center">
-            <Leaf className="w-4 h-4" />
-          </span>
-          <span className="font-display text-lg md:text-xl tracking-[0.14em] uppercase leading-none">
+          <img src={logo} alt="ASRA VEDHA" className="h-9 w-auto" />
+          <span className="font-display text-lg md:text-xl tracking-[0.14em] uppercase leading-none text-[#F5E4B0]">
             ASRA VEDHA
           </span>
         </button>
@@ -106,14 +105,14 @@ export default function NavBar({
                 key={item.name}
                 onClick={() => runNavAction(item)}
                 className={`font-accent text-[11px] tracking-[0.14em] uppercase transition-all duration-200 cursor-pointer relative py-2 whitespace-nowrap ${
-                  isActive ? 'text-[#e8c177]' : 'text-[#d1c5b4] hover:text-[#e8c177]'
+                  isActive ? 'text-[#C4A042]' : 'text-[#d1c5b4] hover:text-[#C4A042]'
                 }`}
               >
                 {item.name}
                 {isActive && (
                   <motion.span
                     layoutId="activeNavLine"
-                    className="absolute bottom-0 left-0 right-0 h-px bg-[#e8c177]"
+                    className="absolute bottom-0 left-0 right-0 h-px bg-[#C4A042]"
                     transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -126,7 +125,7 @@ export default function NavBar({
 
           <button
             onClick={onSearchOpen}
-            className="text-[#e8c177] hover:text-[#ffdea3] transition-colors p-2 cursor-pointer"
+            className="text-[#d1c5b4] hover:text-[#C4A042] transition-colors p-2 cursor-pointer"
             aria-label="Search products"
           >
             <Search className="w-5 h-5 stroke-[1.8]" />
@@ -135,13 +134,13 @@ export default function NavBar({
           <button
             onClick={() => handleNavClick('cart')}
             className={`p-2 relative cursor-pointer flex items-center justify-center transition-colors ${
-              currentView === 'cart' ? 'text-[#ffdea3]' : 'text-[#e8c177] hover:text-[#ffdea3]'
+              currentView === 'cart' ? 'text-[#C4A042]' : 'text-[#d1c5b4] hover:text-[#C4A042]'
             }`}
             aria-label="View cart"
           >
             <ShoppingBag className="w-5 h-5 stroke-[1.8]" />
             {cartCount > 0 && (
-              <span className="absolute -top-0.5 -right-0.5 bg-[#c8a45d] text-[#111111] text-[9px] font-sans font-bold w-4 h-4 flex items-center justify-center rounded-full">
+              <span className="absolute -top-0.5 -right-0.5 bg-[#C4A042] text-[#1A0F00] text-[9px] font-sans font-bold w-4 h-4 flex items-center justify-center rounded-full">
                 {cartCount}
               </span>
             )}
@@ -151,8 +150,8 @@ export default function NavBar({
             onClick={() => handleNavClick(isAuthenticated ? 'sanctuary' : 'login')}
             className={`hidden md:flex p-2 transition-colors cursor-pointer ${
               currentView === 'sanctuary' || currentView === 'login' || currentView === 'signup'
-                ? 'text-[#ffdea3]'
-                : 'text-[#e8c177] hover:text-[#ffdea3]'
+                ? 'text-[#C4A042]'
+                : 'text-[#d1c5b4] hover:text-[#C4A042]'
             }`}
             aria-label={isAuthenticated ? 'Customer account' : 'Sign in'}
           >
@@ -163,7 +162,7 @@ export default function NavBar({
             <button
               onClick={() => handleNavClick('admin')}
               className={`hidden md:flex p-2 transition-colors cursor-pointer ${
-                currentView === 'admin' ? 'text-[#ffdea3]' : 'text-[#e8c177] hover:text-[#ffdea3]'
+                currentView === 'admin' ? 'text-[#C4A042]' : 'text-[#d1c5b4] hover:text-[#C4A042]'
               }`}
               aria-label="Admin panel"
             >
@@ -173,14 +172,14 @@ export default function NavBar({
 
           <button
             onClick={() => handleNavClick('shop')}
-            className="hidden xl:inline-flex bg-[#c8a45d] hover:bg-[#ffdea3] text-[#261900] text-[11px] uppercase tracking-[0.14em] font-bold px-4 py-2.5 rounded transition-colors cursor-pointer"
+            className="hidden xl:inline-flex bg-[#C4A042] hover:bg-[#d4b052] text-[#1A0F00] text-[11px] uppercase tracking-[0.14em] font-bold px-4 py-2.5 rounded transition-colors cursor-pointer"
           >
             Shop Now
           </button>
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden text-[#e8c177] hover:text-[#ffdea3] p-2 cursor-pointer transition-colors"
+            className="lg:hidden text-[#d1c5b4] hover:text-[#C4A042] p-2 cursor-pointer transition-colors"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -195,7 +194,7 @@ export default function NavBar({
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ duration: 0.25, ease: 'easeInOut' }}
-            className="lg:hidden fixed inset-0 top-0 bg-[#111111] border-t border-[#c8a45d]/20 z-[100] overflow-y-auto pt-[61px]"
+            className="lg:hidden fixed inset-0 top-0 bg-[#1A0F00] border-t border-[#C4A042]/20 z-[100] overflow-y-auto pt-[61px]"
           >
             <div className="px-6 py-8 flex flex-col gap-5 min-h-[calc(100vh-61px)]">
               {navLinks.map((item) => {
@@ -204,8 +203,8 @@ export default function NavBar({
                   <button
                     key={item.name}
                     onClick={() => runNavAction(item)}
-                    className={`font-accent text-base tracking-[0.14em] uppercase text-left transition-colors cursor-pointer py-3 border-b border-[#4d4639]/20 ${
-                      isActive ? 'text-[#e8c177] font-semibold' : 'text-[#d1c5b4] hover:text-[#e8c177]'
+                    className={`font-accent text-base tracking-[0.14em] uppercase text-left transition-colors cursor-pointer py-3 border-b border-[#C4A042]/10 ${
+                      isActive ? 'text-[#C4A042] font-semibold' : 'text-[#d1c5b4] hover:text-[#C4A042]'
                     }`}
                   >
                     {item.name}
@@ -215,10 +214,10 @@ export default function NavBar({
 
               <button
                 onClick={() => handleNavClick(isAuthenticated ? 'sanctuary' : 'login')}
-                className={`font-accent text-base tracking-[0.14em] uppercase text-left transition-colors cursor-pointer py-3 border-b border-[#4d4639]/20 ${
+                className={`font-accent text-base tracking-[0.14em] uppercase text-left transition-colors cursor-pointer py-3 border-b border-[#C4A042]/10 ${
                   currentView === 'sanctuary' || currentView === 'login' || currentView === 'signup'
-                    ? 'text-[#e8c177] font-semibold'
-                    : 'text-[#d1c5b4] hover:text-[#e8c177]'
+                    ? 'text-[#C4A042] font-semibold'
+                    : 'text-[#d1c5b4] hover:text-[#C4A042]'
                 }`}
               >
                 {isAuthenticated ? 'Account' : 'Login'}
@@ -227,10 +226,10 @@ export default function NavBar({
               {isAdmin && (
                 <button
                   onClick={() => handleNavClick('admin')}
-                  className={`font-accent text-base tracking-[0.14em] uppercase text-left transition-colors cursor-pointer py-3 border-b border-[#4d4639]/20 ${
+                  className={`font-accent text-base tracking-[0.14em] uppercase text-left transition-colors cursor-pointer py-3 border-b border-[#C4A042]/10 ${
                     currentView === 'admin'
-                      ? 'text-[#e8c177] font-semibold'
-                      : 'text-[#d1c5b4] hover:text-[#e8c177]'
+                      ? 'text-[#C4A042] font-semibold'
+                      : 'text-[#d1c5b4] hover:text-[#C4A042]'
                   }`}
                 >
                   Admin
@@ -239,7 +238,7 @@ export default function NavBar({
 
               <button
                 onClick={() => handleNavClick('shop')}
-                className="mt-auto bg-[#c8a45d] text-[#111] text-center font-bold font-mono tracking-widest uppercase text-xs py-4 rounded cursor-pointer hover:bg-[#ffdea3] transition-colors"
+                className="mt-auto bg-[#C4A042] text-[#1A0F00] text-center font-bold font-mono tracking-widest uppercase text-xs py-4 rounded cursor-pointer hover:bg-[#d4b052] transition-colors"
               >
                 Shop Now
               </button>
@@ -250,3 +249,4 @@ export default function NavBar({
     </header>
   );
 }
+

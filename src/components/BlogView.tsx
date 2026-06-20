@@ -121,20 +121,20 @@ export default function BlogView({ setView }: BlogViewProps) {
 
   if (selectedPost) {
     return (
-      <article className="min-h-screen bg-[#111111] text-[#e5e2e1] pt-24">
+      <article className="min-h-screen bg-[#1A0F00] text-[#F5E4B0] pt-24">
         <section className="relative min-h-[56vh] flex items-end px-6 md:px-12 py-14 overflow-hidden">
           <img src={selectedPost.image} alt={selectedPost.title} className="absolute inset-0 w-full h-full object-cover opacity-45" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/70 to-[#111111]/10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#1A0F00] via-[#1A0F00]/70 to-[#1A0F00]/10" />
           <div className="relative max-w-4xl">
             <button
               onClick={() => setSelectedPost(null)}
-              className="inline-flex items-center gap-2 text-[#e8c177] hover:text-[#ffdea3] text-xs uppercase tracking-widest font-bold mb-8 cursor-pointer"
+              className="inline-flex items-center gap-2 text-[#C4A042] hover:text-[#d4b052] text-xs uppercase tracking-widest font-bold mb-8 cursor-pointer"
             >
               <ArrowLeft className="w-4 h-4" />
               Back to Blog
             </button>
             <div className="flex flex-wrap items-center gap-3 text-xs text-[#d1c5b4] mb-5">
-              <span className="bg-[#c8a45d] text-[#111111] px-3 py-1 rounded-full font-bold uppercase tracking-wider">{selectedPost.category}</span>
+              <span className="bg-[#C4A042] text-[#1A0F00] px-3 py-1 rounded-full font-bold uppercase tracking-wider">{selectedPost.category}</span>
               <span>{selectedPost.date}</span>
               <span>{selectedPost.readTime}</span>
             </div>
@@ -145,30 +145,30 @@ export default function BlogView({ setView }: BlogViewProps) {
         <section className="px-6 md:px-12 py-16 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
           <div className="lg:col-span-8">
             <div className="flex items-center gap-3 text-sm text-[#9a8f80] mb-10">
-              <UserRound className="w-4 h-4 text-[#c8a45d]" />
+              <UserRound className="w-4 h-4 text-[#C4A042]" />
               <span>{selectedPost.author}</span>
             </div>
             <div className="space-y-7">
               {selectedPost.body.map((paragraph) => (
                 <p key={paragraph} className="font-sans text-lg leading-[1.8] text-[#d1c5b4]">{paragraph}</p>
               ))}
-              <blockquote className="border-l-2 border-[#c8a45d] pl-6 py-2 font-display text-2xl text-[#e8c177]">
+              <blockquote className="border-l-2 border-[#C4A042] pl-6 py-2 font-display text-2xl text-[#C4A042]">
                 Wellness content should help customers build better habits, not chase shortcuts.
               </blockquote>
             </div>
           </div>
 
           <aside className="lg:col-span-4 space-y-6">
-            <div className="bg-[#1e1e1e] border border-[#4d4639]/30 rounded-lg p-6">
-              <h3 className="font-sans text-xs uppercase tracking-[0.18em] text-[#c8a45d] font-bold">Share</h3>
+            <div className="bg-[#3D2600] border border-[#C4A042]/30 rounded-lg p-6">
+              <h3 className="font-sans text-xs uppercase tracking-[0.18em] text-[#C4A042] font-bold">Share</h3>
               <div className="flex gap-3 mt-5">
                 <a href="https://wa.me/?text=ASRA%20VEDHA%20Wellness%20Insights" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-[#24523a] text-[#a0d2b3] flex items-center justify-center">
                   <MessageCircle className="w-4 h-4" />
                 </a>
-                <button className="w-10 h-10 rounded-full bg-[#1c1b1b] border border-[#4d4639]/40 text-[#e8c177] flex items-center justify-center">
+                <button className="w-10 h-10 rounded-full bg-[#2D1A00] border border-[#C4A042]/40 text-[#C4A042] flex items-center justify-center">
                   <Facebook className="w-4 h-4" />
                 </button>
-                <button className="w-10 h-10 rounded-full bg-[#1c1b1b] border border-[#4d4639]/40 text-[#e8c177] flex items-center justify-center">
+                <button className="w-10 h-10 rounded-full bg-[#2D1A00] border border-[#C4A042]/40 text-[#C4A042] flex items-center justify-center">
                   <Copy className="w-4 h-4" />
                 </button>
               </div>
@@ -178,7 +178,7 @@ export default function BlogView({ setView }: BlogViewProps) {
               <p className="font-sans text-sm text-[#e8f0e9] mt-2 leading-relaxed">Pair wellness reading with real products from the ASRA VEDHA catalog.</p>
               <button
                 onClick={() => setView('shop')}
-                className="mt-5 bg-[#c8a45d] text-[#261900] px-5 py-3 rounded text-xs uppercase tracking-widest font-bold inline-flex items-center gap-2 cursor-pointer"
+                className="mt-5 bg-[#C4A042] text-[#1A0F00] px-5 py-3 rounded text-xs uppercase tracking-widest font-bold inline-flex items-center gap-2 cursor-pointer"
               >
                 Shop Now
                 <ArrowRight className="w-4 h-4" />
@@ -191,11 +191,11 @@ export default function BlogView({ setView }: BlogViewProps) {
   }
 
   return (
-    <div className="min-h-screen bg-[#111111] text-[#e5e2e1] pt-24">
+    <div className="min-h-screen bg-[#1A0F00] text-[#F5E4B0] pt-24">
       <section className="px-6 md:px-12 py-16 md:py-20 max-w-7xl mx-auto">
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 border-b border-[#4d4639]/30 pb-10">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 border-b border-[#C4A042]/30 pb-10">
           <div>
-            <span className="font-sans text-xs tracking-[0.24em] uppercase text-[#c8a45d] font-bold">Wellness Insights</span>
+            <span className="font-sans text-xs tracking-[0.24em] uppercase text-[#C4A042] font-bold">Wellness Insights</span>
             <h1 className="font-display text-4xl md:text-6xl text-[#f8f5ef] leading-tight mt-4">Journal for Natural Living</h1>
             <p className="font-sans text-base text-[#9a8f80] leading-relaxed max-w-2xl mt-4">
               Practical writing on herbs, nutrition, recipes, and responsible wellness for ASRA VEDHA customers.
@@ -207,7 +207,7 @@ export default function BlogView({ setView }: BlogViewProps) {
               value={query}
               onChange={(event) => setQuery(event.target.value)}
               placeholder="Search articles..."
-              className="w-full bg-[#1c1b1b] border border-[#4d4639]/50 rounded-lg pl-11 pr-4 py-3 text-sm text-[#e5e2e1] focus:outline-none focus:border-[#c8a45d]"
+              className="w-full bg-[#2D1A00] border border-[#C4A042]/50 rounded-lg pl-11 pr-4 py-3 text-sm text-[#F5E4B0] focus:outline-none focus:border-[#C4A042]"
             />
           </div>
         </div>
@@ -218,18 +218,18 @@ export default function BlogView({ setView }: BlogViewProps) {
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45 }}
-          className="grid grid-cols-1 lg:grid-cols-12 gap-8 bg-[#1e1e1e] border border-[#c8a45d]/25 rounded-xl overflow-hidden"
+          className="grid grid-cols-1 lg:grid-cols-12 gap-8 bg-[#3D2600] border border-[#C4A042]/25 rounded-xl overflow-hidden"
         >
           <div className="lg:col-span-7 min-h-[320px]">
             <img src={featuredPost.image} alt={featuredPost.title} className="w-full h-full object-cover" />
           </div>
           <div className="lg:col-span-5 p-8 flex flex-col justify-center">
-            <span className="font-sans text-xs uppercase tracking-[0.18em] text-[#c8a45d] font-bold">Featured Post</span>
+            <span className="font-sans text-xs uppercase tracking-[0.18em] text-[#C4A042] font-bold">Featured Post</span>
             <h2 className="font-display text-3xl md:text-4xl text-[#f8f5ef] mt-4">{featuredPost.title}</h2>
             <p className="font-sans text-sm text-[#9a8f80] leading-relaxed mt-4">{featuredPost.excerpt}</p>
             <button
               onClick={() => setSelectedPost(featuredPost)}
-              className="mt-7 text-[#e8c177] hover:text-[#ffdea3] text-xs uppercase tracking-widest font-bold inline-flex items-center gap-2 cursor-pointer self-start"
+              className="mt-7 text-[#C4A042] hover:text-[#d4b052] text-xs uppercase tracking-widest font-bold inline-flex items-center gap-2 cursor-pointer self-start"
             >
               Read More
               <ArrowRight className="w-4 h-4" />
@@ -246,8 +246,8 @@ export default function BlogView({ setView }: BlogViewProps) {
               onClick={() => setActiveCategory(category)}
               className={`px-4 py-2 rounded-full text-xs font-sans font-bold transition-all cursor-pointer ${
                 activeCategory === category
-                  ? 'bg-[#c8a45d] text-[#111111]'
-                  : 'bg-[#1c1b1b] text-[#d1c5b4] border border-[#4d4639]/30 hover:border-[#c8a45d]/50'
+                  ? 'bg-[#C4A042] text-[#1A0F00]'
+                  : 'bg-[#2D1A00] text-[#d1c5b4] border border-[#C4A042]/30 hover:border-[#C4A042]/50'
               }`}
             >
               {category}
@@ -263,11 +263,11 @@ export default function BlogView({ setView }: BlogViewProps) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.04 }}
-              className="bg-[#1e1e1e] border border-[#4d4639]/30 hover:border-[#c8a45d]/45 rounded-xl overflow-hidden flex flex-col"
+              className="bg-[#3D2600] border border-[#C4A042]/30 hover:border-[#C4A042]/45 rounded-xl overflow-hidden flex flex-col"
             >
               <div className="aspect-[4/3] relative overflow-hidden">
                 <img src={post.image} alt={post.title} className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
-                <span className="absolute top-4 left-4 bg-[#c8a45d] text-[#111111] text-[10px] uppercase tracking-widest font-bold px-3 py-1 rounded-full">
+                <span className="absolute top-4 left-4 bg-[#C4A042] text-[#1A0F00] text-[10px] uppercase tracking-widest font-bold px-3 py-1 rounded-full">
                   {post.category}
                 </span>
               </div>
@@ -280,7 +280,7 @@ export default function BlogView({ setView }: BlogViewProps) {
                 <p className="font-sans text-sm text-[#9a8f80] leading-relaxed mt-3 flex-grow">{post.excerpt}</p>
                 <button
                   onClick={() => setSelectedPost(post)}
-                  className="mt-6 text-[#e8c177] hover:text-[#ffdea3] text-xs uppercase tracking-widest font-bold inline-flex items-center gap-2 cursor-pointer self-start"
+                  className="mt-6 text-[#C4A042] hover:text-[#d4b052] text-xs uppercase tracking-widest font-bold inline-flex items-center gap-2 cursor-pointer self-start"
                 >
                   Read More
                   <ArrowRight className="w-4 h-4" />
@@ -291,8 +291,8 @@ export default function BlogView({ setView }: BlogViewProps) {
         </div>
 
         {filteredPosts.length === 0 && (
-          <div className="bg-[#1c1b1b] border border-[#4d4639]/30 rounded-lg p-10 text-center">
-            <BookOpen className="w-8 h-8 text-[#c8a45d] mx-auto mb-4" />
+          <div className="bg-[#2D1A00] border border-[#C4A042]/30 rounded-lg p-10 text-center">
+            <BookOpen className="w-8 h-8 text-[#C4A042] mx-auto mb-4" />
             <p className="font-sans text-sm text-[#9a8f80]">No posts match this search.</p>
           </div>
         )}
@@ -300,3 +300,4 @@ export default function BlogView({ setView }: BlogViewProps) {
     </div>
   );
 }
+

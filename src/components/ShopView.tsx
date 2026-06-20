@@ -80,10 +80,10 @@ export default function ShopView({
   return (
     <div className="pt-28 min-h-screen px-6 md:px-12 max-w-7xl mx-auto w-full flex flex-col">
       {/* Page Header */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-[#4d4639]/30 pb-8 gap-6">
+      <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-[#C4A042]/30 pb-8 gap-6">
         <div className="flex flex-col gap-2">
-          <span className="font-sans text-xs tracking-widest text-[#c8a45d] uppercase font-bold">Our Wellness Collection</span>
-          <h1 className="font-display text-4xl text-[#e5e2e1] tracking-tight">Premium Herbal Products</h1>
+          <span className="font-sans text-xs tracking-widest text-[#C4A042] uppercase font-bold">Our Wellness Collection</span>
+          <h1 className="font-display text-4xl text-[#F5E4B0] tracking-tight">Premium Herbal Products</h1>
         </div>
 
         {/* Local Search input */}
@@ -93,14 +93,14 @@ export default function ShopView({
             placeholder="Search herbal powders, adaptogens..."
             value={activeSearch}
             onChange={(e) => handleSearchChange(e.target.value)}
-            className="w-full bg-[#1c1b1b] border border-[#4d4639]/50 rounded-lg px-4 py-2.5 pl-10 text-xs font-sans text-[#e5e2e1] focus:outline-none focus:border-[#c8a45d] transition-all"
+            className="w-full bg-[#2D1A00] border border-[#C4A042]/50 rounded-lg px-4 py-2.5 pl-10 text-xs font-sans text-[#F5E4B0] focus:outline-none focus:border-[#C4A042] transition-all"
           />
           <Search className="w-4 h-4 text-[#9a8f80] absolute left-3 top-3" />
         </div>
       </div>
 
       {/* Categories & Sorting control bar */}
-      <div className="flex flex-col lg:flex-row gap-6 justify-between items-start lg:items-center py-6 border-b border-[#4d4639]/20">
+      <div className="flex flex-col lg:flex-row gap-6 justify-between items-start lg:items-center py-6 border-b border-[#C4A042]/20">
         {/* Categories toggler */}
         <div className="flex flex-wrap gap-2">
           {categories.map((cat) => (
@@ -109,8 +109,8 @@ export default function ShopView({
               onClick={() => setSelectedCategory(cat.id)}
               className={`px-4 py-2 rounded-full text-xs font-sans font-medium transition-all cursor-pointer ${
                 selectedCategory === cat.id
-                  ? 'bg-[#c8a45d] text-[#261900] font-bold'
-                  : 'bg-[#1c1b1b] text-[#d1c5b4] border border-[#4d4639]/30 hover:border-[#c8a45d]/50'
+                  ? 'bg-[#C4A042] text-[#1A0F00] font-bold'
+                  : 'bg-[#2D1A00] text-[#d1c5b4] border border-[#C4A042]/30 hover:border-[#C4A042]/50'
               }`}
             >
               {cat.label}
@@ -120,12 +120,12 @@ export default function ShopView({
 
         {/* Sort select menu */}
         <div className="flex items-center gap-3">
-          <SlidersHorizontal className="w-3.5 h-3.5 text-[#e8c177]" />
+          <SlidersHorizontal className="w-3.5 h-3.5 text-[#C4A042]" />
           <span className="text-xs text-[#9a8f80] font-sans uppercase tracking-wider">Sort by</span>
           <select
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value)}
-            className="bg-[#1c1b1b] border border-[#4d4639]/40 text-xs text-[#e5e2e1] px-3 py-1.5 rounded focus:outline-none focus:border-[#c8a45d]"
+            className="bg-[#2D1A00] border border-[#C4A042]/40 text-xs text-[#F5E4B0] px-3 py-1.5 rounded focus:outline-none focus:border-[#C4A042]"
           >
             <option value="featured">Featured</option>
             <option value="price-low">Price: Low to High</option>
@@ -149,11 +149,11 @@ export default function ShopView({
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
-              className="flex flex-col items-center justify-center py-20 text-center gap-4 bg-[#161514] border border-[#4d4639]/20 rounded-xl"
+              className="flex flex-col items-center justify-center py-20 text-center gap-4 bg-[#2D1A00] border border-[#C4A042]/20 rounded-xl"
             >
-              <AlertCircle className="w-8 h-8 text-[#c8a45d]/70" />
+              <AlertCircle className="w-8 h-8 text-[#C4A042]/70" />
               <div>
-                <h4 className="font-display text-lg text-[#e5e2e1] mb-1">No Blends Found</h4>
+                <h4 className="font-display text-lg text-[#F5E4B0] mb-1">No Blends Found</h4>
                 <p className="font-sans text-xs text-[#9a8f80]">Try clearing your search query or choosing a broader category filter.</p>
               </div>
               <button
@@ -161,7 +161,7 @@ export default function ShopView({
                   setSelectedCategory('all');
                   handleSearchChange('');
                 }}
-                className="bg-[#1e1e1e] border border-[#c8a45d]/40 text-[#e8c177] px-4 py-2 text-xs uppercase tracking-wider font-bold rounded hover:bg-[#c8a45d]/10 cursor-pointer"
+                className="bg-[#3D2600] border border-[#C4A042]/40 text-[#C4A042] px-4 py-2 text-xs uppercase tracking-wider font-bold rounded hover:bg-[#C4A042]/10 cursor-pointer"
               >
                 Reset Filters
               </button>
@@ -181,17 +181,17 @@ export default function ShopView({
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.4 }}
-                    className="bg-[#1e1e1e] border border-[#4d4639]/30 rounded-xl overflow-hidden hover:border-[#c8a45d]/40 transition-all duration-300 flex flex-col h-full group cursor-pointer"
+                    className="bg-[#3D2600] border border-[#C4A042]/30 rounded-xl overflow-hidden hover:border-[#C4A042]/40 transition-all duration-300 flex flex-col h-full group cursor-pointer"
                     onClick={() => onSelectProduct(product.id)}
                   >
-                    <div className="aspect-[4/3] w-full bg-[#111111] overflow-hidden relative border-b border-[#4d4639]/15">
+                    <div className="aspect-[4/3] w-full bg-[#1A0F00] overflow-hidden relative border-b border-[#C4A042]/15">
                       <img
                         src={product.image}
                         alt={product.name}
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-104"
                         referrerPolicy="no-referrer"
                       />
-                      <div className="absolute top-4 left-4 bg-[#111111]/70 backdrop-blur-md border border-[#c8a45d]/20 text-[#c8a45d] text-[9px] uppercase tracking-widest font-mono px-2.5 py-1 rounded">
+                      <div className="absolute top-4 left-4 bg-[#1A0F00]/70 backdrop-blur-md border border-[#C4A042]/20 text-[#C4A042] text-[9px] uppercase tracking-widest font-mono px-2.5 py-1 rounded">
                         {product.scientificBadge || 'Ritual Pure'}
                       </div>
                     </div>
@@ -199,10 +199,10 @@ export default function ShopView({
                     <div className="p-6 flex flex-col flex-grow justify-between gap-5">
                       <div className="flex flex-col gap-2">
                         <div className="flex justify-between items-start gap-3">
-                          <h3 className="font-display text-lg text-[#e5e2e1] group-hover:text-[#e8c177] transition-colors leading-tight">
+                          <h3 className="font-display text-lg text-[#F5E4B0] group-hover:text-[#C4A042] transition-colors leading-tight">
                             {product.name}
                           </h3>
-                          <span className="font-mono text-sm font-semibold text-[#e8c177]">
+                          <span className="font-mono text-sm font-semibold text-[#C4A042]">
                             {priceData.formatted}
                           </span>
                         </div>
@@ -216,7 +216,7 @@ export default function ShopView({
                         </p>
                       </div>
 
-                      <div className="flex items-center justify-between border-t border-[#4d4639]/20 pt-4 mt-auto">
+                      <div className="flex items-center justify-between border-t border-[#C4A042]/20 pt-4 mt-auto">
                         <span className="text-[9px] text-[#9a8f80] font-mono tracking-widest uppercase">
                           Lab Tested
                         </span>
@@ -224,14 +224,14 @@ export default function ShopView({
                           <div className="flex items-center gap-2" onClick={(e) => e.stopPropagation()}>
                             <button
                               onClick={() => setPickerQty(Math.max(1, pickerQty - 1))}
-                              className="w-7 h-7 flex items-center justify-center border border-[#4d4639]/40 rounded text-[#e8c177] hover:bg-[#c8a45d]/10 cursor-pointer"
+                              className="w-7 h-7 flex items-center justify-center border border-[#C4A042]/40 rounded text-[#C4A042] hover:bg-[#C4A042]/10 cursor-pointer"
                             >
                               <Minus className="w-3 h-3" />
                             </button>
-                            <span className="text-xs font-bold text-[#e5e2e1] w-5 text-center">{pickerQty}</span>
+                            <span className="text-xs font-bold text-[#F5E4B0] w-5 text-center">{pickerQty}</span>
                             <button
                               onClick={() => setPickerQty(pickerQty + 1)}
-                              className="w-7 h-7 flex items-center justify-center border border-[#4d4639]/40 rounded text-[#e8c177] hover:bg-[#c8a45d]/10 cursor-pointer"
+                              className="w-7 h-7 flex items-center justify-center border border-[#C4A042]/40 rounded text-[#C4A042] hover:bg-[#C4A042]/10 cursor-pointer"
                             >
                               <Plus className="w-3 h-3" />
                             </button>
@@ -241,7 +241,7 @@ export default function ShopView({
                                 setActiveQtyPicker(null);
                                 setPickerQty(1);
                               }}
-                              className="text-[10px] bg-[#c8a45d] text-[#261900] font-bold uppercase px-3 py-1.5 rounded cursor-pointer hover:bg-[#ffdea3] transition-colors"
+                              className="text-[10px] bg-[#C4A042] text-[#1A0F00] font-bold uppercase px-3 py-1.5 rounded cursor-pointer hover:bg-[#d4b052] transition-colors"
                             >
                               Add
                             </button>
@@ -253,7 +253,7 @@ export default function ShopView({
                               setActiveQtyPicker(product.id);
                               setPickerQty(1);
                             }}
-                            className="text-xs text-[#e8c177] hover:text-[#ffdea3] font-sans font-bold uppercase tracking-wider cursor-pointer"
+                            className="text-xs text-[#C4A042] hover:text-[#d4b052] font-sans font-bold uppercase tracking-wider cursor-pointer"
                           >
                             Add To Cart
                           </button>
@@ -269,14 +269,15 @@ export default function ShopView({
       </div>
 
       {/* Small Decorative Wisdom Quote */}
-      <section className="bg-[#161514] border border-[#4d4639]/30 p-8 rounded-xl my-16 text-center max-w-3xl mx-auto w-full">
+      <section className="bg-[#2D1A00] border border-[#C4A042]/30 p-8 rounded-xl my-16 text-center max-w-3xl mx-auto w-full">
         <p className="font-serif italic text-sm text-[#d1c5b4] leading-relaxed">
           &ldquo;Let food be thy medicine, and let thy medicine be thy soil. The power of the root is the true sanctuary of human physical stability.&rdquo;
         </p>
-        <span className="text-[10px] uppercase font-mono tracking-[0.2em] text-[#c8a45d] block mt-3">
+        <span className="text-[10px] uppercase font-mono tracking-[0.2em] text-[#C4A042] block mt-3">
           Ancient Apothecary Axiom IV
         </span>
       </section>
     </div>
   );
 }
+

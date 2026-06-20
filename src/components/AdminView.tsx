@@ -171,16 +171,16 @@ export default function AdminView() {
   };
 
   return (
-    <div className="min-h-screen bg-[#111111] text-[#e5e2e1] pt-24 px-6 md:px-12 pb-20">
+    <div className="min-h-screen bg-[#1A0F00] text-[#F5E4B0] pt-24 px-6 md:px-12 pb-20">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#4d4639]/30 pb-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#C4A042]/30 pb-8">
           <div>
-            <span className="font-sans text-xs tracking-[0.22em] uppercase text-[#c8a45d] font-bold">Admin Panel</span>
+            <span className="font-sans text-xs tracking-[0.22em] uppercase text-[#C4A042] font-bold">Admin Panel</span>
             <h1 className="font-display text-4xl md:text-5xl text-[#f8f5ef] mt-3">ASRA VEDHA Operations</h1>
           </div>
           <button
             onClick={loadAdminData}
-            className="border border-[#c8a45d]/40 text-[#e8c177] px-4 py-3 rounded text-xs uppercase tracking-widest font-bold inline-flex items-center justify-center gap-2"
+            className="border border-[#C4A042]/40 text-[#C4A042] px-4 py-3 rounded text-xs uppercase tracking-widest font-bold inline-flex items-center justify-center gap-2"
           >
             <RefreshCcw className="w-4 h-4" />
             Refresh
@@ -195,7 +195,7 @@ export default function AdminView() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-8">
           <aside className="lg:col-span-3">
-            <nav className="bg-[#1e1e1e] border border-[#4d4639]/30 rounded-lg p-2 sticky top-28">
+            <nav className="bg-[#3D2600] border border-[#C4A042]/30 rounded-lg p-2 sticky top-28">
               {tabs.map((tab) => {
                 const Icon = tab.icon;
                 return (
@@ -204,8 +204,8 @@ export default function AdminView() {
                     onClick={() => setActiveTab(tab.id)}
                     className={`w-full flex items-center gap-3 px-4 py-3 rounded text-left text-xs uppercase tracking-wider transition-colors ${
                       activeTab === tab.id
-                        ? 'bg-[#24523a]/35 text-[#e8c177]'
-                        : 'text-[#d1c5b4] hover:text-[#e8c177] hover:bg-[#111111]'
+                        ? 'bg-[#24523a]/35 text-[#C4A042]'
+                        : 'text-[#d1c5b4] hover:text-[#C4A042] hover:bg-[#1A0F00]'
                     }`}
                   >
                     <Icon className="w-4 h-4" />
@@ -218,7 +218,7 @@ export default function AdminView() {
 
           <main className="lg:col-span-9 space-y-8">
             {loading ? (
-              <div className="bg-[#1e1e1e] border border-[#4d4639]/30 rounded-lg p-10 text-sm text-[#9a8f80]">
+              <div className="bg-[#3D2600] border border-[#C4A042]/30 rounded-lg p-10 text-sm text-[#9a8f80]">
                 Loading admin data...
               </div>
             ) : (
@@ -233,9 +233,9 @@ export default function AdminView() {
                       ['Coupons', summary.coupons || 0],
                       ['Blog Posts', summary.blogPosts || 0]
                     ].map(([label, value]) => (
-                      <div key={label} className="bg-[#1e1e1e] border border-[#4d4639]/30 rounded-lg p-5">
+                      <div key={label} className="bg-[#3D2600] border border-[#C4A042]/30 rounded-lg p-5">
                         <span className="text-[10px] uppercase tracking-widest text-[#9a8f80]">{label}</span>
-                        <div className="font-display text-3xl text-[#e8c177] mt-2">{value}</div>
+                        <div className="font-display text-3xl text-[#C4A042] mt-2">{value}</div>
                       </div>
                     ))}
                   </div>
@@ -243,7 +243,7 @@ export default function AdminView() {
 
                 {activeTab === 'products' && (
                   <section className="space-y-6">
-                    <form onSubmit={createProduct} className="bg-[#1e1e1e] border border-[#4d4639]/30 rounded-lg p-5 grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <form onSubmit={createProduct} className="bg-[#3D2600] border border-[#C4A042]/30 rounded-lg p-5 grid grid-cols-1 md:grid-cols-2 gap-4">
                       <h2 className="md:col-span-2 font-display text-2xl text-[#f8f5ef]">Create Product</h2>
                       {[
                         ['name', 'Product name'],
@@ -259,7 +259,7 @@ export default function AdminView() {
                           <input
                             value={(productForm as any)[field]}
                             onChange={(event) => setProductForm({ ...productForm, [field]: event.target.value })}
-                            className="w-full bg-[#111111] border border-[#4d4639]/55 rounded px-3 py-2.5 text-sm text-[#e5e2e1] focus:outline-none focus:border-[#c8a45d]"
+                            className="w-full bg-[#1A0F00] border border-[#C4A042]/55 rounded px-3 py-2.5 text-sm text-[#F5E4B0] focus:outline-none focus:border-[#C4A042]"
                             required={field !== 'slug' && field !== 'image'}
                           />
                         </label>
@@ -269,7 +269,7 @@ export default function AdminView() {
                         <select
                           value={productForm.category}
                           onChange={(event) => setProductForm({ ...productForm, category: event.target.value })}
-                          className="w-full bg-[#111111] border border-[#4d4639]/55 rounded px-3 py-2.5 text-sm text-[#e5e2e1] focus:outline-none focus:border-[#c8a45d]"
+                          className="w-full bg-[#1A0F00] border border-[#C4A042]/55 rounded px-3 py-2.5 text-sm text-[#F5E4B0] focus:outline-none focus:border-[#C4A042]"
                         >
                           <option value="herbal-powders">Herbal Powders</option>
                           <option value="nutraceuticals">Nutraceuticals</option>
@@ -283,7 +283,7 @@ export default function AdminView() {
                         <textarea
                           value={productForm.description}
                           onChange={(event) => setProductForm({ ...productForm, description: event.target.value })}
-                          className="w-full bg-[#111111] border border-[#4d4639]/55 rounded px-3 py-2.5 text-sm text-[#e5e2e1] focus:outline-none focus:border-[#c8a45d]"
+                          className="w-full bg-[#1A0F00] border border-[#C4A042]/55 rounded px-3 py-2.5 text-sm text-[#F5E4B0] focus:outline-none focus:border-[#C4A042]"
                           rows={3}
                           required
                         />
@@ -291,16 +291,16 @@ export default function AdminView() {
                       <button
                         type="submit"
                         disabled={saving}
-                        className="md:col-span-2 bg-[#c8a45d] text-[#261900] px-5 py-3 rounded text-xs uppercase tracking-widest font-bold inline-flex items-center justify-center gap-2 disabled:opacity-50"
+                        className="md:col-span-2 bg-[#C4A042] text-[#1A0F00] px-5 py-3 rounded text-xs uppercase tracking-widest font-bold inline-flex items-center justify-center gap-2 disabled:opacity-50"
                       >
                         <Save className="w-4 h-4" />
                         {saving ? 'Saving...' : 'Create Product'}
                       </button>
                     </form>
 
-                    <div className="bg-[#1e1e1e] border border-[#4d4639]/30 rounded-lg overflow-hidden">
+                    <div className="bg-[#3D2600] border border-[#C4A042]/30 rounded-lg overflow-hidden">
                       {products.map((product) => (
-                        <div key={product.databaseId || product.id} className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-4 p-4 border-b border-[#4d4639]/20 last:border-0">
+                        <div key={product.databaseId || product.id} className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-4 p-4 border-b border-[#C4A042]/20 last:border-0">
                           <div className="flex gap-4">
                             <img src={product.image} alt={product.name} className="w-16 h-16 object-cover rounded bg-[#111]" />
                             <div>
@@ -311,7 +311,7 @@ export default function AdminView() {
                           <div className="flex items-center gap-2">
                             <button
                               onClick={() => toggleProductPublished(product)}
-                              className="border border-[#c8a45d]/40 text-[#e8c177] px-3 py-2 rounded text-[10px] uppercase tracking-wider"
+                              className="border border-[#C4A042]/40 text-[#C4A042] px-3 py-2 rounded text-[10px] uppercase tracking-wider"
                             >
                               {product.isPublished ? 'Published' : 'Draft'}
                             </button>
@@ -347,16 +347,16 @@ export default function AdminView() {
 function SimpleRows({ rows, columns, empty }: { rows: any[]; columns: string[]; empty: string }) {
   if (!rows.length) {
     return (
-      <div className="bg-[#1e1e1e] border border-[#4d4639]/30 rounded-lg p-8 text-sm text-[#9a8f80]">
+      <div className="bg-[#3D2600] border border-[#C4A042]/30 rounded-lg p-8 text-sm text-[#9a8f80]">
         {empty}
       </div>
     );
   }
 
   return (
-    <div className="bg-[#1e1e1e] border border-[#4d4639]/30 rounded-lg overflow-x-auto">
+    <div className="bg-[#3D2600] border border-[#C4A042]/30 rounded-lg overflow-x-auto">
       <table className="w-full text-left text-xs">
-        <thead className="bg-[#161514] text-[#c8a45d] uppercase tracking-wider">
+        <thead className="bg-[#2D1A00] text-[#C4A042] uppercase tracking-wider">
           <tr>
             {columns.map((column) => (
               <th key={column} className="p-3 whitespace-nowrap">{column}</th>
@@ -365,7 +365,7 @@ function SimpleRows({ rows, columns, empty }: { rows: any[]; columns: string[]; 
         </thead>
         <tbody>
           {rows.map((row, index) => (
-            <tr key={row.id || index} className="border-t border-[#4d4639]/20">
+            <tr key={row.id || index} className="border-t border-[#C4A042]/20">
               {columns.map((column) => (
                 <td key={column} className="p-3 text-[#d1c5b4] whitespace-nowrap">
                   {String(row[column] ?? '')}
@@ -378,3 +378,4 @@ function SimpleRows({ rows, columns, empty }: { rows: any[]; columns: string[]; 
     </div>
   );
 }
+
