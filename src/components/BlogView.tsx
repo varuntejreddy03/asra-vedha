@@ -138,7 +138,7 @@ export default function BlogView({ setView }: BlogViewProps) {
               <span>{selectedPost.date}</span>
               <span>{selectedPost.readTime}</span>
             </div>
-            <h1 className="font-display text-4xl md:text-6xl leading-tight text-[#f8f5ef]">{selectedPost.title}</h1>
+            <h1 className="font-display text-4xl md:text-6xl leading-tight text-[rgba(0,0,0,0.87)]">{selectedPost.title}</h1>
           </div>
         </section>
 
@@ -162,7 +162,7 @@ export default function BlogView({ setView }: BlogViewProps) {
             <div className="bg-[#FFFFFF] border border-[#C9A84C]/30 rounded-lg p-6">
               <h3 className="font-sans text-xs uppercase tracking-[0.18em] text-[#C9A84C] font-bold">Share</h3>
               <div className="flex gap-3 mt-5">
-                <a href="https://wa.me/?text=ASRA%20VEDHA%20Wellness%20Insights" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-[#C9A84C] text-[#C9A84C] flex items-center justify-center">
+                <a href="https://wa.me/?text=ASRA%20VEDHA%20Wellness%20Insights" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-[#C9A84C] text-white flex items-center justify-center">
                   <MessageCircle className="w-4 h-4" />
                 </a>
                 <button className="w-10 h-10 rounded-full bg-[#E5E4E2] border border-[#C9A84C]/40 text-[#C9A84C] flex items-center justify-center">
@@ -173,9 +173,9 @@ export default function BlogView({ setView }: BlogViewProps) {
                 </button>
               </div>
             </div>
-            <div className="bg-[#1f4d36] rounded-lg p-6">
-              <h3 className="font-display text-2xl text-[#f8f5ef]">Explore the collection</h3>
-              <p className="font-sans text-sm text-[#e8f0e9] mt-2 leading-relaxed">Pair wellness reading with real products from the ASRA VEDHA catalog.</p>
+            <div className="bg-white card-shadow rounded-lg p-6">
+              <h3 className="font-display text-2xl text-[rgba(0,0,0,0.87)]">Explore the collection</h3>
+              <p className="font-sans text-sm text-[rgba(0,0,0,0.58)] mt-2 leading-relaxed">Pair wellness reading with real products from the ASRA VEDHA catalog.</p>
               <button
                 onClick={() => setView('shop')}
                 className="mt-5 bg-[#C9A84C] text-[#2B2B2B] px-5 py-3 rounded text-xs uppercase tracking-widest font-bold inline-flex items-center gap-2 cursor-pointer"
@@ -196,7 +196,7 @@ export default function BlogView({ setView }: BlogViewProps) {
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 border-b border-[#C9A84C]/30 pb-10">
           <div>
             <span className="font-sans text-xs tracking-[0.24em] uppercase text-[#C9A84C] font-bold">Wellness Insights</span>
-            <h1 className="font-display text-4xl md:text-6xl text-[#f8f5ef] leading-tight mt-4">Journal for Natural Living</h1>
+            <h1 className="font-display text-4xl md:text-6xl text-[rgba(0,0,0,0.87)] leading-tight mt-4">Journal for Natural Living</h1>
             <p className="font-sans text-base text-[#8C8C8C] leading-relaxed max-w-2xl mt-4">
               Practical writing on herbs, nutrition, recipes, and responsible wellness for ASRA VEDHA customers.
             </p>
@@ -225,7 +225,7 @@ export default function BlogView({ setView }: BlogViewProps) {
           </div>
           <div className="lg:col-span-5 p-8 flex flex-col justify-center">
             <span className="font-sans text-xs uppercase tracking-[0.18em] text-[#C9A84C] font-bold">Featured Post</span>
-            <h2 className="font-display text-3xl md:text-4xl text-[#f8f5ef] mt-4">{featuredPost.title}</h2>
+            <h2 className="font-display text-3xl md:text-4xl text-[rgba(0,0,0,0.87)] mt-4">{featuredPost.title}</h2>
             <p className="font-sans text-sm text-[#8C8C8C] leading-relaxed mt-4">{featuredPost.excerpt}</p>
             <button
               onClick={() => setSelectedPost(featuredPost)}
@@ -276,7 +276,7 @@ export default function BlogView({ setView }: BlogViewProps) {
                   <span className="inline-flex items-center gap-1"><Calendar className="w-3.5 h-3.5" />{post.date}</span>
                   <span className="inline-flex items-center gap-1"><Clock className="w-3.5 h-3.5" />{post.readTime}</span>
                 </div>
-                <h3 className="font-display text-2xl leading-tight text-[#f8f5ef]">{post.title}</h3>
+                <h3 className="font-display text-2xl leading-tight text-[rgba(0,0,0,0.87)]">{post.title}</h3>
                 <p className="font-sans text-sm text-[#8C8C8C] leading-relaxed mt-3 flex-grow">{post.excerpt}</p>
                 <button
                   onClick={() => setSelectedPost(post)}
@@ -300,6 +300,9 @@ export default function BlogView({ setView }: BlogViewProps) {
     </div>
   );
 }
+
+
+
 
 
 

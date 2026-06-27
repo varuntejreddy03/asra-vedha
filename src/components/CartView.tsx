@@ -55,15 +55,15 @@ export default function CartView({
 
       <div className="flex flex-col gap-2 mb-12">
         <span className="font-sans text-xs tracking-widest text-[#C9A84C] uppercase font-bold">Shopping Cart</span>
-        <h1 className="font-display text-4xl text-[#2B2B2B] tracking-tight">Your Wellness Cart</h1>
+        <h1 className="font-display text-4xl text-[rgba(0,0,0,0.87)] tracking-tight">Your Wellness Cart</h1>
       </div>
 
       {resolvedItems.length === 0 ? (
-        <div className="flex flex-col items-center justify-center py-20 bg-[#E5E4E2] border border-[#C9A84C]/20 rounded-xl gap-6">
-          <p className="font-serif italic text-lg text-[#8C8C8C]">Your cart is empty.</p>
+        <div className="flex flex-col items-center justify-center py-20 bg-[#f2f0eb] rounded-xl card-shadow gap-6">
+          <p className="font-serif italic text-lg text-[rgba(0,0,0,0.38)]">Your cart is empty.</p>
           <button
             onClick={() => setView('shop')}
-            className="bg-[#C9A84C] text-[#2B2B2B] px-8 py-3 rounded text-xs uppercase tracking-widest font-sans font-bold hover:bg-[#B8963C] transition-colors cursor-pointer"
+            className="bg-[#C9A84C] text-white px-8 py-3 rounded-full text-sm font-sans font-bold hover:bg-[#B8963C] transition-colors cursor-pointer"
           >
             Shop Products
           </button>
@@ -75,7 +75,7 @@ export default function CartView({
             {resolvedItems.map((item) => (
               <div 
                 key={item.product.id}
-                className="bg-[#FFFFFF] border border-[#C9A84C]/30 rounded-xl p-5 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 hover:border-[#C9A84C]/20 transition-all"
+                className="bg-white border border-[rgba(0,0,0,0.06)] rounded-xl p-5 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 hover:border-[#C9A84C]/20 transition-all"
               >
                 {/* Product thumb */}
                 <div className="flex gap-4 items-center">
@@ -83,8 +83,8 @@ export default function CartView({
                     <img src={item.product.image} alt={item.product.name} className="w-full h-full object-cover" />
                   </div>
                   <div>
-                    <h3 className="text-base font-display text-[#2B2B2B] font-semibold">{item.product.name}</h3>
-                    <p className="text-xs text-[#8C8C8C] tracking-wider mt-0.5 uppercase">{item.product.category.replace('-', ' ')}</p>
+                    <h3 className="text-base font-display text-[rgba(0,0,0,0.87)] font-semibold">{item.product.name}</h3>
+                    <p className="text-xs text-[rgba(0,0,0,0.38)] tracking-wider mt-0.5 uppercase">{item.product.category.replace('-', ' ')}</p>
                     <span className="text-xs font-mono font-semibold text-[#C9A84C] block mt-1">{item.priceDetails?.formatted} each</span>
                   </div>
                 </div>
@@ -94,21 +94,21 @@ export default function CartView({
                   <div className="flex items-center bg-[#EDEDEC] border border-[#C9A84C]/60 rounded-md p-0.5">
                     <button
                       onClick={() => onUpdateQty(item.product.id, item.quantity - 1)}
-                      className="px-2 py-1 text-[#6B6B6B] hover:text-[#C9A84C] cursor-pointer"
+                      className="px-2 py-1 text-[rgba(0,0,0,0.58)] hover:text-[#C9A84C] cursor-pointer"
                     >
                       -
                     </button>
-                    <span className="w-8 text-center font-mono text-xs text-[#2B2B2B] font-bold select-none">{item.quantity}</span>
+                    <span className="w-8 text-center font-mono text-xs text-[rgba(0,0,0,0.87)] font-bold select-none">{item.quantity}</span>
                     <button
                       onClick={() => onUpdateQty(item.product.id, item.quantity + 1)}
-                      className="px-2 py-1 text-[#6B6B6B] hover:text-[#C9A84C] cursor-pointer"
+                      className="px-2 py-1 text-[rgba(0,0,0,0.58)] hover:text-[#C9A84C] cursor-pointer"
                     >
                       +
                     </button>
                   </div>
 
                   <div className="flex items-center gap-4">
-                    <span className="font-mono text-sm text-[#2B2B2B] font-bold">
+                    <span className="font-mono text-sm text-[rgba(0,0,0,0.87)] font-bold">
                       {currency === 'INR' 
                         ? `₹${((item.priceDetails?.price || 0) * item.quantity).toLocaleString()}` 
                         : `$${((item.priceDetails?.price || 0) * item.quantity).toFixed(2)}`}
@@ -127,15 +127,15 @@ export default function CartView({
           </div>
 
           {/* Pricing receipt totals card - Right */}
-          <div className="lg:col-span-4 bg-[#E5E4E2] border border-[#C9A84C]/40 rounded-xl p-6 flex flex-col gap-6">
+          <div className="lg:col-span-4 bg-[#f2f0eb] border border-[#C9A84C]/40 rounded-xl p-6 flex flex-col gap-6">
             <h2 className="text-xs font-sans uppercase font-bold text-[#C9A84C] tracking-widest border-b border-[#C9A84C]/20 pb-3">
               Order Synthesis
             </h2>
 
-            <div className="flex flex-col gap-3 font-sans text-xs text-[#6B6B6B]">
+            <div className="flex flex-col gap-3 font-sans text-xs text-[rgba(0,0,0,0.58)]">
               <div className="flex justify-between">
                 <span>Items Subtotal</span>
-                <span className="font-mono text-[#2B2B2B]">{formattedSubTotal}</span>
+                <span className="font-mono text-[rgba(0,0,0,0.87)]">{formattedSubTotal}</span>
               </div>
               <div className="flex justify-between">
                 <span>Shipping</span>
@@ -150,19 +150,19 @@ export default function CartView({
             <div className="h-[1px] bg-[#C9A84C]/30"></div>
 
             <div className="flex justify-between items-baseline font-display text-lg">
-              <span className="text-[#2B2B2B]">Total</span>
+              <span className="text-[rgba(0,0,0,0.87)]">Total</span>
               <span className="font-mono font-bold text-[#C9A84C]">{formattedSubTotal}</span>
             </div>
 
             <button
               onClick={() => setView('checkout')}
-              className="w-full bg-[#C9A84C] hover:bg-[#B8963C] text-[#2B2B2B] px-6 py-4 rounded text-xs uppercase tracking-widest font-sans font-bold transition-all flex items-center justify-center gap-2 cursor-pointer gold-glow mt-2"
+              className="w-full bg-[#C9A84C] hover:bg-[#B8963C] text-[rgba(0,0,0,0.87)] px-6 py-4 rounded-full text-sm font-sans font-bold transition-all flex items-center justify-center gap-2 cursor-pointer gold-glow mt-2"
             >
               Proceed to Checkout
               <ArrowRight className="w-4 h-4" />
             </button>
 
-            <div className="flex items-center gap-2 justify-center text-[10px] text-[#8C8C8C] mt-1">
+            <div className="flex items-center gap-2 justify-center text-[10px] text-[rgba(0,0,0,0.38)] mt-1">
               <ShieldCheck className="w-4 h-4 text-[#C9A84C]" />
               <span>Secure checkout powered by Razorpay</span>
             </div>
@@ -172,6 +172,11 @@ export default function CartView({
     </div>
   );
 }
+
+
+
+
+
 
 
 

@@ -31,7 +31,7 @@ export default function SearchOverlay({ isOpen, onClose, onSelectProduct, catalo
   return (
     <div className="fixed inset-0 z-[100] flex flex-col pt-24 px-6 md:px-12 bg-[#EDEDEC]/95 backdrop-blur-md">
       {/* Header element */}
-      <div className="max-w-3xl mx-auto w-full flex items-center justify-between border-b border-[#C9A84C]/30 pb-4">
+      <div className="max-w-3xl mx-auto w-full flex items-center justify-between border-b border-[rgba(0,0,0,0.06)] pb-4">
         <div className="flex items-center gap-3 flex-grow">
           <Search className="w-5 h-5 text-[#C9A84C]" />
           <input
@@ -40,13 +40,13 @@ export default function SearchOverlay({ isOpen, onClose, onSelectProduct, catalo
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search products, herbs, benefits..."
-            className="bg-transparent text-xl font-display text-[#2B2B2B] focus:outline-none w-full placeholder-[#8C8C8C]/60"
+            className="bg-transparent text-xl font-display text-[rgba(0,0,0,0.87)] focus:outline-none w-full placeholder-[#8C8C8C]/60"
           />
         </div>
         
         <button
           onClick={onClose}
-          className="p-2 text-[#8C8C8C] hover:text-[#C9A84C] cursor-pointer transition-colors"
+          className="p-2 text-[rgba(0,0,0,0.38)] hover:text-[#C9A84C] cursor-pointer transition-colors"
           aria-label="Close search overlay"
         >
           <X className="w-5 h-5" />
@@ -58,13 +58,13 @@ export default function SearchOverlay({ isOpen, onClose, onSelectProduct, catalo
         {/* Hot Searched terms */}
         {!query.trim() && (
           <div className="flex flex-col gap-3">
-            <span className="text-[10px] font-mono tracking-widest text-[#8C8C8C] uppercase">Suggested Searches</span>
+            <span className="text-[10px] font-mono tracking-widest text-[rgba(0,0,0,0.38)] uppercase">Suggested Searches</span>
             <div className="flex flex-wrap gap-2.5">
               {hotSearches.map((term) => (
                 <button
                   key={term}
                   onClick={() => setQuery(term)}
-                  className="bg-[#E5E4E2] hover:bg-[#C9A84C]/10 text-xs text-[#6B6B6B] hover:text-[#C9A84C] px-4 py-2 rounded-full border border-[#C9A84C]/30 transition-all cursor-pointer"
+                  className="bg-[#f2f0eb] hover:bg-[#C9A84C]/10 text-xs text-[rgba(0,0,0,0.58)] hover:text-[#C9A84C] px-4 py-2 rounded-full border border-[rgba(0,0,0,0.06)] transition-all cursor-pointer"
                 >
                   {term}
                 </button>
@@ -76,10 +76,10 @@ export default function SearchOverlay({ isOpen, onClose, onSelectProduct, catalo
         {/* Live typing results matches */}
         {query.trim() && (
           <div className="flex flex-col gap-4">
-            <span className="text-[10px] font-mono tracking-widest text-[#8C8C8C] uppercase">Matches ({results.length})</span>
+            <span className="text-[10px] font-mono tracking-widest text-[rgba(0,0,0,0.38)] uppercase">Matches ({results.length})</span>
             
             {results.length === 0 ? (
-              <p className="font-serif italic text-[#8C8C8C] text-sm">No products match this search. Try another herb or category.</p>
+              <p className="font-serif italic text-[rgba(0,0,0,0.38)] text-sm">No products match this search. Try another herb or category.</p>
             ) : (
               <div className="flex flex-col gap-3">
                 {results.map((product) => (
@@ -89,15 +89,15 @@ export default function SearchOverlay({ isOpen, onClose, onSelectProduct, catalo
                       onSelectProduct(product.id);
                       onClose();
                     }}
-                    className="flex justify-between items-center bg-[#FFFFFF] border border-[#C9A84C]/20 hover:border-[#C9A84C]/40 p-3 rounded-lg cursor-pointer group transition-all"
+                    className="flex justify-between items-center bg-white border border-[#C9A84C]/20 hover:border-[#C9A84C]/40 p-3 rounded-lg cursor-pointer group transition-all"
                   >
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded overflow-hidden flex-shrink-0 bg-[#111]">
+                      <div className="w-10 h-10 rounded overflow-hidden flex-shrink-0 bg-white">
                         <img src={product.image} alt={product.name} className="w-full h-full object-cover" />
                       </div>
                       <div>
-                        <h4 className="text-xs font-bold text-[#2B2B2B] group-hover:text-[#C9A84C] transition-colors">{product.name}</h4>
-                        <p className="text-[10px] text-[#8C8C8C] line-clamp-1 mt-0.5">{product.subheading}</p>
+                        <h4 className="text-xs font-bold text-[rgba(0,0,0,0.87)] group-hover:text-[#C9A84C] transition-colors">{product.name}</h4>
+                        <p className="text-[10px] text-[rgba(0,0,0,0.38)] line-clamp-1 mt-0.5">{product.subheading}</p>
                       </div>
                     </div>
                     
@@ -115,6 +115,11 @@ export default function SearchOverlay({ isOpen, onClose, onSelectProduct, catalo
     </div>
   );
 }
+
+
+
+
+
 
 
 

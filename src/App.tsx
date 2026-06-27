@@ -223,7 +223,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#EDEDEC] text-[#2B2B2B] flex flex-col justify-between selection:bg-[#C9A84C] selection:text-white">
+    <div className="min-h-screen bg-[#EDEDEC] text-[rgba(0,0,0,0.87)] flex flex-col justify-between selection:bg-[#C9A84C] selection:text-white">
       
 
       {/* Main navigation menu */}

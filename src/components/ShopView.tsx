@@ -80,10 +80,10 @@ export default function ShopView({
   return (
     <div className="pt-28 min-h-screen px-6 md:px-12 max-w-7xl mx-auto w-full flex flex-col">
       {/* Page Header */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-[#C9A84C]/30 pb-8 gap-6">
+      <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-[rgba(0,0,0,0.06)] pb-8 gap-6">
         <div className="flex flex-col gap-2">
           <span className="font-sans text-xs tracking-widest text-[#C9A84C] uppercase font-bold">Our Wellness Collection</span>
-          <h1 className="font-display text-4xl text-[#2B2B2B] tracking-tight">Premium Herbal Products</h1>
+          <h1 className="font-display text-4xl text-[rgba(0,0,0,0.87)] tracking-tight">Premium Herbal Products</h1>
         </div>
 
         {/* Local Search input */}
@@ -93,9 +93,9 @@ export default function ShopView({
             placeholder="Search herbal powders, adaptogens..."
             value={activeSearch}
             onChange={(e) => handleSearchChange(e.target.value)}
-            className="w-full bg-[#E5E4E2] border border-[#C9A84C]/50 rounded-lg px-4 py-2.5 pl-10 text-xs font-sans text-[#2B2B2B] focus:outline-none focus:border-[#C9A84C] transition-all"
+            className="w-full bg-[#f2f0eb] border border-[#C9A84C]/50 rounded-lg px-4 py-2.5 pl-10 text-xs font-sans text-[rgba(0,0,0,0.87)] focus:outline-none focus:border-[#C9A84C] transition-all"
           />
-          <Search className="w-4 h-4 text-[#8C8C8C] absolute left-3 top-3" />
+          <Search className="w-4 h-4 text-[rgba(0,0,0,0.38)] absolute left-3 top-3" />
         </div>
       </div>
 
@@ -109,8 +109,8 @@ export default function ShopView({
               onClick={() => setSelectedCategory(cat.id)}
               className={`px-4 py-2 rounded-full text-xs font-sans font-medium transition-all cursor-pointer ${
                 selectedCategory === cat.id
-                  ? 'bg-[#C9A84C] text-[#2B2B2B] font-bold'
-                  : 'bg-[#E5E4E2] text-[#6B6B6B] border border-[#C9A84C]/30 hover:border-[#C9A84C]/50'
+                  ? 'bg-[#C9A84C] text-white font-bold'
+                  : 'bg-[#f2f0eb] text-[rgba(0,0,0,0.58)] border border-[rgba(0,0,0,0.06)] hover:border-[#C9A84C]/50'
               }`}
             >
               {cat.label}
@@ -121,11 +121,11 @@ export default function ShopView({
         {/* Sort select menu */}
         <div className="flex items-center gap-3">
           <SlidersHorizontal className="w-3.5 h-3.5 text-[#C9A84C]" />
-          <span className="text-xs text-[#8C8C8C] font-sans uppercase tracking-wider">Sort by</span>
+          <span className="text-xs text-[rgba(0,0,0,0.38)] font-sans uppercase tracking-wider">Sort by</span>
           <select
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value)}
-            className="bg-[#E5E4E2] border border-[#C9A84C]/40 text-xs text-[#2B2B2B] px-3 py-1.5 rounded focus:outline-none focus:border-[#C9A84C]"
+            className="bg-[#f2f0eb] border border-[#C9A84C]/40 text-xs text-[rgba(0,0,0,0.87)] px-3 py-1.5 rounded focus:outline-none focus:border-[#C9A84C]"
           >
             <option value="featured">Featured</option>
             <option value="price-low">Price: Low to High</option>
@@ -138,7 +138,7 @@ export default function ShopView({
       {/* Catalog Grid Area */}
       <div className="py-12 flex-grow">
         {activeSearch && (
-          <div className="text-xs text-[#8C8C8C] mb-6 font-mono">
+          <div className="text-xs text-[rgba(0,0,0,0.38)] mb-6 font-mono">
             Showing {filteredProducts.length} results matching &ldquo;{activeSearch}&rdquo;
           </div>
         )}
@@ -149,19 +149,19 @@ export default function ShopView({
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
-              className="flex flex-col items-center justify-center py-20 text-center gap-4 bg-[#E5E4E2] border border-[#C9A84C]/20 rounded-xl"
+              className="flex flex-col items-center justify-center py-20 text-center gap-4 bg-[#f2f0eb] rounded-xl card-shadow"
             >
               <AlertCircle className="w-8 h-8 text-[#C9A84C]/70" />
               <div>
-                <h4 className="font-display text-lg text-[#2B2B2B] mb-1">No Blends Found</h4>
-                <p className="font-sans text-xs text-[#8C8C8C]">Try clearing your search query or choosing a broader category filter.</p>
+                <h4 className="font-display text-lg text-[rgba(0,0,0,0.87)] mb-1">No Blends Found</h4>
+                <p className="font-sans text-xs text-[rgba(0,0,0,0.38)]">Try clearing your search query or choosing a broader category filter.</p>
               </div>
               <button
                 onClick={() => {
                   setSelectedCategory('all');
                   handleSearchChange('');
                 }}
-                className="bg-[#FFFFFF] border border-[#C9A84C]/40 text-[#C9A84C] px-4 py-2 text-xs uppercase tracking-wider font-bold rounded hover:bg-[#C9A84C]/10 cursor-pointer"
+                className="bg-white border border-[#C9A84C]/40 text-[#C9A84C] px-4 py-2 text-xs uppercase tracking-wider font-bold rounded hover:bg-[#C9A84C]/10 cursor-pointer"
               >
                 Reset Filters
               </button>
@@ -181,10 +181,10 @@ export default function ShopView({
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.4 }}
-                    className="bg-[#FFFFFF] border border-[#C9A84C]/30 rounded-xl overflow-hidden hover:border-[#C9A84C]/40 transition-all duration-300 flex flex-col h-full group cursor-pointer"
+                    className="bg-white border border-[rgba(0,0,0,0.06)] rounded-xl overflow-hidden hover:border-[#C9A84C]/40 transition-all duration-300 flex flex-col h-full group cursor-pointer"
                     onClick={() => onSelectProduct(product.id)}
                   >
-                    <div className="aspect-[4/3] w-full bg-[#EDEDEC] overflow-hidden relative border-b border-[#C9A84C]/15">
+                    <div className="aspect-[4/3] w-full bg-[#EDEDEC] overflow-hidden relative border-b border-[rgba(0,0,0,0.06)]">
                       <img
                         src={product.image}
                         alt={product.name}
@@ -199,7 +199,7 @@ export default function ShopView({
                     <div className="p-6 flex flex-col flex-grow justify-between gap-5">
                       <div className="flex flex-col gap-2">
                         <div className="flex justify-between items-start gap-3">
-                          <h3 className="font-display text-lg text-[#2B2B2B] group-hover:text-[#C9A84C] transition-colors leading-tight">
+                          <h3 className="font-display text-lg text-[rgba(0,0,0,0.87)] group-hover:text-[#C9A84C] transition-colors leading-tight">
                             {product.name}
                           </h3>
                           <span className="font-mono text-sm font-semibold text-[#C9A84C]">
@@ -207,17 +207,17 @@ export default function ShopView({
                           </span>
                         </div>
 
-                        <p className="font-sans text-xs text-[#8C8C8C] tracking-wider uppercase">
+                        <p className="font-sans text-xs text-[rgba(0,0,0,0.38)] tracking-wider uppercase">
                           {product.category.replace('-', ' ')}
                         </p>
 
-                        <p className="font-sans text-xs text-[#6B6B6B] leading-relaxed line-clamp-3 mt-1.5">
+                        <p className="font-sans text-xs text-[rgba(0,0,0,0.58)] leading-relaxed line-clamp-3 mt-1.5">
                           {product.subheading || product.description}
                         </p>
                       </div>
 
                       <div className="flex items-center justify-between border-t border-[#C9A84C]/20 pt-4 mt-auto">
-                        <span className="text-[9px] text-[#8C8C8C] font-mono tracking-widest uppercase">
+                        <span className="text-[9px] text-[rgba(0,0,0,0.38)] font-mono tracking-widest uppercase">
                           Lab Tested
                         </span>
                         {activeQtyPicker === product.id ? (
@@ -228,7 +228,7 @@ export default function ShopView({
                             >
                               <Minus className="w-3 h-3" />
                             </button>
-                            <span className="text-xs font-bold text-[#2B2B2B] w-5 text-center">{pickerQty}</span>
+                            <span className="text-xs font-bold text-[rgba(0,0,0,0.87)] w-5 text-center">{pickerQty}</span>
                             <button
                               onClick={() => setPickerQty(pickerQty + 1)}
                               className="w-7 h-7 flex items-center justify-center border border-[#C9A84C]/40 rounded text-[#C9A84C] hover:bg-[#C9A84C]/10 cursor-pointer"
@@ -241,7 +241,7 @@ export default function ShopView({
                                 setActiveQtyPicker(null);
                                 setPickerQty(1);
                               }}
-                              className="text-[10px] bg-[#C9A84C] text-[#2B2B2B] font-bold uppercase px-3 py-1.5 rounded cursor-pointer hover:bg-[#B8963C] transition-colors"
+                              className="text-[10px] bg-[#C9A84C] text-white font-bold uppercase px-3 py-1.5 rounded cursor-pointer hover:bg-[#B8963C] transition-colors"
                             >
                               Add
                             </button>
@@ -269,8 +269,8 @@ export default function ShopView({
       </div>
 
       {/* Small Decorative Wisdom Quote */}
-      <section className="bg-[#E5E4E2] border border-[#C9A84C]/30 p-8 rounded-xl my-16 text-center max-w-3xl mx-auto w-full">
-        <p className="font-serif italic text-sm text-[#6B6B6B] leading-relaxed">
+      <section className="bg-[#f2f0eb] border border-[rgba(0,0,0,0.06)] p-8 rounded-xl my-16 text-center max-w-3xl mx-auto w-full">
+        <p className="font-serif italic text-sm text-[rgba(0,0,0,0.58)] leading-relaxed">
           &ldquo;Let food be thy medicine, and let thy medicine be thy soil. The power of the root is the true sanctuary of human physical stability.&rdquo;
         </p>
         <span className="text-[10px] uppercase font-mono tracking-[0.2em] text-[#C9A84C] block mt-3">
@@ -280,6 +280,11 @@ export default function ShopView({
     </div>
   );
 }
+
+
+
+
+
 
 
 

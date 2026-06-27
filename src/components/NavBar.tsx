@@ -80,8 +80,8 @@ export default function NavBar({
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-[#EDEDEC] ${
         scrolled
-          ? 'bg-[rgba(237,237,236,0.95)] backdrop-blur-md border-b border-[#C9A84C]/20 shadow-sm'
-          : 'lg:bg-transparent border-b border-transparent'
+          ? 'nav-shadow'
+          : 'border-b border-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 py-3.5 flex justify-between items-center gap-4">
@@ -172,7 +172,7 @@ export default function NavBar({
 
           <button
             onClick={() => handleNavClick('shop')}
-            className="hidden xl:inline-flex bg-[#C9A84C] hover:bg-[#B8963C] text-[#2B2B2B] text-[11px] uppercase tracking-[0.14em] font-bold px-4 py-2.5 rounded transition-colors cursor-pointer"
+            className="hidden xl:inline-flex bg-[#C9A84C] hover:bg-[#B8963C] text-white text-sm font-semibold px-6 py-2.5 rounded-full transition-colors cursor-pointer"
           >
             Shop Now
           </button>
@@ -238,7 +238,7 @@ export default function NavBar({
 
               <button
                 onClick={() => handleNavClick('shop')}
-                className="mt-auto bg-[#C9A84C] text-[#2B2B2B] text-center font-bold font-mono tracking-widest uppercase text-xs py-4 rounded cursor-pointer hover:bg-[#B8963C] transition-colors"
+                className="mt-auto bg-[#C9A84C] text-white text-center font-semibold text-sm py-4 rounded-full cursor-pointer hover:bg-[#B8963C] transition-colors"
               >
                 Shop Now
               </button>
@@ -249,6 +249,9 @@ export default function NavBar({
     </header>
   );
 }
+
+
+
 
 
 
