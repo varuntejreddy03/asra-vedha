@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Menu, Search, ShieldCheck, ShoppingBag, User, X } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
+import { Menu, Search, ShoppingBag, User, X } from 'lucide-react';
+import { AnimatePresence, motion } from 'motion/react';
 import { ViewState } from '../types';
 import logo from '../assets/logo.png';
 
@@ -15,40 +15,24 @@ interface NavBarProps {
   onSearchOpen: () => void;
 }
 
-type NavItem = {
-  name: string;
-  view?: ViewState;
-  onClick?: () => void;
-};
+type NavItem = { name: string; view?: ViewState };
 
 export default function NavBar({
-  currentView,
-  setView,
-  cartCount,
-  currency,
-  setCurrency,
-  isAuthenticated,
-  isAdmin = false,
-  onSearchOpen
+  currentView, setView, cartCount, isAuthenticated, isAdmin = false, onSearchOpen
 }: NavBarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
-    if (mobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
+    document.body.style.overflow = mobileMenuOpen ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
   }, [mobileMenuOpen]);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 80);
-    handleScroll();
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   const handleNavClick = (view: ViewState) => {
@@ -66,179 +50,94 @@ export default function NavBar({
     { name: 'Contact', view: 'contact' }
   ];
 
-  const runNavAction = (item: NavItem) => {
-    if (item.view) {
-      handleNavClick(item.view);
-      return;
-    }
-    item.onClick?.();
-  };
-
-  const isItemActive = (item: NavItem) => item.view !== undefined && currentView === item.view;
+  const isActive = (item: NavItem) => item.view !== undefined && currentView === item.view;
 
   return (
-    <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-[#EDEDEC] ${
-        scrolled
-          ? 'nav-shadow'
-          : 'border-b border-transparent'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 py-3.5 flex justify-between items-center gap-4">
-        <button
-          onClick={() => handleNavClick('home')}
-          className="flex items-center gap-2 text-left text-[#C9A84C] hover:text-[#B8963C] transition-colors cursor-pointer shrink-0"
-          id="nav-logo"
-          aria-label="ASRA VEDHA home"
-        >
+    <header className={`fixed top-0 left-0 w-full z-50 bg-white transition-shadow duration-300 ${scrolled ? 'nav-shadow' : ''} border-b border-[rgba(0,0,0,0.08)]`}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 h-16 md:h-[72px] flex justify-between items-center">
+        {/* Logo */}
+        <button onClick={() => handleNavClick('home')} className="flex items-center gap-2.5 cursor-pointer shrink-0" aria-label="ASRA VEDHA home">
           <img src={logo} alt="ASRA VEDHA" className="h-9 w-auto" />
-          <span className="font-display text-lg md:text-xl tracking-[0.14em] uppercase leading-none text-[#2B2B2B]">
+          <span className="font-display text-xl tracking-[0.12em] uppercase text-[rgba(0,0,0,0.87)] font-semibold">
             ASRA VEDHA
           </span>
         </button>
 
-        <nav className="hidden lg:flex items-center justify-center gap-6">
-          {navLinks.map((item) => {
-            const isActive = isItemActive(item);
-            return (
-              <button
-                key={item.name}
-                onClick={() => runNavAction(item)}
-                className={`font-accent text-[11px] tracking-[0.14em] uppercase transition-all duration-200 cursor-pointer relative py-2 whitespace-nowrap ${
-                  isActive ? 'text-[#C9A84C]' : 'text-[#6B6B6B] hover:text-[#C9A84C]'
-                }`}
-              >
-                {item.name}
-                {isActive && (
-                  <motion.span
-                    layoutId="activeNavLine"
-                    className="absolute bottom-0 left-0 right-0 h-px bg-[#C9A84C]"
-                    transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                  />
-                )}
-              </button>
-            );
-          })}
+        {/* Desktop Nav Links */}
+        <nav className="hidden lg:flex items-center gap-8">
+          {navLinks.map((item) => (
+            <button
+              key={item.name}
+              onClick={() => item.view && handleNavClick(item.view)}
+              className={`text-[14px] font-sans font-medium tracking-[0.01em] uppercase transition-colors cursor-pointer py-1 ${
+                isActive(item) ? 'text-[#C9A84C]' : 'text-[rgba(0,0,0,0.87)] hover:text-[#C9A84C]'
+              }`}
+            >
+              {item.name}
+            </button>
+          ))}
         </nav>
 
-        <div className="flex items-center gap-1.5 md:gap-2 shrink-0">
-
-          <button
-            onClick={onSearchOpen}
-            className="text-[#6B6B6B] hover:text-[#C9A84C] transition-colors p-2 cursor-pointer"
-            aria-label="Search products"
-          >
-            <Search className="w-5 h-5 stroke-[1.8]" />
+        {/* Right Icons */}
+        <div className="flex items-center gap-1 shrink-0">
+          <button onClick={onSearchOpen} className="p-2.5 text-[rgba(0,0,0,0.7)] hover:text-[#C9A84C] transition-colors cursor-pointer" aria-label="Search">
+            <Search className="w-5 h-5" />
           </button>
 
-          <button
-            onClick={() => handleNavClick('cart')}
-            className={`p-2 relative cursor-pointer flex items-center justify-center transition-colors ${
-              currentView === 'cart' ? 'text-[#C9A84C]' : 'text-[#6B6B6B] hover:text-[#C9A84C]'
-            }`}
-            aria-label="View cart"
-          >
-            <ShoppingBag className="w-5 h-5 stroke-[1.8]" />
+          <button onClick={() => handleNavClick('cart')} className={`p-2.5 relative cursor-pointer transition-colors ${currentView === 'cart' ? 'text-[#C9A84C]' : 'text-[rgba(0,0,0,0.7)] hover:text-[#C9A84C]'}`} aria-label="Cart">
+            <ShoppingBag className="w-5 h-5" />
             {cartCount > 0 && (
-              <span className="absolute -top-0.5 -right-0.5 bg-[#C9A84C] text-[#2B2B2B] text-[9px] font-sans font-bold w-4 h-4 flex items-center justify-center rounded-full">
+              <span className="absolute top-1 right-1 bg-[#C9A84C] text-white text-[9px] font-bold w-4 h-4 flex items-center justify-center rounded-full">
                 {cartCount}
               </span>
             )}
           </button>
 
-          <button
-            onClick={() => handleNavClick(isAuthenticated ? 'sanctuary' : 'login')}
-            className={`hidden md:flex p-2 transition-colors cursor-pointer ${
-              currentView === 'sanctuary' || currentView === 'login' || currentView === 'signup'
-                ? 'text-[#C9A84C]'
-                : 'text-[#6B6B6B] hover:text-[#C9A84C]'
-            }`}
-            aria-label={isAuthenticated ? 'Customer account' : 'Sign in'}
-          >
-            <User className="w-5 h-5 stroke-[1.8]" />
+          <button onClick={() => handleNavClick(isAuthenticated ? 'sanctuary' : 'login')} className={`hidden md:flex p-2.5 cursor-pointer transition-colors ${currentView === 'sanctuary' || currentView === 'login' ? 'text-[#C9A84C]' : 'text-[rgba(0,0,0,0.7)] hover:text-[#C9A84C]'}`} aria-label="Account">
+            <User className="w-5 h-5" />
           </button>
 
-          {isAdmin && (
-            <button
-              onClick={() => handleNavClick('admin')}
-              className={`hidden md:flex p-2 transition-colors cursor-pointer ${
-                currentView === 'admin' ? 'text-[#C9A84C]' : 'text-[#6B6B6B] hover:text-[#C9A84C]'
-              }`}
-              aria-label="Admin panel"
-            >
-              <ShieldCheck className="w-5 h-5 stroke-[1.8]" />
-            </button>
-          )}
-
-          <button
-            onClick={() => handleNavClick('shop')}
-            className="hidden xl:inline-flex bg-[#C9A84C] hover:bg-[#B8963C] text-white text-sm font-semibold px-6 py-2.5 rounded-full transition-colors cursor-pointer"
-          >
-            Shop Now
-          </button>
-
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden text-[#6B6B6B] hover:text-[#C9A84C] p-2 cursor-pointer transition-colors"
-            aria-label="Toggle menu"
-          >
+          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="lg:hidden p-2.5 text-[rgba(0,0,0,0.7)] hover:text-[#C9A84C] cursor-pointer transition-colors" aria-label="Menu">
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
       </div>
 
+      {/* Mobile Menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, x: '100%' }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: '100%' }}
-            transition={{ duration: 0.25, ease: 'easeInOut' }}
-            className="lg:hidden fixed inset-0 top-0 bg-[#EDEDEC] border-t border-[#C9A84C]/20 z-[100] overflow-y-auto pt-[61px]"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
+            className="lg:hidden fixed inset-0 top-16 bg-white z-[100] overflow-y-auto"
           >
-            <div className="px-6 py-8 flex flex-col gap-5 min-h-[calc(100vh-61px)]">
-              {navLinks.map((item) => {
-                const isActive = isItemActive(item);
-                return (
-                  <button
-                    key={item.name}
-                    onClick={() => runNavAction(item)}
-                    className={`font-accent text-base tracking-[0.14em] uppercase text-left transition-colors cursor-pointer py-3 border-b border-[#C9A84C]/10 ${
-                      isActive ? 'text-[#C9A84C] font-semibold' : 'text-[#6B6B6B] hover:text-[#C9A84C]'
-                    }`}
-                  >
-                    {item.name}
-                  </button>
-                );
-              })}
+            <div className="px-6 py-6 flex flex-col gap-1">
+              {navLinks.map((item) => (
+                <button
+                  key={item.name}
+                  onClick={() => item.view && handleNavClick(item.view)}
+                  className={`text-left text-base font-sans font-semibold py-4 border-b border-[rgba(0,0,0,0.06)] transition-colors cursor-pointer ${
+                    isActive(item) ? 'text-[#C9A84C]' : 'text-[rgba(0,0,0,0.87)] hover:text-[#C9A84C]'
+                  }`}
+                >
+                  {item.name}
+                </button>
+              ))}
 
               <button
                 onClick={() => handleNavClick(isAuthenticated ? 'sanctuary' : 'login')}
-                className={`font-accent text-base tracking-[0.14em] uppercase text-left transition-colors cursor-pointer py-3 border-b border-[#C9A84C]/10 ${
-                  currentView === 'sanctuary' || currentView === 'login' || currentView === 'signup'
-                    ? 'text-[#C9A84C] font-semibold'
-                    : 'text-[#6B6B6B] hover:text-[#C9A84C]'
+                className={`text-left text-base font-sans font-semibold py-4 border-b border-[rgba(0,0,0,0.06)] transition-colors cursor-pointer ${
+                  currentView === 'sanctuary' || currentView === 'login' ? 'text-[#C9A84C]' : 'text-[rgba(0,0,0,0.87)] hover:text-[#C9A84C]'
                 }`}
               >
-                {isAuthenticated ? 'Account' : 'Login'}
+                {isAuthenticated ? 'Account' : 'Sign In'}
               </button>
-
-              {isAdmin && (
-                <button
-                  onClick={() => handleNavClick('admin')}
-                  className={`font-accent text-base tracking-[0.14em] uppercase text-left transition-colors cursor-pointer py-3 border-b border-[#C9A84C]/10 ${
-                    currentView === 'admin'
-                      ? 'text-[#C9A84C] font-semibold'
-                      : 'text-[#6B6B6B] hover:text-[#C9A84C]'
-                  }`}
-                >
-                  Admin
-                </button>
-              )}
 
               <button
                 onClick={() => handleNavClick('shop')}
-                className="mt-auto bg-[#C9A84C] text-white text-center font-semibold text-sm py-4 rounded-full cursor-pointer hover:bg-[#B8963C] transition-colors"
+                className="mt-6 bg-[#C9A84C] text-white text-center font-semibold text-sm py-3.5 rounded-full cursor-pointer hover:bg-[#B8963C] transition-colors"
               >
                 Shop Now
               </button>
@@ -249,10 +148,3 @@ export default function NavBar({
     </header>
   );
 }
-
-
-
-
-
-
-
