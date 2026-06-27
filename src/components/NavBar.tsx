@@ -78,21 +78,21 @@ export default function NavBar({
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-[#1A0F00] ${
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-[#EDEDEC] ${
         scrolled
-          ? 'bg-[rgba(26,15,0,0.92)] backdrop-blur-md border-b border-[#C4A042]/20 shadow-lg shadow-black/30'
+          ? 'bg-[rgba(237,237,236,0.95)] backdrop-blur-md border-b border-[#C9A84C]/20 shadow-sm'
           : 'lg:bg-transparent border-b border-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 py-3.5 flex justify-between items-center gap-4">
         <button
           onClick={() => handleNavClick('home')}
-          className="flex items-center gap-2 text-left text-[#C4A042] hover:text-[#d4b052] transition-colors cursor-pointer shrink-0"
+          className="flex items-center gap-2 text-left text-[#C9A84C] hover:text-[#B8963C] transition-colors cursor-pointer shrink-0"
           id="nav-logo"
           aria-label="ASRA VEDHA home"
         >
           <img src={logo} alt="ASRA VEDHA" className="h-9 w-auto" />
-          <span className="font-display text-lg md:text-xl tracking-[0.14em] uppercase leading-none text-[#F5E4B0]">
+          <span className="font-display text-lg md:text-xl tracking-[0.14em] uppercase leading-none text-[#2B2B2B]">
             ASRA VEDHA
           </span>
         </button>
@@ -105,14 +105,14 @@ export default function NavBar({
                 key={item.name}
                 onClick={() => runNavAction(item)}
                 className={`font-accent text-[11px] tracking-[0.14em] uppercase transition-all duration-200 cursor-pointer relative py-2 whitespace-nowrap ${
-                  isActive ? 'text-[#C4A042]' : 'text-[#d1c5b4] hover:text-[#C4A042]'
+                  isActive ? 'text-[#C9A84C]' : 'text-[#6B6B6B] hover:text-[#C9A84C]'
                 }`}
               >
                 {item.name}
                 {isActive && (
                   <motion.span
                     layoutId="activeNavLine"
-                    className="absolute bottom-0 left-0 right-0 h-px bg-[#C4A042]"
+                    className="absolute bottom-0 left-0 right-0 h-px bg-[#C9A84C]"
                     transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -125,7 +125,7 @@ export default function NavBar({
 
           <button
             onClick={onSearchOpen}
-            className="text-[#d1c5b4] hover:text-[#C4A042] transition-colors p-2 cursor-pointer"
+            className="text-[#6B6B6B] hover:text-[#C9A84C] transition-colors p-2 cursor-pointer"
             aria-label="Search products"
           >
             <Search className="w-5 h-5 stroke-[1.8]" />
@@ -134,13 +134,13 @@ export default function NavBar({
           <button
             onClick={() => handleNavClick('cart')}
             className={`p-2 relative cursor-pointer flex items-center justify-center transition-colors ${
-              currentView === 'cart' ? 'text-[#C4A042]' : 'text-[#d1c5b4] hover:text-[#C4A042]'
+              currentView === 'cart' ? 'text-[#C9A84C]' : 'text-[#6B6B6B] hover:text-[#C9A84C]'
             }`}
             aria-label="View cart"
           >
             <ShoppingBag className="w-5 h-5 stroke-[1.8]" />
             {cartCount > 0 && (
-              <span className="absolute -top-0.5 -right-0.5 bg-[#C4A042] text-[#1A0F00] text-[9px] font-sans font-bold w-4 h-4 flex items-center justify-center rounded-full">
+              <span className="absolute -top-0.5 -right-0.5 bg-[#C9A84C] text-[#2B2B2B] text-[9px] font-sans font-bold w-4 h-4 flex items-center justify-center rounded-full">
                 {cartCount}
               </span>
             )}
@@ -150,8 +150,8 @@ export default function NavBar({
             onClick={() => handleNavClick(isAuthenticated ? 'sanctuary' : 'login')}
             className={`hidden md:flex p-2 transition-colors cursor-pointer ${
               currentView === 'sanctuary' || currentView === 'login' || currentView === 'signup'
-                ? 'text-[#C4A042]'
-                : 'text-[#d1c5b4] hover:text-[#C4A042]'
+                ? 'text-[#C9A84C]'
+                : 'text-[#6B6B6B] hover:text-[#C9A84C]'
             }`}
             aria-label={isAuthenticated ? 'Customer account' : 'Sign in'}
           >
@@ -162,7 +162,7 @@ export default function NavBar({
             <button
               onClick={() => handleNavClick('admin')}
               className={`hidden md:flex p-2 transition-colors cursor-pointer ${
-                currentView === 'admin' ? 'text-[#C4A042]' : 'text-[#d1c5b4] hover:text-[#C4A042]'
+                currentView === 'admin' ? 'text-[#C9A84C]' : 'text-[#6B6B6B] hover:text-[#C9A84C]'
               }`}
               aria-label="Admin panel"
             >
@@ -172,14 +172,14 @@ export default function NavBar({
 
           <button
             onClick={() => handleNavClick('shop')}
-            className="hidden xl:inline-flex bg-[#C4A042] hover:bg-[#d4b052] text-[#1A0F00] text-[11px] uppercase tracking-[0.14em] font-bold px-4 py-2.5 rounded transition-colors cursor-pointer"
+            className="hidden xl:inline-flex bg-[#C9A84C] hover:bg-[#B8963C] text-[#2B2B2B] text-[11px] uppercase tracking-[0.14em] font-bold px-4 py-2.5 rounded transition-colors cursor-pointer"
           >
             Shop Now
           </button>
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden text-[#d1c5b4] hover:text-[#C4A042] p-2 cursor-pointer transition-colors"
+            className="lg:hidden text-[#6B6B6B] hover:text-[#C9A84C] p-2 cursor-pointer transition-colors"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -194,7 +194,7 @@ export default function NavBar({
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ duration: 0.25, ease: 'easeInOut' }}
-            className="lg:hidden fixed inset-0 top-0 bg-[#1A0F00] border-t border-[#C4A042]/20 z-[100] overflow-y-auto pt-[61px]"
+            className="lg:hidden fixed inset-0 top-0 bg-[#EDEDEC] border-t border-[#C9A84C]/20 z-[100] overflow-y-auto pt-[61px]"
           >
             <div className="px-6 py-8 flex flex-col gap-5 min-h-[calc(100vh-61px)]">
               {navLinks.map((item) => {
@@ -203,8 +203,8 @@ export default function NavBar({
                   <button
                     key={item.name}
                     onClick={() => runNavAction(item)}
-                    className={`font-accent text-base tracking-[0.14em] uppercase text-left transition-colors cursor-pointer py-3 border-b border-[#C4A042]/10 ${
-                      isActive ? 'text-[#C4A042] font-semibold' : 'text-[#d1c5b4] hover:text-[#C4A042]'
+                    className={`font-accent text-base tracking-[0.14em] uppercase text-left transition-colors cursor-pointer py-3 border-b border-[#C9A84C]/10 ${
+                      isActive ? 'text-[#C9A84C] font-semibold' : 'text-[#6B6B6B] hover:text-[#C9A84C]'
                     }`}
                   >
                     {item.name}
@@ -214,10 +214,10 @@ export default function NavBar({
 
               <button
                 onClick={() => handleNavClick(isAuthenticated ? 'sanctuary' : 'login')}
-                className={`font-accent text-base tracking-[0.14em] uppercase text-left transition-colors cursor-pointer py-3 border-b border-[#C4A042]/10 ${
+                className={`font-accent text-base tracking-[0.14em] uppercase text-left transition-colors cursor-pointer py-3 border-b border-[#C9A84C]/10 ${
                   currentView === 'sanctuary' || currentView === 'login' || currentView === 'signup'
-                    ? 'text-[#C4A042] font-semibold'
-                    : 'text-[#d1c5b4] hover:text-[#C4A042]'
+                    ? 'text-[#C9A84C] font-semibold'
+                    : 'text-[#6B6B6B] hover:text-[#C9A84C]'
                 }`}
               >
                 {isAuthenticated ? 'Account' : 'Login'}
@@ -226,10 +226,10 @@ export default function NavBar({
               {isAdmin && (
                 <button
                   onClick={() => handleNavClick('admin')}
-                  className={`font-accent text-base tracking-[0.14em] uppercase text-left transition-colors cursor-pointer py-3 border-b border-[#C4A042]/10 ${
+                  className={`font-accent text-base tracking-[0.14em] uppercase text-left transition-colors cursor-pointer py-3 border-b border-[#C9A84C]/10 ${
                     currentView === 'admin'
-                      ? 'text-[#C4A042] font-semibold'
-                      : 'text-[#d1c5b4] hover:text-[#C4A042]'
+                      ? 'text-[#C9A84C] font-semibold'
+                      : 'text-[#6B6B6B] hover:text-[#C9A84C]'
                   }`}
                 >
                   Admin
@@ -238,7 +238,7 @@ export default function NavBar({
 
               <button
                 onClick={() => handleNavClick('shop')}
-                className="mt-auto bg-[#C4A042] text-[#1A0F00] text-center font-bold font-mono tracking-widest uppercase text-xs py-4 rounded cursor-pointer hover:bg-[#d4b052] transition-colors"
+                className="mt-auto bg-[#C9A84C] text-[#2B2B2B] text-center font-bold font-mono tracking-widest uppercase text-xs py-4 rounded cursor-pointer hover:bg-[#B8963C] transition-colors"
               >
                 Shop Now
               </button>
@@ -249,4 +249,7 @@ export default function NavBar({
     </header>
   );
 }
+
+
+
 

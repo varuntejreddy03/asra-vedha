@@ -77,7 +77,7 @@ export default function CheckoutView({
       <button
         onClick={() => setView('cart')}
         disabled={loading || orderComplete}
-        className="flex items-center gap-2 text-xs text-[#C4A042] hover:text-[#d4b052] uppercase tracking-wider font-sans font-bold cursor-pointer mb-8 self-start disabled:opacity-30"
+        className="flex items-center gap-2 text-xs text-[#C9A84C] hover:text-[#B8963C] uppercase tracking-wider font-sans font-bold cursor-pointer mb-8 self-start disabled:opacity-30"
       >
         <ArrowLeft className="w-4 h-4" />
         Return to Cart
@@ -85,33 +85,33 @@ export default function CheckoutView({
 
       {orderComplete ? (
         <motion.div 
-          className="bg-[#2D1A00] border border-[#24523a]/50 p-12 rounded-2xl max-w-2xl mx-auto w-full text-center flex flex-col items-center gap-6"
+          className="bg-[#E5E4E2] border border-[#C9A84C]/50 p-12 rounded-2xl max-w-2xl mx-auto w-full text-center flex flex-col items-center gap-6"
           initial={{ scale: 0.95, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
         >
-          <div className="w-16 h-16 rounded-full bg-[#24523a]/40 text-[#a0d2b3] flex items-center justify-center border border-[#a0d2b3]/30">
+          <div className="w-16 h-16 rounded-full bg-[#C9A84C]/40 text-[#C9A84C] flex items-center justify-center border border-[#C9A84C]/30">
             <CheckCircle2 className="w-10 h-10 stroke-[2.2]" />
           </div>
 
           <div className="flex flex-col gap-2">
-            <span className="font-sans text-xs tracking-widest text-[#C4A042] uppercase font-bold">Order Placed Successfully</span>
-            <h2 className="font-display text-3xl text-[#F5E4B0] tracking-tight">Thank You for Your Order</h2>
+            <span className="font-sans text-xs tracking-widest text-[#C9A84C] uppercase font-bold">Order Placed Successfully</span>
+            <h2 className="font-display text-3xl text-[#2B2B2B] tracking-tight">Thank You for Your Order</h2>
           </div>
 
-          <p className="font-sans text-sm text-[#d1c5b4] leading-relaxed max-w-md">
-            Your wellness order has been created under code <strong className="font-mono text-[#C4A042]">#AV-{Math.floor(Math.random() * 89999 + 10000)}</strong>. Our team will confirm payment and delivery details by email: <strong className="text-[#C4A042]">{details.email}</strong>.
+          <p className="font-sans text-sm text-[#6B6B6B] leading-relaxed max-w-md">
+            Your wellness order has been created under code <strong className="font-mono text-[#C9A84C]">#AV-{Math.floor(Math.random() * 89999 + 10000)}</strong>. Our team will confirm payment and delivery details by email: <strong className="text-[#C9A84C]">{details.email}</strong>.
           </p>
 
-          <div className="w-full h-[1px] bg-[#C4A042]/30"></div>
+          <div className="w-full h-[1px] bg-[#C9A84C]/30"></div>
 
           <div className="flex flex-col gap-1 items-center">
-            <Heart className="w-5 h-5 text-red-400 fill-current animate-pulse" />
-            <span className="text-[10px] uppercase font-mono tracking-widest text-[#9a8f80]">May You Transcend Daily • Asra Vedha</span>
+            <Heart className="w-5 h-5 text-red-600 fill-current animate-pulse" />
+            <span className="text-[10px] uppercase font-mono tracking-widest text-[#8C8C8C]">May You Transcend Daily • Asra Vedha</span>
           </div>
 
           <button
             onClick={() => setView('home')}
-            className="mt-4 bg-[#C4A042] text-[#1A0F00] px-8 py-3 rounded text-xs uppercase tracking-widest font-sans font-bold hover:bg-[#d4b052] transition-colors cursor-pointer"
+            className="mt-4 bg-[#C9A84C] text-[#2B2B2B] px-8 py-3 rounded text-xs uppercase tracking-widest font-sans font-bold hover:bg-[#B8963C] transition-colors cursor-pointer"
           >
             Continue Shopping
           </button>
@@ -121,13 +121,13 @@ export default function CheckoutView({
           {/* Checkout Form Area - Left */}
           <form onSubmit={handleSubmit} className="lg:col-span-7 flex flex-col gap-8">
             {/* Contact Box */}
-            <div className="bg-[#3D2600] border border-[#C4A042]/30 rounded-xl p-6 flex flex-col gap-5">
-              <h2 className="text-sm font-sans uppercase font-bold text-[#C4A042] tracking-widest border-b border-[#C4A042]/20 pb-3">
+            <div className="bg-[#FFFFFF] border border-[#C9A84C]/30 rounded-xl p-6 flex flex-col gap-5">
+              <h2 className="text-sm font-sans uppercase font-bold text-[#C9A84C] tracking-widest border-b border-[#C9A84C]/20 pb-3">
                 1. Contact Details
               </h2>
               
               <div className="flex flex-col gap-1">
-                <label className="text-[11px] text-[#9a8f80] uppercase tracking-wider font-sans font-bold" htmlFor="checkout-email">
+                <label className="text-[11px] text-[#8C8C8C] uppercase tracking-wider font-sans font-bold" htmlFor="checkout-email">
                   Email Address *
                 </label>
                 <input
@@ -138,7 +138,7 @@ export default function CheckoutView({
                   disabled={loading}
                   onChange={(e) => setDetails({...details, email: e.target.value})}
                   placeholder="name@example.com"
-                  className="bg-[#1A0F00] border border-[#C4A042]/50 text-xs text-[#F5E4B0] px-4 py-3 rounded-lg focus:outline-none focus:border-[#C4A042]"
+                  className="bg-[#EDEDEC] border border-[#C9A84C]/50 text-xs text-[#2B2B2B] px-4 py-3 rounded-lg focus:outline-none focus:border-[#C9A84C]"
                 />
               </div>
 
@@ -149,22 +149,22 @@ export default function CheckoutView({
                   disabled={loading}
                   checked={details.newsletter}
                   onChange={(e) => setDetails({...details, newsletter: e.target.checked})}
-                  className="w-4 h-4 rounded border-[#C4A042]/60 text-[#C4A042] focus:ring-[#C4A042]/30"
+                  className="w-4 h-4 rounded border-[#C9A84C]/60 text-[#C9A84C] focus:ring-[#C9A84C]/30"
                 />
-                <label htmlFor="newsletter" className="text-xs text-[#d1c5b4] select-none cursor-pointer">
+                <label htmlFor="newsletter" className="text-xs text-[#6B6B6B] select-none cursor-pointer">
                   Subscribe to wellness updates, product launches, and offers.
                 </label>
               </div>
             </div>
 
             {/* Delivery Box */}
-            <div className="bg-[#3D2600] border border-[#C4A042]/30 rounded-xl p-6 flex flex-col gap-6">
-              <h2 className="text-sm font-sans uppercase font-bold text-[#C4A042] tracking-widest border-b border-[#C4A042]/20 pb-3">
+            <div className="bg-[#FFFFFF] border border-[#C9A84C]/30 rounded-xl p-6 flex flex-col gap-6">
+              <h2 className="text-sm font-sans uppercase font-bold text-[#C9A84C] tracking-widest border-b border-[#C9A84C]/20 pb-3">
                 2. Delivery Address
               </h2>
 
               <div className="flex flex-col gap-1">
-                <label className="text-[11px] text-[#9a8f80] uppercase tracking-wider font-sans font-bold" htmlFor="country-select">
+                <label className="text-[11px] text-[#8C8C8C] uppercase tracking-wider font-sans font-bold" htmlFor="country-select">
                   Country / Region *
                 </label>
                 <select
@@ -172,7 +172,7 @@ export default function CheckoutView({
                   disabled={loading}
                   value={details.country}
                   onChange={(e) => setDetails({...details, country: e.target.value})}
-                  className="bg-[#1A0F00] border border-[#C4A042]/50 text-xs text-[#F5E4B0] px-4 py-3 rounded-lg focus:outline-none focus:border-[#C4A042]"
+                  className="bg-[#EDEDEC] border border-[#C9A84C]/50 text-xs text-[#2B2B2B] px-4 py-3 rounded-lg focus:outline-none focus:border-[#C9A84C]"
                 >
                   <option value="India">India (Republic of India)</option>
                   <option value="United States">United States</option>
@@ -184,7 +184,7 @@ export default function CheckoutView({
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="flex flex-col gap-1">
-                  <label className="text-[11px] text-[#9a8f80] uppercase tracking-wider font-sans font-bold" htmlFor="first-name-input">
+                  <label className="text-[11px] text-[#8C8C8C] uppercase tracking-wider font-sans font-bold" htmlFor="first-name-input">
                     First Name *
                   </label>
                   <input
@@ -195,11 +195,11 @@ export default function CheckoutView({
                     value={details.firstName}
                     onChange={(e) => setDetails({...details, firstName: e.target.value})}
                     placeholder="Siddharth"
-                    className="bg-[#1A0F00] border border-[#C4A042]/50 text-xs text-[#F5E4B0] px-4 py-3 rounded-lg focus:outline-none focus:border-[#C4A042]"
+                    className="bg-[#EDEDEC] border border-[#C9A84C]/50 text-xs text-[#2B2B2B] px-4 py-3 rounded-lg focus:outline-none focus:border-[#C9A84C]"
                   />
                 </div>
                 <div className="flex flex-col gap-1">
-                  <label className="text-[11px] text-[#9a8f80] uppercase tracking-wider font-sans font-bold" htmlFor="last-name-input">
+                  <label className="text-[11px] text-[#8C8C8C] uppercase tracking-wider font-sans font-bold" htmlFor="last-name-input">
                     Last Name *
                   </label>
                   <input
@@ -210,13 +210,13 @@ export default function CheckoutView({
                     value={details.lastName}
                     onChange={(e) => setDetails({...details, lastName: e.target.value})}
                     placeholder="Varma"
-                    className="bg-[#1A0F00] border border-[#C4A042]/50 text-xs text-[#F5E4B0] px-4 py-3 rounded-lg focus:outline-none focus:border-[#C4A042]"
+                    className="bg-[#EDEDEC] border border-[#C9A84C]/50 text-xs text-[#2B2B2B] px-4 py-3 rounded-lg focus:outline-none focus:border-[#C9A84C]"
                   />
                 </div>
               </div>
 
               <div className="flex flex-col gap-1">
-                <label className="text-[11px] text-[#9a8f80] uppercase tracking-wider font-sans font-bold" htmlFor="address-input">
+                <label className="text-[11px] text-[#8C8C8C] uppercase tracking-wider font-sans font-bold" htmlFor="address-input">
                   Address Line 1 *
                 </label>
                 <input
@@ -227,12 +227,12 @@ export default function CheckoutView({
                   value={details.address}
                   onChange={(e) => setDetails({...details, address: e.target.value})}
                     placeholder="House no., street, area"
-                  className="bg-[#1A0F00] border border-[#C4A042]/50 text-xs text-[#F5E4B0] px-4 py-3 rounded-lg focus:outline-none focus:border-[#C4A042]"
+                  className="bg-[#EDEDEC] border border-[#C9A84C]/50 text-xs text-[#2B2B2B] px-4 py-3 rounded-lg focus:outline-none focus:border-[#C9A84C]"
                 />
               </div>
 
               <div className="flex flex-col gap-1">
-                <label className="text-[11px] text-[#9a8f80] uppercase tracking-wider font-sans font-bold" htmlFor="apartment-input">
+                <label className="text-[11px] text-[#8C8C8C] uppercase tracking-wider font-sans font-bold" htmlFor="apartment-input">
                   Apartment, Suite, Unit, etc. (Optional)
                 </label>
                 <input
@@ -242,13 +242,13 @@ export default function CheckoutView({
                   value={details.apartment}
                   onChange={(e) => setDetails({...details, apartment: e.target.value})}
                   placeholder="3rd Floor, Lotus Wing"
-                  className="bg-[#1A0F00] border border-[#C4A042]/50 text-xs text-[#F5E4B0] px-4 py-3 rounded-lg focus:outline-none focus:border-[#C4A042]"
+                  className="bg-[#EDEDEC] border border-[#C9A84C]/50 text-xs text-[#2B2B2B] px-4 py-3 rounded-lg focus:outline-none focus:border-[#C9A84C]"
                 />
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div className="flex flex-col gap-1">
-                  <label className="text-[11px] text-[#9a8f80] uppercase tracking-wider font-sans font-bold" htmlFor="city-input">
+                  <label className="text-[11px] text-[#8C8C8C] uppercase tracking-wider font-sans font-bold" htmlFor="city-input">
                     City *
                   </label>
                   <input
@@ -259,11 +259,11 @@ export default function CheckoutView({
                     value={details.city}
                     onChange={(e) => setDetails({...details, city: e.target.value})}
                     placeholder="New Delhi"
-                    className="bg-[#1A0F00] border border-[#C4A042]/50 text-xs text-[#F5E4B0] px-4 py-3 rounded-lg focus:outline-none focus:border-[#C4A042]"
+                    className="bg-[#EDEDEC] border border-[#C9A84C]/50 text-xs text-[#2B2B2B] px-4 py-3 rounded-lg focus:outline-none focus:border-[#C9A84C]"
                   />
                 </div>
                 <div className="flex flex-col gap-1">
-                  <label className="text-[11px] text-[#9a8f80] uppercase tracking-wider font-sans font-bold" htmlFor="state-input">
+                  <label className="text-[11px] text-[#8C8C8C] uppercase tracking-wider font-sans font-bold" htmlFor="state-input">
                     State / Province
                   </label>
                   <input
@@ -273,11 +273,11 @@ export default function CheckoutView({
                     value={details.state}
                     onChange={(e) => setDetails({...details, state: e.target.value})}
                     placeholder="Delhi NCT"
-                    className="bg-[#1A0F00] border border-[#C4A042]/50 text-xs text-[#F5E4B0] px-4 py-3 rounded-lg focus:outline-none focus:border-[#C4A042]"
+                    className="bg-[#EDEDEC] border border-[#C9A84C]/50 text-xs text-[#2B2B2B] px-4 py-3 rounded-lg focus:outline-none focus:border-[#C9A84C]"
                   />
                 </div>
                 <div className="flex flex-col gap-1">
-                  <label className="text-[11px] text-[#9a8f80] uppercase tracking-wider font-sans font-bold" htmlFor="zip-code-input">
+                  <label className="text-[11px] text-[#8C8C8C] uppercase tracking-wider font-sans font-bold" htmlFor="zip-code-input">
                     Zip / Postal Code *
                   </label>
                   <input
@@ -288,7 +288,7 @@ export default function CheckoutView({
                     value={details.zipCode}
                     onChange={(e) => setDetails({...details, zipCode: e.target.value})}
                     placeholder="110001"
-                    className="bg-[#1A0F00] border border-[#C4A042]/50 text-xs text-[#F5E4B0] px-4 py-3 rounded-lg focus:outline-none focus:border-[#C4A042]"
+                    className="bg-[#EDEDEC] border border-[#C9A84C]/50 text-xs text-[#2B2B2B] px-4 py-3 rounded-lg focus:outline-none focus:border-[#C9A84C]"
                   />
                 </div>
               </div>
@@ -298,7 +298,7 @@ export default function CheckoutView({
             <button
               type="submit"
               disabled={loading}
-              className="bg-[#C4A042] hover:bg-[#d4b052] text-[#1A0F00] px-6 py-4 rounded-xl text-xs uppercase tracking-widest font-sans font-bold transition-all flex items-center justify-center gap-3 disabled:opacity-50 cursor-pointer shadow-lg shadow-[#C4A042]/10"
+              className="bg-[#C9A84C] hover:bg-[#B8963C] text-[#2B2B2B] px-6 py-4 rounded-xl text-xs uppercase tracking-widest font-sans font-bold transition-all flex items-center justify-center gap-3 disabled:opacity-50 cursor-pointer shadow-lg shadow-[#C9A84C]/10"
             >
               {loading ? (
                 <>
@@ -315,25 +315,25 @@ export default function CheckoutView({
           </form>
 
           {/* Checkout Item Summary - Right */}
-          <div className="lg:col-span-5 bg-[#2D1A00] border border-[#C4A042]/40 rounded-xl p-6 flex flex-col gap-6">
-            <h2 className="text-xs font-sans uppercase font-bold text-[#C4A042] tracking-widest border-b border-[#C4A042]/20 pb-3">
+          <div className="lg:col-span-5 bg-[#E5E4E2] border border-[#C9A84C]/40 rounded-xl p-6 flex flex-col gap-6">
+            <h2 className="text-xs font-sans uppercase font-bold text-[#C9A84C] tracking-widest border-b border-[#C9A84C]/20 pb-3">
               Order Summary
             </h2>
 
             {/* Item listing */}
             <div className="flex flex-col gap-4 max-h-72 overflow-y-auto">
               {resolvedItems.map((item) => (
-                <div key={item.product?.id} className="flex gap-3 justify-between items-center border-b border-[#C4A042]/10 pb-3">
+                <div key={item.product?.id} className="flex gap-3 justify-between items-center border-b border-[#C9A84C]/10 pb-3">
                   <div className="flex gap-3 items-center">
-                    <div className="w-12 h-12 rounded bg-[#1A0F00] overflow-hidden flex-shrink-0 border border-[#C4A042]/20">
+                    <div className="w-12 h-12 rounded bg-[#EDEDEC] overflow-hidden flex-shrink-0 border border-[#C9A84C]/20">
                       <img src={item.product?.image} alt={item.product?.name} className="w-full h-full object-cover" />
                     </div>
                     <div>
-                      <h4 className="text-xs font-display text-[#F5E4B0] font-bold">{item.product?.name}</h4>
-                      <p className="text-[10px] text-[#9a8f80] font-mono mt-0.5">Quantity: {item.quantity}</p>
+                      <h4 className="text-xs font-display text-[#2B2B2B] font-bold">{item.product?.name}</h4>
+                      <p className="text-[10px] text-[#8C8C8C] font-mono mt-0.5">Quantity: {item.quantity}</p>
                     </div>
                   </div>
-                  <span className="text-xs font-mono font-bold text-[#C4A042]">
+                  <span className="text-xs font-mono font-bold text-[#C9A84C]">
                     {currency === 'INR' 
                       ? `₹${((item.priceDetails?.price || 0) * item.quantity).toLocaleString()}` 
                       : `$${((item.priceDetails?.price || 0) * item.quantity).toFixed(2)}`}
@@ -343,30 +343,30 @@ export default function CheckoutView({
             </div>
 
             {/* Total blocks */}
-            <div className="flex flex-col gap-3 font-sans text-xs text-[#d1c5b4] border-t border-[#C4A042]/20 pt-4">
+            <div className="flex flex-col gap-3 font-sans text-xs text-[#6B6B6B] border-t border-[#C9A84C]/20 pt-4">
               <div className="flex justify-between">
                 <span>Subtotal</span>
-                <span className="font-mono text-[#F5E4B0]">{formattedSubTotal}</span>
+                <span className="font-mono text-[#2B2B2B]">{formattedSubTotal}</span>
               </div>
               <div className="flex justify-between">
                 <span>Shipping</span>
-                <span className="font-mono text-emerald-400 font-semibold uppercase">Complimentary</span>
+                <span className="font-mono text-[#C9A84C] font-semibold uppercase">Complimentary</span>
               </div>
             </div>
 
-            <div className="h-[1px] bg-[#C4A042]/30"></div>
+            <div className="h-[1px] bg-[#C9A84C]/30"></div>
 
             <div className="flex justify-between items-baseline font-display text-lg">
-              <span className="text-[#F5E4B0]">Total</span>
-              <span className="font-mono font-bold text-[#C4A042]">{formattedSubTotal}</span>
+              <span className="text-[#2B2B2B]">Total</span>
+              <span className="font-mono font-bold text-[#C9A84C]">{formattedSubTotal}</span>
             </div>
 
-            <div className="bg-[#111]/80 rounded-xl p-4 flex flex-col gap-2 border border-[#24523a]/30">
-              <div className="flex items-center gap-2 text-emerald-400">
+            <div className="bg-[#111]/80 rounded-xl p-4 flex flex-col gap-2 border border-[#C9A84C]/30">
+              <div className="flex items-center gap-2 text-[#C9A84C]">
                 <ShieldCheck className="w-4 h-4" />
                 <span className="text-[10px] font-sans uppercase font-bold tracking-wider">Razorpay Secure Payment</span>
               </div>
-              <p className="text-[10px] text-[#9a8f80] leading-relaxed">
+              <p className="text-[10px] text-[#8C8C8C] leading-relaxed">
                 ASRA VEDHA checkout is prepared for Razorpay integration. Use test keys first, then switch to live keys on launch.
               </p>
             </div>
@@ -376,4 +376,7 @@ export default function CheckoutView({
     </div>
   );
 }
+
+
+
 

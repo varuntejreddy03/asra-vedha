@@ -90,7 +90,7 @@ export default function ProductDetailView({
       {/* Return link */}
       <button
         onClick={() => setView('shop')}
-        className="flex items-center gap-2 text-xs text-[#C4A042] hover:text-[#d4b052] uppercase tracking-wider font-sans font-bold cursor-pointer mb-12 self-start"
+        className="flex items-center gap-2 text-xs text-[#C9A84C] hover:text-[#B8963C] uppercase tracking-wider font-sans font-bold cursor-pointer mb-12 self-start"
       >
         <ArrowLeft className="w-4 h-4" />
         Back to Products
@@ -101,7 +101,7 @@ export default function ProductDetailView({
         {/* Left column (Image & Quality Certificates) */}
         <div className="lg:col-span-6 flex flex-col gap-8">
           <motion.div 
-            className="aspect-[4/5] w-full rounded-2xl overflow-hidden border border-[#C4A042]/40 bg-[#3D2600] relative gold-glow"
+            className="aspect-[4/5] w-full rounded-2xl overflow-hidden border border-[#C9A84C]/40 bg-[#FFFFFF] relative gold-glow"
             layoutId={`shop-card-${product.id}`}
           >
             <img
@@ -111,25 +111,25 @@ export default function ProductDetailView({
               referrerPolicy="no-referrer"
             />
             
-            <div className="absolute top-6 left-6 bg-[#1A0F00]/80 backdrop-blur-md border border-[#C4A042]/30 text-[#C4A042] text-[10px] font-mono tracking-widest px-3 py-1.5 rounded-full uppercase">
+            <div className="absolute top-6 left-6 bg-[#EDEDEC]/80 backdrop-blur-md border border-[#C9A84C]/30 text-[#C9A84C] text-[10px] font-mono tracking-widest px-3 py-1.5 rounded-full uppercase">
               {product.scientificBadge || 'Raw Purity'}
             </div>
           </motion.div>
 
           {/* Clinical Credentials Frame */}
-          <div className="bg-[#2D1A00] border border-[#C4A042]/30 rounded-xl p-6 flex flex-col gap-4">
-            <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-[#C4A042] font-bold">
+          <div className="bg-[#E5E4E2] border border-[#C9A84C]/30 rounded-xl p-6 flex flex-col gap-4">
+            <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-[#C9A84C] font-bold">
               Laboratory Assayed Authenticity
             </span>
             <div className="grid grid-cols-2 gap-4">
               {product.qualityTesting.badges.map((badge, idx) => (
                 <div key={idx} className="flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4 text-[#24523a]" />
-                  <span className="text-xs text-[#d1c5b4] font-sans font-semibold">{badge}</span>
+                  <ShieldCheck className="w-4 h-4 text-[#C9A84C]" />
+                  <span className="text-xs text-[#6B6B6B] font-sans font-semibold">{badge}</span>
                 </div>
               ))}
             </div>
-            <p className="text-xs text-[#9a8f80] leading-relaxed border-t border-[#C4A042]/30 pt-3 mt-1">
+            <p className="text-xs text-[#8C8C8C] leading-relaxed border-t border-[#C9A84C]/30 pt-3 mt-1">
               {product.qualityTesting.description}
             </p>
           </div>
@@ -140,62 +140,62 @@ export default function ProductDetailView({
           <div className="flex flex-col gap-2">
             <div className="flex flex-wrap items-center gap-3">
               {product.isOrganic && (
-                <span className="bg-[#24523a]/40 text-[#a0d2b3] border border-[#a0d2b3]/20 text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded">
+                <span className="bg-[#C9A84C]/40 text-[#C9A84C] border border-[#C9A84C]/20 text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded">
                   Organic
                 </span>
               )}
-              <div className="flex items-center gap-1 text-[#C4A042]">
+              <div className="flex items-center gap-1 text-[#C9A84C]">
                 <Star className="w-3.5 h-3.5 fill-current" />
                 <Star className="w-3.5 h-3.5 fill-current" />
                 <Star className="w-3.5 h-3.5 fill-current" />
                 <Star className="w-3.5 h-3.5 fill-current" />
                 <Star className="w-3.5 h-3.5 fill-current" />
-                <span className="text-[10px] text-[#9a8f80] font-mono ml-1">4.9 (248 reviews)</span>
+                <span className="text-[10px] text-[#8C8C8C] font-mono ml-1">4.9 (248 reviews)</span>
               </div>
             </div>
 
-            <h1 className="font-display text-3xl md:text-4xl text-[#F5E4B0] tracking-tight mt-1">
+            <h1 className="font-display text-3xl md:text-4xl text-[#2B2B2B] tracking-tight mt-1">
               {product.name}
             </h1>
             
-            <p className="font-sans text-sm italic text-[#C4A042] tracking-wide">
+            <p className="font-sans text-sm italic text-[#C9A84C] tracking-wide">
               {product.subheading}
             </p>
           </div>
 
-          <div className="text-3xl font-display font-medium text-[#C4A042] border-y border-[#C4A042]/20 py-4 font-mono">
+          <div className="text-3xl font-display font-medium text-[#C9A84C] border-y border-[#C9A84C]/20 py-4 font-mono">
             {priceData.formatted}
           </div>
 
-          <p className="font-sans text-sm text-[#d1c5b4] leading-relaxed">
+          <p className="font-sans text-sm text-[#6B6B6B] leading-relaxed">
             {product.description}
           </p>
 
           {/* Interactive Quantity Selection */}
           <div className="flex flex-col gap-3 mt-2">
-            <span className="text-xs text-[#9a8f80] font-sans uppercase tracking-widest">Select Quantity</span>
+            <span className="text-xs text-[#8C8C8C] font-sans uppercase tracking-widest">Select Quantity</span>
             <div className="flex items-center gap-6">
-              <div className="flex items-center bg-[#2D1A00] border border-[#C4A042]/60 rounded-lg p-1">
+              <div className="flex items-center bg-[#E5E4E2] border border-[#C9A84C]/60 rounded-lg p-1">
                 <button
                   onClick={() => handleQtyChange(-1)}
-                  className="p-2 hover:text-[#C4A042] transition-colors cursor-pointer text-[#d1c5b4]"
+                  className="p-2 hover:text-[#C9A84C] transition-colors cursor-pointer text-[#6B6B6B]"
                   aria-label="Decrease discount"
                 >
                   <Minus className="w-3.5 h-3.5" />
                 </button>
-                <span className="w-10 text-center font-mono text-sm text-[#F5E4B0] font-semibold select-none">
+                <span className="w-10 text-center font-mono text-sm text-[#2B2B2B] font-semibold select-none">
                   {quantity}
                 </span>
                 <button
                   onClick={() => handleQtyChange(1)}
-                  className="p-2 hover:text-[#C4A042] transition-colors cursor-pointer text-[#d1c5b4]"
+                  className="p-2 hover:text-[#C9A84C] transition-colors cursor-pointer text-[#6B6B6B]"
                   aria-label="Increase discount"
                 >
                   <Plus className="w-3.5 h-3.5" />
                 </button>
               </div>
 
-              <span className="text-xs font-mono text-[#9a8f80]">
+              <span className="text-xs font-mono text-[#8C8C8C]">
                 Weight: {product.category === 'herbal-powders' || product.category === 'superfoods' ? '100g Standard Pack' : 'Standard Pack'}
               </span>
             </div>
@@ -207,13 +207,13 @@ export default function ProductDetailView({
               onClick={() => {
                 addToCart(product.id, quantity);
               }}
-              className="border border-[#C4A042] text-[#C4A042] hover:bg-[#C4A042]/10 px-6 py-4 rounded text-xs uppercase tracking-widest font-sans font-bold transition-all cursor-pointer text-center"
+              className="border border-[#C9A84C] text-[#C9A84C] hover:bg-[#C9A84C]/10 px-6 py-4 rounded text-xs uppercase tracking-widest font-sans font-bold transition-all cursor-pointer text-center"
             >
               Add To Cart
             </button>
             <button
               onClick={() => onInstantBuy(product.id, quantity)}
-              className="bg-[#C4A042] hover:bg-[#d4b052] text-[#1A0F00] px-6 py-4 rounded text-xs uppercase tracking-widest font-sans font-bold transition-colors cursor-pointer text-center gold-glow"
+              className="bg-[#C9A84C] hover:bg-[#B8963C] text-[#2B2B2B] px-6 py-4 rounded text-xs uppercase tracking-widest font-sans font-bold transition-colors cursor-pointer text-center gold-glow"
             >
               Buy Now
             </button>
@@ -223,18 +223,18 @@ export default function ProductDetailView({
           <div className="mt-4">
             <button
               onClick={() => setChatOpen(!chatOpen)}
-              className="w-full bg-[#2D1A00] border border-[#C4A042]/20 hover:border-[#C4A042]/50 rounded-xl p-4 flex items-center justify-between transition-all cursor-pointer text-left group"
+              className="w-full bg-[#E5E4E2] border border-[#C9A84C]/20 hover:border-[#C9A84C]/50 rounded-xl p-4 flex items-center justify-between transition-all cursor-pointer text-left group"
             >
               <div className="flex items-center gap-3">
-                <div className="p-2.5 rounded-lg bg-[#24523a]/40 text-[#a0d2b3]">
+                <div className="p-2.5 rounded-lg bg-[#C9A84C]/40 text-[#C9A84C]">
                   <MessageSquare className="w-5 h-5 animate-bounce" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold text-[#F5E4B0] uppercase tracking-wider">Consult Botanical Advisor</h4>
-                  <p className="text-[11px] text-[#9a8f80] mt-0.5">Ask about ingredients, timing, and responsible use.</p>
+                  <h4 className="text-xs font-bold text-[#2B2B2B] uppercase tracking-wider">Consult Botanical Advisor</h4>
+                  <p className="text-[11px] text-[#8C8C8C] mt-0.5">Ask about ingredients, timing, and responsible use.</p>
                 </div>
               </div>
-              <span className="text-xs font-bold text-[#C4A042] group-hover:underline uppercase tracking-wider">
+              <span className="text-xs font-bold text-[#C9A84C] group-hover:underline uppercase tracking-wider">
                 {chatOpen ? 'Minimize' : 'Ask Now'}
               </span>
             </button>
@@ -244,15 +244,15 @@ export default function ProductDetailView({
               <motion.div 
                 initial={{ opacity: 0, height: 0 }}
                 animate={{ opacity: 1, height: 'auto' }}
-                className="mt-3 bg-[#0d0d0c] border border-[#24523a]/40 rounded-xl p-4 flex flex-col gap-4 overflow-hidden"
+                className="mt-3 bg-[#E5E4E2] border border-[#C9A84C]/40 rounded-xl p-4 flex flex-col gap-4 overflow-hidden"
               >
                 {/* Simulated WhatsApp Header */}
-                <div className="flex items-center justify-between border-b border-[#C4A042]/20 pb-3">
+                <div className="flex items-center justify-between border-b border-[#C9A84C]/20 pb-3">
                   <div className="flex items-center gap-2">
-                    <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></div>
-                    <span className="text-xs font-mono font-bold tracking-wider text-[#a0d2b3] uppercase">WhatsApp Clinician Interface</span>
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#C9A84C]/500 animate-pulse"></div>
+                    <span className="text-xs font-mono font-bold tracking-wider text-[#C9A84C] uppercase">WhatsApp Clinician Interface</span>
                   </div>
-                  <span className="text-[9px] font-mono text-[#9a8f80]">Encryption: Active SSL</span>
+                  <span className="text-[9px] font-mono text-[#8C8C8C]">Encryption: Active SSL</span>
                 </div>
 
                 {/* Message Log */}
@@ -262,35 +262,35 @@ export default function ProductDetailView({
                       key={idx}
                       className={`flex flex-col max-w-[85%] rounded-xl p-3 text-xs leading-relaxed ${
                         log.sender === 'user' 
-                          ? 'bg-[#2D1A00] border border-[#C4A042]/30 text-[#F5E4B0] self-end' 
-                          : 'bg-[#24523a]/15 border border-[#24523a]/40 text-[#d1c5b4] self-start'
+                          ? 'bg-[#E5E4E2] border border-[#C9A84C]/30 text-[#2B2B2B] self-end' 
+                          : 'bg-[#C9A84C]/15 border border-[#C9A84C]/40 text-[#6B6B6B] self-start'
                       }`}
                     >
                       <p>{log.text}</p>
-                      <span className="text-[9px] text-[#9a8f80] mt-1 self-end font-mono">{log.time}</span>
+                      <span className="text-[9px] text-[#8C8C8C] mt-1 self-end font-mono">{log.time}</span>
                     </div>
                   ))}
 
                   {aiTyping && (
-                    <div className="bg-[#24523a]/15 border border-[#24523a]/40 rounded-xl p-3 text-xs text-[#9a8f80] self-start animate-pulse italic">
+                    <div className="bg-[#C9A84C]/15 border border-[#C9A84C]/40 rounded-xl p-3 text-xs text-[#8C8C8C] self-start animate-pulse italic">
                       Clinician is reading historical texts...
                     </div>
                   )}
                 </div>
 
                 {/* Input form */}
-                <form onSubmit={submitChat} className="flex gap-2 border-t border-[#C4A042]/20 pt-3">
+                <form onSubmit={submitChat} className="flex gap-2 border-t border-[#C9A84C]/20 pt-3">
                   <input
                     type="text"
                     value={userMsg}
                     onChange={(e) => setUserMsg(e.target.value)}
                     placeholder="Ask about ideal times, dosages, side benefits..."
-                    className="flex-grow bg-[#141413] border border-[#C4A042]/60 text-xs rounded-lg px-3 py-2 text-[#F5E4B0] focus:outline-none focus:border-[#C4A042]"
+                    className="flex-grow bg-[#141413] border border-[#C9A84C]/60 text-xs rounded-lg px-3 py-2 text-[#2B2B2B] focus:outline-none focus:border-[#C9A84C]"
                   />
                   <button
                     type="submit"
                     disabled={aiTyping}
-                    className="bg-[#24523a] text-[#a0d2b3] font-sans font-bold text-xs uppercase px-4 py-2 rounded-lg hover:bg-[#2e6447] transition-all disabled:opacity-50 cursor-pointer"
+                    className="bg-[#C9A84C] text-[#C9A84C] font-sans font-bold text-xs uppercase px-4 py-2 rounded-lg hover:bg-[#B8963C] transition-all disabled:opacity-50 cursor-pointer"
                   >
                     Send
                   </button>
@@ -300,16 +300,16 @@ export default function ProductDetailView({
           </div>
 
           {/* Tab Accordion Details */}
-          <div className="border border-[#C4A042]/30 rounded-xl overflow-hidden mt-4">
-            <div className="flex border-b border-[#C4A042]/30 bg-[#2D1A00]">
+          <div className="border border-[#C9A84C]/30 rounded-xl overflow-hidden mt-4">
+            <div className="flex border-b border-[#C9A84C]/30 bg-[#E5E4E2]">
               {(['benefits', 'ingredients', 'quality'] as ActiveTab[]).map((tab) => (
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
                   className={`flex-1 py-3 text-xs font-sans uppercase tracking-widest font-bold border-b-2 transition-all cursor-pointer ${
                     activeTab === tab
-                      ? 'text-[#C4A042] border--[#C4A042] bg-[#3D2600]'
-                      : 'text-[#9a8f80] border-transparent hover:text-[#C4A042]'
+                      ? 'text-[#C9A84C] border--[#C9A84C] bg-[#FFFFFF]'
+                      : 'text-[#8C8C8C] border-transparent hover:text-[#C9A84C]'
                   }`}
                 >
                   {tab === 'benefits' ? 'The Benefits' : tab === 'ingredients' ? 'Ingredients' : 'Testing Log'}
@@ -317,7 +317,7 @@ export default function ProductDetailView({
               ))}
             </div>
 
-            <div className="p-6 bg-[#3D2600]">
+            <div className="p-6 bg-[#FFFFFF]">
               <AnimatePresence mode="wait">
                 {activeTab === 'benefits' && (
                   <motion.div
@@ -329,12 +329,12 @@ export default function ProductDetailView({
                   >
                     {product.benefits.map((benefit, i) => (
                       <div key={i} className="flex gap-3 items-start">
-                        <div className="p-1.5 rounded bg-[#C4A042]/10 text-[#C4A042] mt-0.5">
-                          <CheckCircle className="w-3.5 h-3.5 text-[#C4A042]" />
+                        <div className="p-1.5 rounded bg-[#C9A84C]/10 text-[#C9A84C] mt-0.5">
+                          <CheckCircle className="w-3.5 h-3.5 text-[#C9A84C]" />
                         </div>
                         <div>
-                          <h4 className="text-xs font-bold text-[#F5E4B0] uppercase tracking-wider">{benefit.title}</h4>
-                          <p className="text-xs text-[#9a8f80] mt-1 leading-relaxed">{benefit.description}</p>
+                          <h4 className="text-xs font-bold text-[#2B2B2B] uppercase tracking-wider">{benefit.title}</h4>
+                          <p className="text-xs text-[#8C8C8C] mt-1 leading-relaxed">{benefit.description}</p>
                         </div>
                       </div>
                     ))}
@@ -349,10 +349,10 @@ export default function ProductDetailView({
                     exit={{ opacity: 0 }}
                     className="flex flex-col gap-2"
                   >
-                    <div className="text-xs font-mono font-bold text-[#C4A042] uppercase">Active Formula</div>
-                    <p className="text-xs font-sans text-[#F5E4B0] font-semibold">{product.ingredients}</p>
-                    <div className="w-full h-[1px] bg-[#C4A042]/20 my-2"></div>
-                    <p className="text-xs text-[#9a8f80] leading-relaxed">{product.ingredientsDetail}</p>
+                    <div className="text-xs font-mono font-bold text-[#C9A84C] uppercase">Active Formula</div>
+                    <p className="text-xs font-sans text-[#2B2B2B] font-semibold">{product.ingredients}</p>
+                    <div className="w-full h-[1px] bg-[#C9A84C]/20 my-2"></div>
+                    <p className="text-xs text-[#8C8C8C] leading-relaxed">{product.ingredientsDetail}</p>
                   </motion.div>
                 )}
 
@@ -365,10 +365,10 @@ export default function ProductDetailView({
                     className="flex flex-col gap-3"
                   >
                     <div className="flex flex-wrap gap-2">
-                      <span className="bg-[#1A0F00] px-2.5 py-1 text-[9px] font-mono text-[#a0d2b3] border border-[#a0d2b3]/20 rounded uppercase">Certificate of Analysis: #AV-2026-X</span>
-                      <span className="bg-[#1A0F00] px-2.5 py-1 text-[9px] font-mono text-[#C4A042] border border-[#C4A042]/20 rounded uppercase">Standard HPLC HPLC Grade</span>
+                      <span className="bg-[#EDEDEC] px-2.5 py-1 text-[9px] font-mono text-[#C9A84C] border border-[#C9A84C]/20 rounded uppercase">Certificate of Analysis: #AV-2026-X</span>
+                      <span className="bg-[#EDEDEC] px-2.5 py-1 text-[9px] font-mono text-[#C9A84C] border border-[#C9A84C]/20 rounded uppercase">Standard HPLC HPLC Grade</span>
                     </div>
-                    <p className="text-xs text-[#d1c5b4] leading-relaxed">
+                    <p className="text-xs text-[#6B6B6B] leading-relaxed">
                       Assayed completely by independent certified third-party testing centers. Results guarantee absence of heavy metals down to 0.001 parts per billion, with zero synthetic fillers, talcs, or moisture accelerators.
                     </p>
                   </motion.div>
@@ -380,8 +380,8 @@ export default function ProductDetailView({
       </div>
 
       {/* Companion Rituals Recommendations */}
-      <section className="mt-24 border-t border-[#C4A042]/30 pt-16 mb-12">
-        <h3 className="font-display text-2xl text-[#F5E4B0] mb-8 tracking-tight text-center">Related Wellness Products</h3>
+      <section className="mt-24 border-t border-[#C9A84C]/30 pt-16 mb-12">
+        <h3 className="font-display text-2xl text-[#2B2B2B] mb-8 tracking-tight text-center">Related Wellness Products</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto w-full">
           {companionProducts.map((companion) => {
             const compPrice = getPrice(companion, currency);
@@ -397,15 +397,15 @@ export default function ProductDetailView({
                     window.dispatchEvent(clickEvent);
                   }, 100);
                 }}
-                className="bg-[#2D1A00] border border-[#C4A042]/20 rounded-xl p-4 flex gap-4 hover:border-[#C4A042]/40 transition-all cursor-pointer group"
+                className="bg-[#E5E4E2] border border-[#C9A84C]/20 rounded-xl p-4 flex gap-4 hover:border-[#C9A84C]/40 transition-all cursor-pointer group"
               >
-                <div className="w-20 h-20 rounded-lg overflow-hidden bg-[#1A0F00]">
+                <div className="w-20 h-20 rounded-lg overflow-hidden bg-[#EDEDEC]">
                   <img src={companion.image} alt={companion.name} className="w-full h-full object-cover group-hover:scale-104 transition-transform" />
                 </div>
                 <div className="flex flex-col justify-center flex-grow">
-                  <h4 className="text-sm font-display text-[#F5E4B0] group-hover:text-[#C4A042] transition-colors font-semibold">{companion.name}</h4>
-                  <p className="text-xs text-[#9a8f80] mt-0.5 line-clamp-1">{companion.subheading}</p>
-                  <span className="text-xs font-mono text-[#C4A042] mt-1">{compPrice.formatted}</span>
+                  <h4 className="text-sm font-display text-[#2B2B2B] group-hover:text-[#C9A84C] transition-colors font-semibold">{companion.name}</h4>
+                  <p className="text-xs text-[#8C8C8C] mt-0.5 line-clamp-1">{companion.subheading}</p>
+                  <span className="text-xs font-mono text-[#C9A84C] mt-1">{compPrice.formatted}</span>
                 </div>
               </div>
             );
@@ -415,4 +415,7 @@ export default function ProductDetailView({
     </div>
   );
 }
+
+
+
 

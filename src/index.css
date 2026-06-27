@@ -77,8 +77,8 @@
 }
 
 body {
-  background-color: #1A0F00;
-  color: #F5E4B0;
+  background-color: #EDEDEC;
+  color: #2B2B2B;
   font-family: 'DM Sans', sans-serif;
   overflow-x: hidden;
   scroll-behavior: smooth;
@@ -106,7 +106,7 @@ body {
   width: 600px;
   height: 600px;
   transform: translate(-50%, -50%);
-  background: radial-gradient(circle, rgba(196,160,66,0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 70%);
   animation: glow-pulse 4s ease-in-out infinite;
   pointer-events: none;
   z-index: 0;
@@ -123,12 +123,12 @@ body {
   position: absolute;
   inset: 0;
   background-image:
-    radial-gradient(1.5px 1.5px at 15% 25%, rgba(196,160,66,0.4) 0%, transparent 100%),
-    radial-gradient(1px 1px at 55% 65%, rgba(196,160,66,0.3) 0%, transparent 100%),
-    radial-gradient(2px 2px at 75% 15%, rgba(196,160,66,0.35) 0%, transparent 100%),
-    radial-gradient(1px 1px at 35% 85%, rgba(196,160,66,0.25) 0%, transparent 100%),
-    radial-gradient(1.5px 1.5px at 85% 45%, rgba(196,160,66,0.3) 0%, transparent 100%),
-    radial-gradient(1px 1px at 5% 55%, rgba(196,160,66,0.2) 0%, transparent 100%);
+    radial-gradient(1.5px 1.5px at 15% 25%, rgba(201,168,76,0.2) 0%, transparent 100%),
+    radial-gradient(1px 1px at 55% 65%, rgba(201,168,76,0.15) 0%, transparent 100%),
+    radial-gradient(2px 2px at 75% 15%, rgba(201,168,76,0.18) 0%, transparent 100%),
+    radial-gradient(1px 1px at 35% 85%, rgba(201,168,76,0.12) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 85% 45%, rgba(201,168,76,0.15) 0%, transparent 100%),
+    radial-gradient(1px 1px at 5% 55%, rgba(201,168,76,0.1) 0%, transparent 100%);
   animation: float-particles 25s linear infinite;
   pointer-events: none;
   z-index: 0;
@@ -161,7 +161,7 @@ body {
 
 /* Shimmer load states */
 .shimmer-bg {
-  background: #2D1A00;
+  background: #E5E4E2;
   position: relative;
   overflow: hidden;
 }
