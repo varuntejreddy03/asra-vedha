@@ -124,3 +124,5 @@ export default function SearchOverlay({ isOpen, onClose, onSelectProduct, catalo
 
 
 
+
+

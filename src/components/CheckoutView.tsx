@@ -367,7 +367,7 @@ export default function CheckoutView({
                 <span className="text-[10px] font-sans uppercase font-bold tracking-wider">Razorpay Secure Payment</span>
               </div>
               <p className="text-[10px] text-[rgba(0,0,0,0.38)] leading-relaxed">
-                ASRA VEDHA checkout is prepared for Razorpay integration. Use test keys first, then switch to live keys on launch.
+                Asra Vedha checkout is prepared for Razorpay integration. Use test keys first, then switch to live keys on launch.
               </p>
             </div>
           </div>
@@ -376,6 +376,8 @@ export default function CheckoutView({
     </div>
   );
 }
+
+
 
 
 

@@ -202,7 +202,7 @@ export default function ShopView({
                           <h3 className="font-display text-lg text-[rgba(0,0,0,0.87)] group-hover:text-[#C9A84C] transition-colors leading-tight">
                             {product.name}
                           </h3>
-                          <span className="font-mono text-sm font-semibold text-[#C9A84C]">
+                          <span className="font-mono text-sm font-semibold text-[rgba(0,0,0,0.87)]">
                             {priceData.formatted}
                           </span>
                         </div>
@@ -280,6 +280,8 @@ export default function ShopView({
     </div>
   );
 }
+
+
 
 
 

@@ -176,7 +176,7 @@ export default function AdminView() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[rgba(0,0,0,0.06)] pb-8">
           <div>
             <span className="font-sans text-xs tracking-[0.22em] uppercase text-[#C9A84C] font-bold">Admin Panel</span>
-            <h1 className="font-display text-4xl md:text-5xl text-[rgba(0,0,0,0.87)] mt-3">ASRA VEDHA Operations</h1>
+            <h1 className="font-display text-4xl md:text-5xl text-[rgba(0,0,0,0.87)] mt-3">Asra Vedha Operations</h1>
           </div>
           <button
             onClick={loadAdminData}
@@ -378,6 +378,8 @@ function SimpleRows({ rows, columns, empty }: { rows: any[]; columns: string[]; 
     </div>
   );
 }
+
+
 
 
 

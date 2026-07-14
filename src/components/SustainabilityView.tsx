@@ -58,7 +58,7 @@ export default function SustainabilityView({ setView }: SustainabilityViewProps)
               Rooted in Responsibility
             </h1>
             <p className="font-sans text-base md:text-lg text-[rgba(0,0,0,0.58)] leading-relaxed max-w-2xl mt-5">
-              ASRA VEDHA is building a wellness brand that respects farms, ingredients, packaging, and the people who choose natural nutrition every day.
+              Asra Vedha is building a wellness brand that respects farms, ingredients, packaging, and the people who choose natural nutrition every day.
             </p>
           </motion.div>
 
@@ -122,7 +122,7 @@ export default function SustainabilityView({ setView }: SustainabilityViewProps)
               Better products begin with better relationships.
             </h2>
             <p className="font-sans text-sm md:text-base text-[rgba(0,0,0,0.58)] leading-relaxed mt-6">
-              As ASRA VEDHA grows, the sourcing system should make farmer and supplier relationships visible. This means product records, batch traceability, and honest stories about where key ingredients come from.
+              As Asra Vedha grows, the sourcing system should make farmer and supplier relationships visible. This means product records, batch traceability, and honest stories about where key ingredients come from.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
               {[
@@ -161,7 +161,7 @@ export default function SustainabilityView({ setView }: SustainabilityViewProps)
           <div>
             <Boxes className="w-7 h-7 text-[#C9A84C] mb-5" />
             <h2 className="font-display text-3xl text-[rgba(0,0,0,0.87)]">Partner with a responsible wellness brand.</h2>
-            <p className="font-sans text-sm text-[rgba(0,0,0,0.58)] mt-2">Distributor and export conversations can start with the ASRA VEDHA team.</p>
+            <p className="font-sans text-sm text-[rgba(0,0,0,0.58)] mt-2">Distributor and export conversations can start with the Asra Vedha team.</p>
           </div>
           <button
             onClick={() => setView('contact')}
@@ -175,6 +175,8 @@ export default function SustainabilityView({ setView }: SustainabilityViewProps)
     </div>
   );
 }
+
+
 
 
 

@@ -30,7 +30,7 @@ export default function ProductDetailView({
   const [chatLogs, setChatLogs] = useState<{ sender: 'user' | 'ai'; text: string; time: string }[]>([
     { 
       sender: 'ai', 
-      text: `Greetings from ASRA VEDHA. I am your botanical advisor. Ask me anything about the benefits, ingredients, or suggested use of ${product.name}.`, 
+      text: `Greetings from Asra Vedha. I am your botanical advisor. Ask me anything about the benefits, ingredients, or suggested use of ${product.name}.`, 
       time: 'Just now' 
     }
   ]);
@@ -415,6 +415,8 @@ export default function ProductDetailView({
     </div>
   );
 }
+
+
 
 
 

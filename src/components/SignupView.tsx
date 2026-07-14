@@ -29,13 +29,13 @@ export default function SignupView({ setView, onGoogleLogin }: SignupViewProps) 
             <span className="w-10 h-10 rounded-full border border-[#C9A84C]/40 bg-[#EDEDEC] flex items-center justify-center">
               <Leaf className="w-5 h-5" />
             </span>
-            <span className="font-display text-2xl tracking-[0.14em] uppercase">ASRA VEDHA</span>
+            <span className="font-display text-2xl tracking-[0.14em] uppercase">Asra Vedha</span>
           </button>
 
           <div className="text-center mt-8">
             <h1 className="font-display text-4xl text-[rgba(0,0,0,0.87)]">Create Your Account</h1>
             <p className="font-sans text-sm text-[rgba(0,0,0,0.38)] mt-2">
-              Google creates your ASRA VEDHA account securely in one step.
+              Google creates your Asra Vedha account securely in one step.
             </p>
           </div>
 
@@ -67,6 +67,8 @@ export default function SignupView({ setView, onGoogleLogin }: SignupViewProps) 
     </div>
   );
 }
+
+
 
 
 

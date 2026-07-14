@@ -49,11 +49,11 @@ export default function Footer({ setView, onLinkDialog }: FooterProps) {
               className="flex items-center gap-3 text-left text-[#C9A84C] hover:text-[#B8963C] transition-colors cursor-pointer"
               onClick={() => goToView('home')}
             >
-              <img src={logo} alt="ASRA VEDHA" className="h-10 w-auto" />
-              <span className="font-display text-2xl tracking-[0.12em] uppercase text-[#F0F0EF]">ASRA VEDHA</span>
+              <img src={logo} alt="Asra Vedha" className="h-10 w-auto" />
+              <span className="font-serif text-2xl tracking-normal italic text-[#F0F0EF] font-semibold">Asra Vedha</span>
             </button>
             <div>
-              <p className="font-sans text-sm font-semibold text-[#F0F0EF]">ASRA VEDHA WELLNESS PVT LTD</p>
+              <p className="font-sans text-sm font-semibold text-[#F0F0EF]">Asra Vedha WELLNESS PVT LTD</p>
               <p className="font-sans text-xs text-[#C9A84C] mt-2">Rooted in Nature, Crafted for Wellness</p>
             </div>
             <p className="font-sans text-sm text-[#A0A0A0] leading-relaxed">
@@ -70,14 +70,14 @@ export default function Footer({ setView, onLinkDialog }: FooterProps) {
                 <Instagram className="w-4 h-4" />
               </a>
               <button
-                onClick={() => showInfo('Facebook', 'Facebook page placeholder. Add the official ASRA VEDHA Facebook URL before launch.')}
+                onClick={() => showInfo('Facebook', 'Facebook page placeholder. Add the official Asra Vedha Facebook URL before launch.')}
                 className="w-9 h-9 rounded-full border border-[#C9A84C]/50 text-[#C9A84C] hover:border-[#C9A84C] hover:bg-[#C9A84C]/10 flex items-center justify-center transition-colors cursor-pointer"
                 aria-label="Facebook"
               >
                 <Facebook className="w-4 h-4" />
               </button>
               <button
-                onClick={() => showInfo('LinkedIn', 'LinkedIn page placeholder. Add the official ASRA VEDHA LinkedIn URL before launch.')}
+                onClick={() => showInfo('LinkedIn', 'LinkedIn page placeholder. Add the official Asra Vedha LinkedIn URL before launch.')}
                 className="w-9 h-9 rounded-full border border-[#C9A84C]/50 text-[#C9A84C] hover:border-[#C9A84C] hover:bg-[#C9A84C]/10 flex items-center justify-center transition-colors cursor-pointer"
                 aria-label="LinkedIn"
               >
@@ -119,9 +119,9 @@ export default function Footer({ setView, onLinkDialog }: FooterProps) {
           <div>
             <h3 className="font-sans text-xs uppercase tracking-[0.18em] text-[#C9A84C] font-bold mb-5">Contact</h3>
             <div className="flex flex-col gap-4 font-sans text-sm text-[#A0A0A0]">
-              <a href="tel:+917989255841" className="flex gap-3 hover:text-[#C9A84C] transition-colors">
+              <a href="tel:+917989255849" className="flex gap-3 hover:text-[#C9A84C] transition-colors">
                 <Phone className="w-4 h-4 text-[#C9A84C] shrink-0 mt-0.5" />
-                <span>7989255841</span>
+                <span>7989255849</span>
               </a>
               <a href="mailto:asravedha@gmail.com" className="flex gap-3 hover:text-[#C9A84C] transition-colors">
                 <Mail className="w-4 h-4 text-[#C9A84C] shrink-0 mt-0.5" />
@@ -142,9 +142,9 @@ export default function Footer({ setView, onLinkDialog }: FooterProps) {
         </div>
 
         <div className="relative max-w-7xl mx-auto mt-14 pt-6 border-t border-[#C9A84C]/30 flex flex-col md:flex-row gap-4 justify-between items-center text-[11px] text-[#8C8C8C] font-sans">
-          <p>© 2024 ASRA VEDHA WELLNESS PVT LTD. All rights reserved.</p>
+          <p>© 2024 Asra Vedha WELLNESS PVT LTD. All rights reserved.</p>
           <div className="flex flex-wrap justify-center gap-5">
-            <button onClick={() => showInfo('Privacy Policy', 'ASRA VEDHA protects customer data and uses it only for order, support, and account-related communication.')} className="hover:text-[#C9A84C] transition-colors cursor-pointer">Privacy Policy</button>
+            <button onClick={() => showInfo('Privacy Policy', 'Asra Vedha protects customer data and uses it only for order, support, and account-related communication.')} className="hover:text-[#C9A84C] transition-colors cursor-pointer">Privacy Policy</button>
             <button onClick={() => showInfo('Terms & Conditions', 'Use of this website is subject to product availability, verified pricing, and responsible wellness guidance. Products do not replace medical advice.')} className="hover:text-[#C9A84C] transition-colors cursor-pointer">Terms & Conditions</button>
             <button onClick={() => showInfo('Refund Policy', 'Refund and return rules should be finalized before launch based on product category, packaging condition, and payment gateway policy.')} className="hover:text-[#C9A84C] transition-colors cursor-pointer">Refund Policy</button>
           </div>
@@ -152,7 +152,7 @@ export default function Footer({ setView, onLinkDialog }: FooterProps) {
       </footer>
 
       <a
-        href="https://wa.me/917989255841"
+        href="https://wa.me/917989255849"
         target="_blank"
         rel="noreferrer"
         className="fixed bottom-5 right-5 z-[70] group flex items-center gap-3"
@@ -168,6 +168,8 @@ export default function Footer({ setView, onLinkDialog }: FooterProps) {
     </>
   );
 }
+
+
 
 
 

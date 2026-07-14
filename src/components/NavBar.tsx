@@ -56,10 +56,10 @@ export default function NavBar({
     <header className={`fixed top-0 left-0 w-full z-50 bg-white transition-shadow duration-300 ${scrolled ? 'nav-shadow' : ''} border-b border-[rgba(0,0,0,0.08)]`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 h-16 md:h-[72px] flex justify-between items-center">
         {/* Logo */}
-        <button onClick={() => handleNavClick('home')} className="flex items-center gap-2.5 cursor-pointer shrink-0" aria-label="ASRA VEDHA home">
-          <img src={logo} alt="ASRA VEDHA" className="h-9 w-auto" />
-          <span className="font-display text-xl tracking-[0.12em] uppercase text-[rgba(0,0,0,0.87)] font-semibold">
-            ASRA VEDHA
+        <button onClick={() => handleNavClick('home')} className="flex items-center gap-2.5 cursor-pointer shrink-0" aria-label="Asra Vedha home">
+          <img src={logo} alt="Asra Vedha" className="h-9 w-auto" />
+          <span className="font-serif text-xl tracking-normal text-[rgba(0,0,0,0.87)] font-semibold italic">
+            Asra Vedha
           </span>
         </button>
 
@@ -148,3 +148,5 @@ export default function NavBar({
     </header>
   );
 }
+
+

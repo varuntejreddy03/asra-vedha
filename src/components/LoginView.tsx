@@ -29,7 +29,7 @@ export default function LoginView({ setView, onGoogleLogin }: LoginViewProps) {
             <span className="w-10 h-10 rounded-full border border-[#C9A84C]/40 bg-[#EDEDEC] flex items-center justify-center">
               <Leaf className="w-5 h-5" />
             </span>
-            <span className="font-display text-2xl tracking-[0.14em] uppercase">ASRA VEDHA</span>
+            <span className="font-display text-2xl tracking-[0.14em] uppercase">Asra Vedha</span>
           </button>
 
           <div className="text-center mt-8">
@@ -52,7 +52,7 @@ export default function LoginView({ setView, onGoogleLogin }: LoginViewProps) {
           <div className="mt-6 bg-[#EDEDEC]/80 border border-[#C9A84C]/40 rounded-lg p-4 flex gap-3">
             <ShieldCheck className="w-5 h-5 text-[#C9A84C] shrink-0 mt-0.5" />
             <p className="font-sans text-xs text-[rgba(0,0,0,0.58)] leading-relaxed">
-              Email and password login is not enabled in this backend phase. ASRA VEDHA accounts are Google OAuth only.
+              Email and password login is not enabled in this backend phase. Asra Vedha accounts are Google OAuth only.
             </p>
           </div>
 
@@ -67,6 +67,8 @@ export default function LoginView({ setView, onGoogleLogin }: LoginViewProps) {
     </div>
   );
 }
+
+
 
 
 

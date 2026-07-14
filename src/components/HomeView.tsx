@@ -142,7 +142,7 @@ export default function HomeView({
                         <h3 className="font-display text-lg text-[rgba(0,0,0,0.87)] group-hover:text-[#C9A84C] transition-colors font-semibold">
                           {product.name}
                         </h3>
-                        <span className="font-sans text-sm font-bold text-[#C9A84C]">
+                        <span className="font-sans text-sm font-bold text-[rgba(0,0,0,0.87)]">
                           {priceData.formatted}
                         </span>
                       </div>
@@ -204,7 +204,7 @@ export default function HomeView({
             <div className="w-10 h-[2px] bg-[#C9A84C] rounded-full"></div>
             
             <p className="font-sans text-base text-[rgba(0,0,0,0.58)] leading-relaxed">
-              Every ASRA VEDHA product is guided by a simple promise: natural ingredients, thoughtful sourcing, clean processing, and trustworthy wellness for modern Indian families.
+              Every Asra Vedha product is guided by a simple promise: natural ingredients, thoughtful sourcing, clean processing, and trustworthy wellness for modern Indian families.
             </p>
 
             <div className="flex flex-wrap gap-4 mt-2">
@@ -223,5 +223,7 @@ export default function HomeView({
     </div>
   );
 }
+
+
 
 

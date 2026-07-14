@@ -177,7 +177,7 @@ export default function WisdomView({ setView }: WisdomViewProps) {
               </div>
               <h3 className="font-display text-xl text-[#C9A84C] mb-4">Luna Stewardship</h3>
               <p className="font-sans text-xs md:text-sm text-[rgba(0,0,0,0.58)] leading-relaxed relative z-10">
-                Responsible sourcing, clean processing, and recyclable packaging choices guide each ASRA VEDHA wellness product.
+                Responsible sourcing, clean processing, and recyclable packaging choices guide each Asra Vedha wellness product.
               </p>
             </motion.div>
           </div>
@@ -235,6 +235,8 @@ export default function WisdomView({ setView }: WisdomViewProps) {
     </div>
   );
 }
+
+
 
 
 

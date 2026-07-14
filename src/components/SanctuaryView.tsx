@@ -75,7 +75,7 @@ export default function SanctuaryView({
     firstName: initialFirstName || 'ASRA',
     lastName: initialLastNameParts.join(' ') || 'Customer',
     email: user?.email || 'customer@example.com',
-    phone: user?.phone || '+91 7989255841'
+    phone: user?.phone || '+91 7989255849'
   });
 
   // Settings form input holders
@@ -378,7 +378,7 @@ export default function SanctuaryView({
                         Amara, {profile.firstName} {profile.lastName}
                       </h1>
                       <p className="font-sans text-xs md:text-sm text-[rgba(0,0,0,0.58)] max-w-xl leading-relaxed">
-                        Welcome back to your ASRA VEDHA wellness account. Review orders, wishlist products, saved details, and future subscription preferences from one place.
+                        Welcome back to your Asra Vedha wellness account. Review orders, wishlist products, saved details, and future subscription preferences from one place.
                       </p>
                     </div>
                   </div>
@@ -1026,6 +1026,8 @@ export default function SanctuaryView({
     </div>
   );
 }
+
+
 
 
 

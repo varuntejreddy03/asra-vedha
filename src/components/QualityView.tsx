@@ -74,7 +74,7 @@ export default function QualityView({ setView }: QualityViewProps) {
               Uncompromising Quality
             </h1>
             <p className="font-sans text-base md:text-lg text-[rgba(0,0,0,0.58)] leading-relaxed max-w-2xl mt-5">
-              ASRA VEDHA products are built around clean ingredients, disciplined processing, transparent batch records, and practical safety checks before they reach customers.
+              Asra Vedha products are built around clean ingredients, disciplined processing, transparent batch records, and practical safety checks before they reach customers.
             </p>
           </motion.div>
 
@@ -194,6 +194,8 @@ export default function QualityView({ setView }: QualityViewProps) {
     </div>
   );
 }
+
+
 
 
 

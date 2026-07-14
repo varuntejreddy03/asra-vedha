@@ -75,7 +75,7 @@ export default function ContactView() {
           <span className="font-sans text-xs tracking-[0.24em] uppercase text-[#C9A84C] font-bold">Contact Us</span>
           <h1 className="font-display text-4xl md:text-6xl text-[rgba(0,0,0,0.87)] leading-tight mt-5">We are here to help.</h1>
           <p className="font-sans text-base md:text-lg text-[rgba(0,0,0,0.58)] leading-relaxed max-w-2xl mt-5">
-            Send product questions, order support requests, distributor interest, or general enquiries to ASRA VEDHA WELLNESS.
+            Send product questions, order support requests, distributor interest, or general enquiries to Asra Vedha WELLNESS.
           </p>
         </div>
       </section>
@@ -186,14 +186,14 @@ export default function ContactView() {
           className="lg:col-span-5 space-y-6"
         >
           <div className="bg-white card-shadow rounded-xl p-6 md:p-8">
-            <h2 className="font-display text-3xl text-[rgba(0,0,0,0.87)]">ASRA VEDHA WELLNESS</h2>
+            <h2 className="font-display text-3xl text-[rgba(0,0,0,0.87)]">Asra Vedha WELLNESS</h2>
             <p className="font-sans text-sm text-[rgba(0,0,0,0.58)] leading-relaxed mt-3">
               Premium Herbal Nutrition | Nutraceuticals | Wellness Products
             </p>
             <div className="space-y-5 mt-8">
-              <a href="tel:+917989255841" className="flex gap-4 text-[rgba(0,0,0,0.87)] hover:text-[#C9A84C] transition-colors">
+              <a href="tel:+917989255849" className="flex gap-4 text-[rgba(0,0,0,0.87)] hover:text-[#C9A84C] transition-colors">
                 <Phone className="w-5 h-5 text-[#C9A84C] shrink-0 mt-0.5" />
-                <span>7989255841</span>
+                <span>7989255849</span>
               </a>
               <a href="mailto:asravedha@gmail.com" className="flex gap-4 text-[rgba(0,0,0,0.87)] hover:text-[#C9A84C] transition-colors">
                 <Mail className="w-5 h-5 text-[#C9A84C] shrink-0 mt-0.5" />
@@ -217,7 +217,7 @@ export default function ContactView() {
               ))}
             </div>
             <a
-              href="https://wa.me/917989255841"
+              href="https://wa.me/917989255849"
               target="_blank"
               rel="noreferrer"
               className="mt-6 w-full bg-[#25D366] text-white px-5 py-3 rounded-full text-sm font-bold inline-flex items-center justify-center gap-2"
@@ -232,7 +232,7 @@ export default function ContactView() {
       <section className="px-6 md:px-12 pb-20 max-w-7xl mx-auto">
         <div className="rounded-xl overflow-hidden border border-[#C9A84C]/25 bg-white min-h-[360px]">
           <iframe
-            title="ASRA VEDHA Nalgonda map"
+            title="Asra Vedha Nalgonda map"
             src="https://www.google.com/maps?q=Nalgonda,%20Telangana,%20India&output=embed"
             className="w-full h-[360px] border-0"
             loading="lazy"
@@ -243,6 +243,8 @@ export default function ContactView() {
     </div>
   );
 }
+
+
 
 
 

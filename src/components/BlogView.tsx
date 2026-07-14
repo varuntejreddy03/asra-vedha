@@ -25,14 +25,14 @@ const posts: BlogPost[] = [
     title: 'Why Moringa Fits a Modern Daily Nutrition Routine',
     category: 'Nutrition',
     date: 'June 12, 2026',
-    author: 'ASRA VEDHA Team',
+    author: 'Asra Vedha Team',
     readTime: '4 min read',
     image: 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1400&q=80',
     excerpt: 'A practical look at moringa powder, micronutrients, smoothies, and how to build a steady morning habit.',
     body: [
       'Moringa is valued because it is simple to add to everyday food. A small serving can blend into warm water, smoothies, chutneys, or breakfast bowls without changing the routine too much.',
       'The best wellness habits are repeatable. Keep the serving small, use it consistently, and pair it with a balanced diet instead of treating any single herb as a shortcut.',
-      'ASRA VEDHA positions moringa as a daily green nutrition support product, with purity checks and clean labeling as the foundation.'
+      'Asra Vedha positions moringa as a daily green nutrition support product, with purity checks and clean labeling as the foundation.'
     ]
   },
   {
@@ -40,14 +40,14 @@ const posts: BlogPost[] = [
     title: 'Ashwagandha for Stress Support and Vitality',
     category: 'Herbs',
     date: 'June 8, 2026',
-    author: 'ASRA VEDHA Team',
+    author: 'Asra Vedha Team',
     readTime: '5 min read',
     image: 'https://images.unsplash.com/photo-1615485500704-8e990f9900f7?auto=format&fit=crop&w=1400&q=80',
     excerpt: 'How this classic adaptogen is used in Indian wellness routines, and what responsible use should look like.',
     body: [
       'Ashwagandha has a long place in traditional wellness systems. It is commonly used in evening routines, strength routines, and stress-support habits.',
       'Responsible use matters. Customers with medical conditions, pregnancy, lactation, or prescription medicines should speak with a qualified professional before adding concentrated herbs.',
-      'For ASRA VEDHA, the focus is clear product information, clean sourcing, and practical directions that customers can understand.'
+      'For Asra Vedha, the focus is clear product information, clean sourcing, and practical directions that customers can understand.'
     ]
   },
   {
@@ -55,7 +55,7 @@ const posts: BlogPost[] = [
     title: 'A Simple Golden Milk Ritual with Turmeric',
     category: 'Recipes',
     date: 'June 4, 2026',
-    author: 'ASRA VEDHA Team',
+    author: 'Asra Vedha Team',
     readTime: '3 min read',
     image: 'https://images.unsplash.com/photo-1609501676725-7186f017a4b7?auto=format&fit=crop&w=1400&q=80',
     excerpt: 'A warm turmeric drink recipe for evenings, with simple ingredients and clean preparation.',
@@ -70,7 +70,7 @@ const posts: BlogPost[] = [
     title: 'What Clean Label Means for Herbal Wellness',
     category: 'Research',
     date: 'May 30, 2026',
-    author: 'ASRA VEDHA Team',
+    author: 'Asra Vedha Team',
     readTime: '6 min read',
     image: 'https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=1400&q=80',
     excerpt: 'Purity, testing, transparent ingredients, and why fewer inputs often build more trust.',
@@ -85,14 +85,14 @@ const posts: BlogPost[] = [
     title: 'Seasonal Immunity Habits Beyond One Product',
     category: 'Lifestyle',
     date: 'May 24, 2026',
-    author: 'ASRA VEDHA Team',
+    author: 'Asra Vedha Team',
     readTime: '4 min read',
     image: 'https://images.unsplash.com/photo-1505576399279-565b52d4ac71?auto=format&fit=crop&w=1400&q=80',
     excerpt: 'Food, sleep, hydration, and herbs work best when they support a wider lifestyle system.',
     body: [
       'Seasonal wellness is strongest when it is built around basics: sleep, hydration, balanced food, movement, and stress management.',
       'Herbs can support the routine, but they should not be the whole routine. Amla, turmeric, tulsi, and moringa all fit best when daily habits are already moving in the right direction.',
-      'ASRA VEDHA content should keep customers informed without overpromising.'
+      'Asra Vedha content should keep customers informed without overpromising.'
     ]
   }
 ];
@@ -175,7 +175,7 @@ export default function BlogView({ setView }: BlogViewProps) {
             </div>
             <div className="bg-white card-shadow rounded-lg p-6">
               <h3 className="font-display text-2xl text-[rgba(0,0,0,0.87)]">Explore the collection</h3>
-              <p className="font-sans text-sm text-[rgba(0,0,0,0.58)] mt-2 leading-relaxed">Pair wellness reading with real products from the ASRA VEDHA catalog.</p>
+              <p className="font-sans text-sm text-[rgba(0,0,0,0.58)] mt-2 leading-relaxed">Pair wellness reading with real products from the Asra Vedha catalog.</p>
               <button
                 onClick={() => setView('shop')}
                 className="mt-5 bg-[#C9A84C] text-[#2B2B2B] px-5 py-3 rounded text-xs uppercase tracking-widest font-bold inline-flex items-center gap-2 cursor-pointer"
@@ -198,7 +198,7 @@ export default function BlogView({ setView }: BlogViewProps) {
             <span className="font-sans text-xs tracking-[0.24em] uppercase text-[#C9A84C] font-bold">Wellness Insights</span>
             <h1 className="font-display text-4xl md:text-6xl text-[rgba(0,0,0,0.87)] leading-tight mt-4">Journal for Natural Living</h1>
             <p className="font-sans text-base text-[#8C8C8C] leading-relaxed max-w-2xl mt-4">
-              Practical writing on herbs, nutrition, recipes, and responsible wellness for ASRA VEDHA customers.
+              Practical writing on herbs, nutrition, recipes, and responsible wellness for Asra Vedha customers.
             </p>
           </div>
           <div className="relative w-full lg:max-w-sm">
@@ -300,6 +300,8 @@ export default function BlogView({ setView }: BlogViewProps) {
     </div>
   );
 }
+
+
 
 
 
